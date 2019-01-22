@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6beb56ae1de747349b396a7d9a7cf3d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TicketL: {fileID: 1424958245709722, guid: 4e0e3fd6c3d8ac3488d5cd275194e8e1, type: 2}
+  - TicketC: {fileID: 1083098084055090, guid: 21b794204de5a0d4797be6a99f2abda4, type: 2}
+  - TicketR: {fileID: 1320858876030632, guid: 2ea6a2fd35588a7488c0a3814c3b74b5, type: 2}
+  - TicketTf: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
