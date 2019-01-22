@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="03_Scripts" t="Include">
+          <e p="00_Auth" t="Include">
+            <e p="firebase_auth.cs" t="Include" />
+            <e p="RealtimeDatabase.cs" t="Include" />
+          </e>
+          <e p="04_Cashier" t="Include">
+            <e p="cheeseMove.cs" t="Include" />
+            <e p="cherryMove.cs" t="Include" />
+            <e p="CookieMove.cs" t="Include" />
+            <e p="EggMove.cs" t="Include" />
+            <e p="FishMove.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="Hand.cs" t="Include" />
+            <e p="Marchandise.cs" t="Include" />
+            <e p="MilkMove.cs" t="Include" />
+            <e p="potatoMove.cs" t="Include" />
+            <e p="smallTissueMove.cs" t="Include" />
+            <e p="Timer.cs" t="Include" />
+            <e p="TissueMove.cs" t="Include" />
+          </e>
+          <e p="05_Cinema" t="Include">
+            <e p="CinemaManager.cs" t="Include" />
+            <e p="Pause.cs" t="Include" />
+            <e p="TicketMove.cs" t="Include" />
+            <e p="TimerScript_cinema.cs" t="Include" />
+          </e>
+          <e p="Factory" t="Include">
+            <e p="ButtonClicked.cs" t="Include" />
+            <e p="FactoryManager.cs" t="Include" />
+            <e p="SelectChange.cs" t="Include" />
+            <e p="TimerScript.cs" t="Include" />
+          </e>
+          <e p="Main" t="Include">
+            <e p="ChangeScenes.cs" t="Include" />
+            <e p="MainManager.cs" t="Include" />
+            <e p="TextMoveA.cs" t="Include" />
+            <e p="TextMoveB.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Firebase" t="Include">
+          <e p="m2repository" t="Include">
+            <e p="com" t="Include">
+              <e p="google" t="Include">
+                <e p="Firebase" t="Include">
+                  <e p="firebase-app-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-auth-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-database-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="Http" t="Include">
+              <e p="link.xml" t="Include" />
+            </e>
+            <e p="link.xml" t="Include" />
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="04_Cashier" t="Include">
+            <e p="FreePixelFood" t="Include">
+              <e p="README.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Low Poly UI Kit - v.1.1c" t="Include">
+            <e p="README.txt" t="Include" />
+            <e p="UI Kit" t="Include">
+              <e p="AI Files" t="Include">
+                <e p="README.txt" t="Include" />
+              </e>
+              <e p="Font" t="Include">
+                <e p="README.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="New Unity Project (7).sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_New Unity Project (7).-434445480.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+  </component>
+</project>
