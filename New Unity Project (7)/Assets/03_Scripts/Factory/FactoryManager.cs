@@ -91,7 +91,6 @@ public class FactoryManager : MonoBehaviour {
 
         left += 1f;
         right += 1f;
-        if(left ==198)
         if(left > 1000)
         {
             left = right = 0;
@@ -107,7 +106,7 @@ public class FactoryManager : MonoBehaviour {
             score += 200;
         else
             score += 100;
-        scoreText.text = "Score : " + score.ToString();
+        scoreText.text =  score.ToString();
         
     }
 
