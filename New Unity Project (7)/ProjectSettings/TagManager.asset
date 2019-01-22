@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - bottle
+  - can
+  - TicketC
+  - TicketR
+  - TicketL
+  - pet
+  - paper
+  - fakeTicketL
+  - potato
+  - fakeTicketR
+  - fakeTicketC
+  - bottom
   layers:
   - Default
   - TransparentFX
@@ -40,4 +52,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Table
+    uniqueID: 2623702009
+    locked: 0
+  - name: Marchandise
+    uniqueID: 2388216805
     locked: 0
