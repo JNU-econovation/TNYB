@@ -7,19 +7,20 @@ public class Pause : MonoBehaviour {
     public GameObject BlockPanel; // 가림막
     bool isPaused = false;
 
-    public void pauseGame()
-    {
-        if (isPaused)
-        {
-            Time.timeScale = 1;
-            isPaused = false;
-            BlockPanel.SetActive(false); // new
-        }
-        else
+
+        public void pauseGame()
         {
             Time.timeScale = 0;
             isPaused = true;
-            BlockPanel.SetActive(true); // new
+            BlockPanel.SetActive(true);
+
         }
-    }
+        public void ResumeGame()
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+            BlockPanel.SetActive(false);
+        }
+
+  
 }

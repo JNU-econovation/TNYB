@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 5407317962155472566}
   - component: {fileID: 5407317962155472565}
   - component: {fileID: 5407317962155472564}
+  - component: {fileID: 4754756003878373074}
   m_Layer: 5
   m_Name: Game_3
   m_TagString: Untagged
@@ -1286,9 +1287,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5407317962155472565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4754756003878373074}
+        m_MethodName: ToFactory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4754756003878373074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407317962155472570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af9302c81bc36a4bb795f82365e4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5407317962184353374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,8 +1776,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5193069570807285804}
-  - {fileID: 5193873349694674830}
+  - {fileID: 5194389205841417990}
+  - {fileID: 5194433954235956230}
   - {fileID: 5407317962880584440}
   - {fileID: 5407317963175208618}
   - {fileID: 5407317963184790590}
@@ -4463,8 +4487,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5193069571890182358}
-  - {fileID: 5193873351392260170}
+  - {fileID: 5194389206875613180}
+  - {fileID: 5194433952660003778}
   - {fileID: 5407317963828606439}
   - {fileID: 5407317962796803370}
   - {fileID: 5407317963046639958}
@@ -4990,6 +5014,7 @@ GameObject:
   - component: {fileID: 5407317963184998055}
   - component: {fileID: 5407317963184998054}
   - component: {fileID: 5407317963184998053}
+  - component: {fileID: 6575419276332951913}
   m_Layer: 5
   m_Name: Game_2
   m_TagString: Untagged
@@ -5093,9 +5118,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5407317963184998054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6575419276332951913}
+        m_MethodName: ToCinema
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6575419276332951913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407317963184998059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af9302c81bc36a4bb795f82365e4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5407317963232449387
 GameObject:
   m_ObjectHideFlags: 0
@@ -6409,6 +6457,7 @@ GameObject:
   - component: {fileID: 5407317963696173291}
   - component: {fileID: 5407317963696173290}
   - component: {fileID: 5407317963696173289}
+  - component: {fileID: 3177530398244517339}
   m_Layer: 5
   m_Name: Game_1
   m_TagString: Untagged
@@ -6512,9 +6561,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5407317963696173290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3177530398244517339}
+        m_MethodName: ToMart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3177530398244517339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407317963696173295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af9302c81bc36a4bb795f82365e4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5407317963697333866
 GameObject:
   m_ObjectHideFlags: 0
@@ -6697,8 +6769,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5193069571283584859}
-  - {fileID: 5193873349443444490}
+  - {fileID: 5194389206266894449}
+  - {fileID: 5194433953950119042}
   - {fileID: 5407317963697333867}
   - {fileID: 5407317963060751154}
   - {fileID: 5407317961919011735}
@@ -7027,6 +7099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5407317962313770596}
     m_Modifications:
+    - target: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7119,9 +7196,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92af9a8f7daecf64cadc868c1416cf83, type: 3}
---- !u!224 &5193873349694674830 stripped
+--- !u!224 &5194433954235956230 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
+  m_CorrespondingSourceObject: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
     type: 3}
   m_PrefabInstance: {fileID: 5407317961867426544}
   m_PrefabAsset: {fileID: 0}
@@ -7224,9 +7301,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89012f0b148c1d0489456315057e357e, type: 3}
---- !u!224 &5193069570807285804 stripped
+--- !u!224 &5194389205841417990 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224012623101682864, guid: 89012f0b148c1d0489456315057e357e,
+  m_CorrespondingSourceObject: {fileID: 224206362274118554, guid: 89012f0b148c1d0489456315057e357e,
     type: 3}
   m_PrefabInstance: {fileID: 5407317962073189532}
   m_PrefabAsset: {fileID: 0}
@@ -7237,6 +7314,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5407317963731351738}
     m_Modifications:
+    - target: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7329,9 +7411,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92af9a8f7daecf64cadc868c1416cf83, type: 3}
---- !u!224 &5193873349443444490 stripped
+--- !u!224 &5194433953950119042 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
+  m_CorrespondingSourceObject: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
     type: 3}
   m_PrefabInstance: {fileID: 5407317962152014452}
   m_PrefabAsset: {fileID: 0}
@@ -7434,9 +7516,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89012f0b148c1d0489456315057e357e, type: 3}
---- !u!224 &5193069571890182358 stripped
+--- !u!224 &5194389206875613180 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224012623101682864, guid: 89012f0b148c1d0489456315057e357e,
+  m_CorrespondingSourceObject: {fileID: 224206362274118554, guid: 89012f0b148c1d0489456315057e357e,
     type: 3}
   m_PrefabInstance: {fileID: 5407317963186019430}
   m_PrefabAsset: {fileID: 0}
@@ -7447,6 +7529,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5407317963064204952}
     m_Modifications:
+    - target: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7539,9 +7626,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92af9a8f7daecf64cadc868c1416cf83, type: 3}
---- !u!224 &5193873351392260170 stripped
+--- !u!224 &5194433952660003778 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224897692769791358, guid: 92af9a8f7daecf64cadc868c1416cf83,
+  m_CorrespondingSourceObject: {fileID: 224319207574357750, guid: 92af9a8f7daecf64cadc868c1416cf83,
     type: 3}
   m_PrefabInstance: {fileID: 5407317963571420468}
   m_PrefabAsset: {fileID: 0}
@@ -7644,9 +7731,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89012f0b148c1d0489456315057e357e, type: 3}
---- !u!224 &5193069571283584859 stripped
+--- !u!224 &5194389206266894449 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224012623101682864, guid: 89012f0b148c1d0489456315057e357e,
+  m_CorrespondingSourceObject: {fileID: 224206362274118554, guid: 89012f0b148c1d0489456315057e357e,
     type: 3}
   m_PrefabInstance: {fileID: 5407317963652097003}
   m_PrefabAsset: {fileID: 0}
