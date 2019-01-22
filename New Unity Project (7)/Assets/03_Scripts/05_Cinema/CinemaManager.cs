@@ -195,7 +195,7 @@ public class CinemaManager : MonoBehaviour
         else if (Combo < 30) score += 3;
         else if (Combo < 40) score += 4;
         else score += 5;
-        scoreText.text = "Score :  " + score;
+        scoreText.text = "" + score;
     }
 
     public void WrongButton()
@@ -205,7 +205,7 @@ public class CinemaManager : MonoBehaviour
         StartCoroutine(ShakeCoroutine(clickedTicket));
         score--;
         ComboReset();
-        scoreText.text = "Score :  " + score;
+        scoreText.text = "" + score;
     }
 
     // Update is called once per frame
