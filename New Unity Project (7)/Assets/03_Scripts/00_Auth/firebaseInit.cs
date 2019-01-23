@@ -15,6 +15,12 @@ public class firebaseInit : MonoBehaviour
     
     void Awake()
     {
+        // 해상도
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+//        Screen.SetResolution(1080, 1920, true);
+        Screen.SetResolution(Screen.width, Screen.width * 1080/1920, true);
+        
+        
         // 초기화
         auth = FirebaseAuth.DefaultInstance;
     }
