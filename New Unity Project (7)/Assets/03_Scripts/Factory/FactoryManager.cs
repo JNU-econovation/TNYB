@@ -10,8 +10,11 @@ public class FactoryManager : MonoBehaviour {
     public static FactoryManager Instance;
     private bool isPaused = false;
     public Image selector;
+    private string[] kind = {"pet", "pet", "pet", "paper",
+        "paper", "paper", "bottle", "bottle", "bottle",
+        "can","can","can","pet","paper", "bottle", "can"};
 
-    public Image[] objImage = new Image[8];
+    public Image[] objImage = new Image[8]; //세팅된 이미지
     public Text scoreText;
     private int score = 0;
     private int clickCount;
@@ -24,12 +27,7 @@ public class FactoryManager : MonoBehaviour {
     public Sprite[] can = new Sprite[4];
 
     public Sprite[] trashImage = new Sprite[16];
-    public GameObject[] trash = new GameObject[16];
-    private GameObject[] setting = new GameObject[8];
     private string[] recycleName = { "pet", "paper", "can", "bottle" };
-
-    private float[] x = { -2.13f, -0.71f,0.71f, 2.13f, -2.13f, -0.71f, 0.71f, 2.13f };
-    private float[] y = { -2, -2, -2, -2, -4, -4, -4, -4 };
     private string select;
     private int count;
 
@@ -59,7 +57,6 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        //StartCoroutine(makeTrash(speed));
         StartCoroutine(Changing(speed));
         comboText.text = "";
         makeTrash_1();
@@ -165,44 +162,36 @@ public class FactoryManager : MonoBehaviour {
         for(int i=0; i<8; i++)
         {
             int random = Random.Range(0, 16);
-            GameObject tmp = trash[random];
-            if (select == tmp.tag) count++;
+            if (select == kind[random])
+                count++;
             clickCount = count;
-            setting[i] = (GameObject)Instantiate(tmp, new Vector3(100, 0, 0), Quaternion.identity);
             objImage[i].GetComponent<Image>().sprite = trashImage[random];
             num[i] = random;
+           
         }
         if (count == 0)
         {
             if (clickCount == 0)
                 combo = true;
             int ran = Random.Range(0, 8);
-            GameObject rantmp;
-            Destroy(setting[ran]);
+            int tmpran;
             while (true)
             {
-                int a = Random.Range(0, 16);
-                rantmp = trash[a];
-                if (rantmp.tag == select) break;
+                tmpran = Random.Range(0, 16);
+                if (kind[tmpran] == select) break;
             }
-            setting[ran] = (GameObject)Instantiate(rantmp, new Vector3(x[ran], y[ran], 0), Quaternion.identity);
-           // objImage[ran].GetComponent<Image>().sprite = t
+            objImage[ran].GetComponent<Image>().sprite = trashImage[tmpran];
             count++;
         }
     }  
     public void ItemDestroy(int i)
     {
-        if(setting[i] != null)
+        if(objImage[i].GetComponent<Image>().sprite != transparent)
         {
             clickCount -= 1;
-            if (setting[i].tag == select)
+            if ( kind[num[i]] == select)
             {
                 GetComponent<AudioSource>().Play();
-                particle.transform.position = setting[i].transform.position;
-                particle.Clear();
-                particle.Play();
-
-                Destroy(setting[i]);
                 objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
                 if(count == 0)
@@ -213,29 +202,23 @@ public class FactoryManager : MonoBehaviour {
                         speed -= 0.2f;
                         combo = true;
                     }
-                    for (int j = 0; j < 8; j++)
-                    {
-                        if (setting[j] != null)
-                            Destroy(setting[j]);
-                    }
                     makeTrash_1();
                 }
             }
             else
             {
-                Shake(setting[i]);
+                Shake(objImage[i]);
                 DownScore();
             }
         }
     }
 
-    void Shake(GameObject obj)
+    void Shake(Image obj)
     {
         StartCoroutine(ShakeCoroutine(obj));
     }
     void makeTrash_1()
     {
-        setting = new GameObject[16];
         select = recycleName[Random.Range(0, 4)];
 
         set();
@@ -248,25 +231,20 @@ public class FactoryManager : MonoBehaviour {
         b = Random.Range(0, 8);
         while(a==b)
             b = Random.Range(0, 8);
-        if (setting[a] != null && setting[b] != null)
+        if (objImage[a].GetComponent<Image>().sprite !=transparent
+            && objImage[b].GetComponent<Image>().sprite != transparent)
         {
-       //     Debug.Log(a + "   +    " + b);
-            Destroy(setting[a]);
-            Destroy(setting[b]);
-            setting[a] = (GameObject)Instantiate(trash[num[b]], new Vector3(100, 0, 0), Quaternion.identity);
-            setting[b] = (GameObject)Instantiate(trash[num[a]], new Vector3(100, 0, 0), Quaternion.identity);
-            objImage[a].GetComponent<Image>().sprite = trashImage[b];
-            objImage[b].GetComponent<Image>().sprite = trashImage[a];
+            objImage[a].GetComponent<Image>().sprite = trashImage[num[b]];
+            objImage[b].GetComponent<Image>().sprite = trashImage[num[a]];
+
             int tmpnum = num[b];
             num[b] = num[a];
             num[a] = tmpnum;
         }
-        }
-
+    }
     public void DeleteObj(int i)
     {
-        if (setting[i] != null)
-            Destroy(setting[i]);
+        objImage[i].GetComponent<Image>().sprite = transparent;
     }
     IEnumerator Changing(float delay) //오브젝트 변경
     {
@@ -276,21 +254,8 @@ public class FactoryManager : MonoBehaviour {
             yield return new WaitForSeconds(delay);
         }
     }
-    IEnumerator makeTrash(float delay)
-    {
-        while (true)
-        {
-            setting = new GameObject[16];
-            select = recycleName[Random.Range(0, 4)];
-           
-            set();
-            setSelector();
-            
-            yield return new WaitForSeconds(delay);
-        }
-    }
     
-     IEnumerator ShakeCoroutine(GameObject obj) //틀렸을 때 오브젝트 흔들림.
+     IEnumerator ShakeCoroutine(Image obj) //틀렸을 때 오브젝트 흔들림.
     {
         float t = 1f;
         Vector3 originV = obj.transform.position;
