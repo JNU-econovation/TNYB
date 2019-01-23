@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 4956300781800536265}
   - component: {fileID: 4956300781800536262}
   - component: {fileID: 4956300781800536263}
+  - component: {fileID: 5564664693787265933}
   m_Layer: 5
   m_Name: FinishButton
   m_TagString: Untagged
@@ -267,9 +268,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4956300781800536262}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5564664693787265933}
+        m_MethodName: ToMain_aka_Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5564664693787265933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956300781800536261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af9302c81bc36a4bb795f82365e4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4956300781934125908
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4956300783171432020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1045,6 +1069,7 @@ GameObject:
   - component: {fileID: 3395596805273248224}
   - component: {fileID: 1502548986843167146}
   - component: {fileID: 7606199714083182311}
+  - component: {fileID: 6435743666466826413}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -1148,9 +1173,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1502548986843167146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6435743666466826413}
+        m_MethodName: ToMart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6435743666466826413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164964413807370270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af9302c81bc36a4bb795f82365e4ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8468544363798872712
 GameObject:
   m_ObjectHideFlags: 0

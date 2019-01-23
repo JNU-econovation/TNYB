@@ -52,10 +52,11 @@ public class GameManager : MonoBehaviour
 
 		instance = this;
 
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		Screen.SetResolution(1080, 1920, true);
-		
-		handTfList.Add(handTf1);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(1080, 1920, true);
+        Screen.SetResolution(1080, 1920 * 1080 / 1920, true);
+
+        handTfList.Add(handTf1);
 		handTfList.Add(handTf2);
 		handTfList.Add(handTf3);
 		
