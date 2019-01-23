@@ -9,6 +9,8 @@ public class firebaseInit : MonoBehaviour
     private const string email = "econo_ddak@econovation.kr";
     private const string password = "ecnv2018";
     public Text loginResult;
+    public InputField nicknameInput;
+    private string userNickname;
     
     FirebaseAuth auth;
     FirebaseUser AdminUser;
