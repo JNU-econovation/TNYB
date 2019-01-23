@@ -432,6 +432,15 @@ MonoBehaviour:
   transparent: {fileID: 21300000, guid: 6ae6fd4f1331606428a96bc5f0266891, type: 3}
   particle: {fileID: 909053841}
   selector: {fileID: 1427111116}
+  btn:
+  - {fileID: 1514702651}
+  - {fileID: 1286850602}
+  - {fileID: 314040923}
+  - {fileID: 775667625}
+  - {fileID: 1602898078}
+  - {fileID: 2055434931}
+  - {fileID: 1757645765}
+  - {fileID: 357826876}
   objImage:
   - {fileID: 309164606}
   - {fileID: 1236817508}
@@ -442,6 +451,7 @@ MonoBehaviour:
   - {fileID: 1346459517}
   - {fileID: 1128692966}
   scoreText: {fileID: 40358375}
+  resultText: {fileID: 939573294}
   comboText: {fileID: 94883148}
   image:
   - {fileID: 528075838}
@@ -2197,6 +2207,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &939573294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4956300781934125910, guid: 14c4f259329d78243a805a6f05306301,
+    type: 3}
+  m_PrefabInstance: {fileID: 4956300782281475697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &972932899
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,6 +4599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FinishPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956300783171432021, guid: 14c4f259329d78243a805a6f05306301,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4956300783171432020, guid: 14c4f259329d78243a805a6f05306301,
         type: 3}
