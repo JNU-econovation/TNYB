@@ -16,7 +16,7 @@ public class RealtimeDatabase : MonoBehaviour
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
         FirebaseApp.DefaultInstance.SetEditorP12FileName("ddak-8f8b5-7e0bc8521a04.p12");
         
-        // 아래 비밀번호에는 특별하게 설정한거 없으면 notasecret 일 겁니다.
+        // 비밀번호 특별하게 설정한거 없으면 notasecret
         FirebaseApp.DefaultInstance.SetEditorP12Password("notasecret");
     } 
     
