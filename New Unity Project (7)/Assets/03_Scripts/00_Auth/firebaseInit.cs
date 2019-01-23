@@ -27,7 +27,7 @@ public class firebaseInit : MonoBehaviour
     {
         // 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(Screen.width, Screen.width * 9/16, true);
+        Screen.SetResolution(Screen.width, Screen.width * 16/9, true);
         
         // 초기화
         auth = FirebaseAuth.DefaultInstance;
