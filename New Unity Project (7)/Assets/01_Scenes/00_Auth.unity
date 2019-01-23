@@ -601,7 +601,6 @@ GameObject:
   m_Component:
   - component: {fileID: 638744032}
   - component: {fileID: 638744031}
-  - component: {fileID: 638744033}
   m_Layer: 0
   m_Name: LogInManager
   m_TagString: Untagged
@@ -637,19 +636,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &638744033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638744030}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8538021657a5f48d38a33864b0fb2674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtPrint: {fileID: 0}
 --- !u!1 &691553025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439593491}
+  - component: {fileID: 1439593492}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -1218,6 +1205,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439593492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439593490}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c988a2de981524c4a8f860dab00e5855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501541928
 GameObject:
   m_ObjectHideFlags: 0
