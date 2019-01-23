@@ -53,6 +53,7 @@ public class CinemaManager : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(1080, 1920, true);
+        Screen.SetResolution(1080, 1920 * 1080 / 1920, true);
 
         TicketList.Add(TicketL);
         TicketList.Add(TicketC);

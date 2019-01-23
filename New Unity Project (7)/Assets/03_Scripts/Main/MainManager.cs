@@ -20,7 +20,9 @@ public class MainManager : MonoBehaviour {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
-        Screen.SetResolution(1920, 1080, true);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(1080, 1920, true);
+        Screen.SetResolution(1080, 1920 * 1080 / 1920, true);
 
 
     }
