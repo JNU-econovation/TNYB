@@ -11,6 +11,8 @@ public class firebaseInit : MonoBehaviour
     public Text loginResult;
     
     FirebaseAuth auth;
+    FirebaseUser AdminUser;
+    
     void Awake()
     {
         // 초기화
@@ -20,10 +22,11 @@ public class firebaseInit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoginadminAccount();
+        LoginAdminAccount();
+        InitializeFirebase();
     }
 
-    private void LoginadminAccount()
+    private void LoginAdminAccount()
     {
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if (task.IsCanceled)
@@ -38,12 +41,35 @@ public class firebaseInit : MonoBehaviour
                 loginResult.text = "로그인 실패";               
                 return;
             }
- 
-            Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",
-                newUser.DisplayName, newUser.UserId);
-            loginResult.text = newUser.DisplayName;
 
         });
+    }
+    
+    void InitializeFirebase() {
+        auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        auth.StateChanged += AuthStateChanged;
+    }
+
+    /** 상태변화 추적 */
+    void AuthStateChanged(object sender, System.EventArgs eventArgs) {
+        if (auth.CurrentUser != AdminUser) {
+            bool signedIn = AdminUser != auth.CurrentUser && auth.CurrentUser != null;
+            if (!signedIn && AdminUser != null) {
+                Debug.LogFormat("Signed out {0}", AdminUser.UserId);
+            }
+            AdminUser = auth.CurrentUser;
+            if (signedIn) {
+                Log(string.Format("Signed in {0}", AdminUser.UserId));
+                string displayName = AdminUser.DisplayName ?? "";
+                string emailAddress = AdminUser.Email ?? "";
+                Log(string.Format("Signed in {0} _ {1}", displayName, emailAddress));
+            }
+        }
+    }
+    
+    void Log(string logText)
+    {
+        loginResult.text += (logText + "\n");
+        Debug.Log(logText);
     }
 }

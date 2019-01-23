@@ -389,6 +389,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5407317961870590466, guid: adf7bf93dbd98114598253ad8d15d670,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1153694072}
+    - target: {fileID: 5407317961870590466, guid: adf7bf93dbd98114598253ad8d15d670,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MusicButton
+      objectReference: {fileID: 0}
     - target: {fileID: 5407317962822229941, guid: adf7bf93dbd98114598253ad8d15d670,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,16 +509,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 802944705}
-    - target: {fileID: 5407317961870590466, guid: adf7bf93dbd98114598253ad8d15d670,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1153694072}
-    - target: {fileID: 5407317961870590466, guid: adf7bf93dbd98114598253ad8d15d670,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MusicButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5407317963243789968, guid: adf7bf93dbd98114598253ad8d15d670,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
