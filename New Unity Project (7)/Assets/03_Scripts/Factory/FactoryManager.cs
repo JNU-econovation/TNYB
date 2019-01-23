@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FactoryManager : MonoBehaviour {
 
@@ -51,6 +52,7 @@ public class FactoryManager : MonoBehaviour {
     {
         return select;
     }
+   
     void Awake()
     {
         if (!Instance)
@@ -288,6 +290,11 @@ public class FactoryManager : MonoBehaviour {
         while (afterA == afterB)
             afterB = Random.Range(0, 8);
         
+    }
+    public void ToMain_aka_Exit()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     public void DeleteObj(int i)
     {
