@@ -10,9 +10,11 @@ public class firebaseInit : MonoBehaviour
     private const string password = "ecnv2018";
     public Text loginResult;
     public InputField nicknameInput;
-    private bool hasNickname = false;
     
     private string userNickname;
+    
+//    PlayerPrefs.SetString("userNicknameKey", " ");
+    
     
     FirebaseAuth auth;
     FirebaseUser AdminUser;
@@ -22,7 +24,6 @@ public class firebaseInit : MonoBehaviour
         // 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, Screen.width * 1080/1920, true);
-        
         
         // 초기화
         auth = FirebaseAuth.DefaultInstance;

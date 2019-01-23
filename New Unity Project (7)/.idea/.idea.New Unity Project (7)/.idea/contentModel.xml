@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="03_Scripts" t="Include">
@@ -46,6 +47,13 @@
           </e>
         </e>
         <e p="Firebase" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AppDependencies.xml" t="Include" />
+            <e p="AuthDependencies.xml" t="Include" />
+            <e p="DatabaseDependencies.xml" t="Include" />
+            <e p="FirebaseAuth_version-5.4.3_manifest.txt" t="Include" />
+            <e p="FirebaseDatabase_version-5.4.3_manifest.txt" t="Include" />
+          </e>
           <e p="m2repository" t="Include">
             <e p="com" t="Include">
               <e p="google" t="Include">
@@ -68,6 +76,20 @@
               <e p="link.xml" t="Include" />
             </e>
             <e p="link.xml" t="Include" />
+          </e>
+        </e>
+        <e p="PlayerPrefs" t="Include">
+          <e p="Editor" t="Include">
+            <e p="PlayerPrefsEditor" t="Include">
+              <e p="PlayerPrefsEditorUtility.cs" t="Include" />
+              <e p="PlayerPrefsEditorWindow.cs" t="Include" />
+            </e>
+            <e p="PlayerPrefsExtension.cs" t="Include" />
+          </e>
+        </e>
+        <e p="PlayServicesResolver" t="Include">
+          <e p="Editor" t="Include">
+            <e p="play-services-resolver_v1.2.95.0.txt" t="Include" />
           </e>
         </e>
         <e p="Resources" t="Include">
