@@ -14,7 +14,6 @@ public class firebase_auth : MonoBehaviour
 
     string displayName;
     string emailAddress;
-    string photoUrl;
 
     /** 상태 출력용 */
     public Text txtPrint;
@@ -22,6 +21,7 @@ public class firebase_auth : MonoBehaviour
     void Start()
     {
         // 초기화
+        Debug.Log("Hi");
         InitializeFirebase();
     }
 
