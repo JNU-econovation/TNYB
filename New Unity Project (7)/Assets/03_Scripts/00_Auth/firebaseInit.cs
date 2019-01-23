@@ -13,9 +13,6 @@ public class firebaseInit : MonoBehaviour
     
     private string userNickname;
     
-//    PlayerPrefs.SetString("userNicknameKey", " ");
-    
-    
     FirebaseAuth auth;
     FirebaseUser AdminUser;
     
@@ -23,7 +20,7 @@ public class firebaseInit : MonoBehaviour
     {
         // 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(Screen.width, Screen.width * 1080/1920, true);
+        Screen.SetResolution(Screen.width, Screen.width * 9/16, true);
         
         // 초기화
         auth = FirebaseAuth.DefaultInstance;
@@ -34,6 +31,23 @@ public class firebaseInit : MonoBehaviour
     {
         LoginAdminAccount();
         InitializeFirebase();
+        InitializePlayerPrefs();
+    }
+
+    private void InitializePlayerPrefs()
+    {
+        if (PlayerPrefs.GetString("Nickname", null) == null)
+        {
+            // 가져올 닉네임이 없다
+            // need new nickname
+        }
+        
+    }
+    
+    void checkNickname()
+    {
+        string tempNick = nicknameInput.text;
+        PlayerPrefs.SetString("Nickname", null);
     }
 
     private void LoginAdminAccount()
@@ -58,12 +72,6 @@ public class firebaseInit : MonoBehaviour
     void InitializeFirebase() {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         auth.StateChanged += AuthStateChanged;
-    }
-
-
-    void checkNickname()
-    {
-        
     }
 
     /** 상태변화 추적 */
