@@ -10,15 +10,18 @@ public class FactoryManager : MonoBehaviour {
     public static FactoryManager Instance;
     private bool isPaused = false;
     public Image selector;
+    public Button[] btn = new Button[8];
     private string[] kind = {"pet", "pet", "pet", "paper",
         "paper", "paper", "bottle", "bottle", "bottle",
         "can","can","can","pet","paper", "bottle", "can"};
+    private float moveSpeed=1;
 
     public Image[] objImage = new Image[8]; //세팅된 이미지
-    public Text scoreText;
+    public Text scoreText, resultText;
     private int score = 0;
     private int clickCount;
     public Text comboText;
+    int beforeA, beforeB, afterA, afterB;
 
     public Image[] image = new Image[4];
     public Sprite[] pet = new Sprite[4];
@@ -55,7 +58,7 @@ public class FactoryManager : MonoBehaviour {
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(1080, 1920, true);
-        Screen.SetResolution(1080, 1920 * 1080 / 1920, true);
+        Screen.SetResolution(1080, 1920 * 9/16, true);
     }
     // Use this for initialization
     void Start() {
@@ -67,15 +70,37 @@ public class FactoryManager : MonoBehaviour {
 
 
         timer = 0.0f;
-        waitingTime = 1.5f;
+        waitingTime = 0.7f;
 
     }
-    void FixedUpdate()
+    
+
+    void Update()
     {
         timer += Time.deltaTime;
+        if (a)
+        {
+            Color color = new Color(255, 255, 255, 0.1f+timer);
+            objImage[afterA].color = color;
+            objImage[afterB].color = color;
+      
+        }
+        else
+        {
+            Color color = new Color(255, 255, 255, 0.8f-timer);
+            objImage[afterA].color = color;
+            objImage[afterB].color = color;
+    
+
+        }
 
         if (timer > waitingTime)
         {
+            if (a)
+                a = false;
+            else
+                a = true;
+            
             if (combo)
             {
                 if (a)
@@ -94,8 +119,8 @@ public class FactoryManager : MonoBehaviour {
             timer = 0;
         }
 
-        left += 1f;
-        right += 1f;
+        left += moveSpeed;
+        right += moveSpeed;
         if(left > 1000)
         {
             left = right = 0;
@@ -108,10 +133,17 @@ public class FactoryManager : MonoBehaviour {
     void UpScore() //점수 업
     {
         if (combo)
+        {
             score += 200;
+            moveSpeed += 0.2f;
+        }
         else
+        {
             score += 100;
+            moveSpeed = 1f;
+        }
         scoreText.text =  score.ToString();
+        resultText.text = "Score : " + score.ToString();
         
     }
 
@@ -122,10 +154,12 @@ public class FactoryManager : MonoBehaviour {
         {
             score -= 50;
             scoreText.text = score.ToString();
+            resultText.text = "Score : " + score.ToString();
         }
         else
         {
-            scoreText.text = "Score : 0";
+            scoreText.text = "0";
+            resultText.text = "Score : " + score.ToString();
         }
         speed = 4.0f;
         
@@ -175,8 +209,6 @@ public class FactoryManager : MonoBehaviour {
         }
         if (count == 0)
         {
-            if (clickCount == 0)
-                combo = true;
             int ran = Random.Range(0, 8);
             int tmpran;
             while (true)
@@ -184,6 +216,7 @@ public class FactoryManager : MonoBehaviour {
                 tmpran = Random.Range(0, 16);
                 if (kind[tmpran] == select) break;
             }
+            num[ran] = tmpran;
             objImage[ran].GetComponent<Image>().sprite = trashImage[tmpran];
             count++;
         }
@@ -230,21 +263,31 @@ public class FactoryManager : MonoBehaviour {
     }
     void changeTrash()
     {
-        int a, b;
-        a = Random.Range(0, 8);
-        b = Random.Range(0, 8);
-        while(a==b)
-            b = Random.Range(0, 8);
-        if (objImage[a].GetComponent<Image>().sprite !=transparent
-            && objImage[b].GetComponent<Image>().sprite != transparent)
-        {
-            objImage[a].GetComponent<Image>().sprite = trashImage[num[b]];
-            objImage[b].GetComponent<Image>().sprite = trashImage[num[a]];
+        Color color = new Vector4(255, 255, 255, 1);
+        objImage[afterA].color = color;
+        objImage[afterB].color = color;
+        beforeA = afterA;
+        beforeB = afterB;
 
-            int tmpnum = num[b];
-            num[b] = num[a];
-            num[a] = tmpnum;
-        }
+        btn[beforeA].GetComponent<Button>().interactable = false; //바뀌는 도중 클릭 하지 않도록 비활성화
+        btn[beforeB].GetComponent<Button>().interactable = false;
+
+       
+            objImage[beforeA].GetComponent<Image>().sprite = trashImage[num[beforeB]];
+            objImage[beforeB].GetComponent<Image>().sprite = trashImage[num[beforeA]];
+
+            int tmpnum = num[beforeB];
+            num[beforeB] = num[beforeA];
+            num[beforeA] = tmpnum;
+        
+
+        btn[beforeA].GetComponent<Button>().interactable = true;
+        btn[beforeB].GetComponent<Button>().interactable = true;
+        afterA = Random.Range(0, 8);
+        afterB = Random.Range(0, 8);
+        while (afterA == afterB)
+            afterB = Random.Range(0, 8);
+        
     }
     public void DeleteObj(int i)
     {
@@ -255,7 +298,7 @@ public class FactoryManager : MonoBehaviour {
         while (true)
         {
            changeTrash();
-            yield return new WaitForSeconds(delay);
+           yield return new WaitForSeconds(delay);
         }
     }
     
