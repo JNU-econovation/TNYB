@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Auth;
+using Firebase.Database;
+using Firebase;
+using Firebase.Unity.Editor;
 
 public class firebaseInit : MonoBehaviour
 {
@@ -12,9 +15,13 @@ public class firebaseInit : MonoBehaviour
     public InputField nicknameInput;
     
     private string userNickname;
+    private bool hasNickname = false;
     
     FirebaseAuth auth;
     FirebaseUser AdminUser;
+    
+    FirebaseApp firebaseApp;
+    DatabaseReference databaseReference;
     
     void Awake()
     {
@@ -24,6 +31,15 @@ public class firebaseInit : MonoBehaviour
         
         // 초기화
         auth = FirebaseAuth.DefaultInstance;
+        
+        // firebase database
+        firebaseApp = FirebaseDatabase.DefaultInstance.App;
+        firebaseApp.SetEditorDatabaseUrl("https://ddak-8f8b5.firebaseio.com/");
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        FirebaseApp.DefaultInstance.SetEditorP12FileName("ddak-8f8b5-7e0bc8521a04.p12");
+        
+        // 비밀번호 특별하게 설정한거 없으면 notasecret
+        FirebaseApp.DefaultInstance.SetEditorP12Password("notasecret");
     }
     
     // Start is called before the first frame update
@@ -41,13 +57,21 @@ public class firebaseInit : MonoBehaviour
             // 가져올 닉네임이 없다
             // need new nickname
         }
+        else
+        {
+            // 닉네임이 있다.
+            hasNickname = true;
+        }
         
     }
     
-    void checkNickname()
+    IEnumerator checkNickname()
     {
+        yield return null;
         string tempNick = nicknameInput.text;
-        PlayerPrefs.SetString("Nickname", null);
+        
+        // database에서 nickname 검사
+        
     }
 
     private void LoginAdminAccount()
