@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour {
     public GameObject BlockPanel; // 가림막
-    bool isPaused = false;
+    bool isPaused = true;
+    
 
 
         public void pauseGame()
