@@ -20,8 +20,10 @@ public class MainManager : MonoBehaviour {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
-        
-	}
+        Screen.SetResolution(1920, 1080, true);
+
+
+    }
 	
    void Update()
     {
