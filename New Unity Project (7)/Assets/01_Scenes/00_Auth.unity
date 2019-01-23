@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginResult: {fileID: 2144055705}
-  nicknameInput: {fileID: 0}
+  nicknameInput: {fileID: 1379312214}
 --- !u!4 &638744032
 Transform:
   m_ObjectHideFlags: 0
@@ -1522,12 +1522,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e0ba5b7584beddd45be9923afc3716f8, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 35
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
