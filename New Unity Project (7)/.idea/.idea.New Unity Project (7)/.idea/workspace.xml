@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1a.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1a.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1b.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1b.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1c.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Materials/BG1c.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +27,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="582" />
+          <entry key="cs" value="586" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="582" />
+          <entry key="C#" value="586" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -159,7 +165,7 @@
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="475">
-                  <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+                  <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
                   <folding>
                     <marker date="1548227297215" expanded="true" signature="6:121" ph="..." />
                     <marker date="1548227297215" expanded="true" signature="164:2238" ph="{...}" />
@@ -183,12 +189,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
+                <state relative-caret-position="75">
+                  <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
                   <folding>
-                    <marker date="1548232204984" expanded="false" signature="6:78" ph="..." />
-                    <marker date="1548232204984" expanded="true" signature="125:299" ph="{...}" />
-                    <marker date="1548232204984" expanded="true" signature="197:218" ph="{...}" />
-                    <marker date="1548232204984" expanded="true" signature="276:297" ph="{...}" />
+                    <marker date="1548233785145" expanded="true" signature="6:44" ph="..." />
+                    <marker date="1548233785145" expanded="true" signature="92:763" ph="{...}" />
+                    <marker date="1548233785145" expanded="true" signature="254:429" ph="{...}" />
+                    <marker date="1548233785145" expanded="true" signature="450:761" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -248,7 +255,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebase_auth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/RealtimeDatabase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/EggMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Hand.cs" root0="FORCE_HIGHLIGHTING" />
@@ -262,6 +269,7 @@
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/RealtimeDatabase.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebase_auth.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" />
+        <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs" />
       </list>
     </option>
   </component>
@@ -356,12 +364,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548169230533</updated>
       <workItem from="1548169235183" duration="427000" />
-      <workItem from="1548209436969" duration="6579000" />
+      <workItem from="1548209436969" duration="7362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7006000" />
+    <option name="totallyTimeSpent" value="7789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -545,7 +553,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
           <folding>
             <marker date="1548227297215" expanded="true" signature="6:121" ph="..." />
             <marker date="1548227297215" expanded="true" signature="164:2238" ph="{...}" />
@@ -567,12 +575,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundRepeat.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="75">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
-            <marker date="1548232204984" expanded="false" signature="6:78" ph="..." />
-            <marker date="1548232204984" expanded="true" signature="125:299" ph="{...}" />
-            <marker date="1548232204984" expanded="true" signature="197:218" ph="{...}" />
-            <marker date="1548232204984" expanded="true" signature="276:297" ph="{...}" />
+            <marker date="1548233785145" expanded="true" signature="6:44" ph="..." />
+            <marker date="1548233785145" expanded="true" signature="92:763" ph="{...}" />
+            <marker date="1548233785145" expanded="true" signature="254:429" ph="{...}" />
+            <marker date="1548233785145" expanded="true" signature="450:761" ph="{...}" />
           </folding>
         </state>
       </provider>
