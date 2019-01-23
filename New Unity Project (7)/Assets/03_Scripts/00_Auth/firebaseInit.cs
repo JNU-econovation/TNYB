@@ -27,7 +27,7 @@ public class firebaseInit : MonoBehaviour
     {
         // 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(Screen.width, Screen.width * 9/16, true);
+        Screen.SetResolution(Screen.width, Screen.width * 16/9, true);
         
         // 초기화
         auth = FirebaseAuth.DefaultInstance;
@@ -73,6 +73,23 @@ public class firebaseInit : MonoBehaviour
         // database에서 nickname 검사
         
     }
+
+    private void WriteNewRecord(string uid, int cinemaScore, int cashierScore, int factoryScore)
+    {
+        string NicknameCompare;
+        int ScoreCompare;
+        
+        DatabaseReference reF_Score = FirebaseDatabase.DefaultInstance.RootReference;
+        DatabaseReference reF_Coin = FirebaseDatabase.DefaultInstance.RootReference;
+        
+    }
+    
+//    private void WriteNewUser(string uid, string name, string email)
+//    {
+//        User user = new User(name, email);
+//        string json = JsonUtility.ToJson(user);
+//        databaseReference.Child("users").Child(uid).SetRawJsonValueAsync(json);
+//    }
 
     private void LoginAdminAccount()
     {
