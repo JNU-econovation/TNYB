@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Hand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parse/Plugins/Unity.Compat.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Parse/Plugins/Unity.Compat.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parse/Plugins/Unity.Tasks.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Parse/Plugins/Unity.Tasks.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/Title.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/Title.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +21,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="270" />
+          <entry key="cs" value="355" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="270" />
+          <entry key="C#" value="355" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -155,15 +147,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/Title.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+            <state relative-caret-position="255">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding>
-                <marker date="1548217124071" expanded="true" signature="6:78" ph="..." />
-                <marker date="1548217124071" expanded="true" signature="114:666" ph="{...}" />
-                <marker date="1548217124071" expanded="true" signature="217:328" ph="{...}" />
-                <marker date="1548217124071" expanded="true" signature="365:585" ph="{...}" />
-                <marker date="1548217124071" expanded="true" signature="429:579" ph="{...}" />
-                <marker date="1548217124071" expanded="true" signature="643:664" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="6:78" ph="..." />
+                <marker date="1548217639213" expanded="true" signature="114:1317" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="133:265" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="302:628" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="436:578" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="676:932" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="739:880" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="982:1236" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="1045:1186" ph="{...}" />
+                <marker date="1548217639213" expanded="true" signature="1294:1315" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -281,12 +277,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548169230533</updated>
       <workItem from="1548169235183" duration="427000" />
-      <workItem from="1548209436969" duration="1116000" />
+      <workItem from="1548209436969" duration="1629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1543000" />
+    <option name="totallyTimeSpent" value="2056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,15 +436,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/Title.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+        <state relative-caret-position="255">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding>
-            <marker date="1548217124071" expanded="true" signature="6:78" ph="..." />
-            <marker date="1548217124071" expanded="true" signature="114:666" ph="{...}" />
-            <marker date="1548217124071" expanded="true" signature="217:328" ph="{...}" />
-            <marker date="1548217124071" expanded="true" signature="365:585" ph="{...}" />
-            <marker date="1548217124071" expanded="true" signature="429:579" ph="{...}" />
-            <marker date="1548217124071" expanded="true" signature="643:664" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="6:78" ph="..." />
+            <marker date="1548217639213" expanded="true" signature="114:1317" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="133:265" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="302:628" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="436:578" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="676:932" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="739:880" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="982:1236" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="1045:1186" ph="{...}" />
+            <marker date="1548217639213" expanded="true" signature="1294:1315" ph="{...}" />
           </folding>
         </state>
       </provider>
