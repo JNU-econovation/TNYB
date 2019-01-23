@@ -71,7 +71,7 @@ public class Hand : MonoBehaviour
 		audioSource.Play();
 	}
 
-	public IEnumerator IeMoveDownCoroutine()
+	private IEnumerator IeMoveDownCoroutine()
 	{
 		for(int i =0;i<30;i++)
 		{
@@ -80,7 +80,7 @@ public class Hand : MonoBehaviour
 		}
 	}
 	
-	public IEnumerator IeMoveUpCoroutine()
+	private IEnumerator IeMoveUpCoroutine()
 	{
 		yield return null;
 		for(int i =0;i<20;i++)
@@ -90,7 +90,7 @@ public class Hand : MonoBehaviour
 		}
 	}
 	
-	public IEnumerator IeAlphaUpCoroutine()
+	private IEnumerator IeAlphaUpCoroutine()
 	{
 		float t = 0;
 		
@@ -104,13 +104,13 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	public IEnumerator IeStartAlphaDown(float handAlphaDownDelay)
+	private IEnumerator IeStartAlphaDown(float handAlphaDownDelay)
 	{
 		yield return new WaitForSeconds(handAlphaDownDelay);
 		StartCoroutine(IeAlphaDownCoroutine());
 	}
 	
-	public IEnumerator IeAlphaDownCoroutine()
+	private IEnumerator IeAlphaDownCoroutine()
 	{
 		float t = 0.95f;
 		
