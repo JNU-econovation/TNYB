@@ -58,7 +58,7 @@ public class FactoryManager : MonoBehaviour {
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(1080, 1920, true);
-        Screen.SetResolution(1080, 1920 * 1080 / 1920, true);
+        Screen.SetResolution(1080, 1920 * 9/16, true);
     }
     // Use this for initialization
     void Start() {
