@@ -20,10 +20,10 @@ public class firebaseInit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoginadminAccount();
+        LoginAdminAccount();
     }
 
-    private void LoginadminAccount()
+    private void LoginAdminAccount()
     {
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
             if (task.IsCanceled)

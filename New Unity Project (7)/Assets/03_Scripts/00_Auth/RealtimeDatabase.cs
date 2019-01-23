@@ -8,7 +8,6 @@ public class RealtimeDatabase : MonoBehaviour
     FirebaseApp firebaseApp;
     DatabaseReference databaseReference;
  
- 
     private void Awake()
     {
         firebaseApp = FirebaseDatabase.DefaultInstance.App;

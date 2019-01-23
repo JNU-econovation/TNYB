@@ -21,7 +21,6 @@ public class firebase_auth : MonoBehaviour
     void Start()
     {
         // 초기화
-        Debug.Log("Hi");
         InitializeFirebase();
     }
 
