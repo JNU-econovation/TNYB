@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class FactoryManager : MonoBehaviour {
 
+    public Sprite transparent;
     public ParticleSystem particle;
     public static FactoryManager Instance;
     private bool isPaused = false;
     public Image selector;
 
+    public Image[] objImage = new Image[8];
     public Text scoreText;
     private int score = 0;
     private int clickCount;
@@ -20,7 +22,8 @@ public class FactoryManager : MonoBehaviour {
     public Sprite[] bottle = new Sprite[4];
     public Sprite[] paper = new Sprite[4];
     public Sprite[] can = new Sprite[4];
-    
+
+    public Sprite[] trashImage = new Sprite[16];
     public GameObject[] trash = new GameObject[16];
     private GameObject[] setting = new GameObject[8];
     private string[] recycleName = { "pet", "paper", "can", "bottle" };
@@ -60,6 +63,7 @@ public class FactoryManager : MonoBehaviour {
         StartCoroutine(Changing(speed));
         comboText.text = "";
         makeTrash_1();
+
 
         timer = 0.0f;
         waitingTime = 1.5f;
@@ -164,7 +168,8 @@ public class FactoryManager : MonoBehaviour {
             GameObject tmp = trash[random];
             if (select == tmp.tag) count++;
             clickCount = count;
-            setting[i] = (GameObject)Instantiate(tmp, new Vector3(x[i], y[i], 0), Quaternion.identity);
+            setting[i] = (GameObject)Instantiate(tmp, new Vector3(100, 0, 0), Quaternion.identity);
+            objImage[i].GetComponent<Image>().sprite = trashImage[random];
             num[i] = random;
         }
         if (count == 0)
@@ -176,10 +181,12 @@ public class FactoryManager : MonoBehaviour {
             Destroy(setting[ran]);
             while (true)
             {
-                rantmp = trash[Random.Range(0, 16)];
+                int a = Random.Range(0, 16);
+                rantmp = trash[a];
                 if (rantmp.tag == select) break;
             }
             setting[ran] = (GameObject)Instantiate(rantmp, new Vector3(x[ran], y[ran], 0), Quaternion.identity);
+           // objImage[ran].GetComponent<Image>().sprite = t
             count++;
         }
     }  
@@ -196,6 +203,7 @@ public class FactoryManager : MonoBehaviour {
                 particle.Play();
 
                 Destroy(setting[i]);
+                objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
                 if(count == 0)
                 {
@@ -245,9 +253,10 @@ public class FactoryManager : MonoBehaviour {
        //     Debug.Log(a + "   +    " + b);
             Destroy(setting[a]);
             Destroy(setting[b]);
-            setting[a] = (GameObject)Instantiate(trash[num[b]], new Vector3(x[a], y[a], 0), Quaternion.identity);
-            setting[b] = (GameObject)Instantiate(trash[num[a]], new Vector3(x[b], y[b], 0), Quaternion.identity);
-
+            setting[a] = (GameObject)Instantiate(trash[num[b]], new Vector3(100, 0, 0), Quaternion.identity);
+            setting[b] = (GameObject)Instantiate(trash[num[a]], new Vector3(100, 0, 0), Quaternion.identity);
+            objImage[a].GetComponent<Image>().sprite = trashImage[b];
+            objImage[b].GetComponent<Image>().sprite = trashImage[a];
             int tmpnum = num[b];
             num[b] = num[a];
             num[a] = tmpnum;
