@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject pausePanel;
 	public GameObject hand;
 	public Transform handTf1, handTf2, handTf3;
 	private List<Transform> handTfList = new List<Transform>();
@@ -80,10 +81,22 @@ public class GameManager : MonoBehaviour
 	
 	void Start ()
 	{
-		bCanHandRespawn = true;
+        pausePanel.SetActive(false);
+        bCanHandRespawn = true;
 	}
 
-	private void FixedUpdate()
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+    }
+
+    private void FixedUpdate()
 	{
 		if (bCanHandRespawn && isClear)
 		{

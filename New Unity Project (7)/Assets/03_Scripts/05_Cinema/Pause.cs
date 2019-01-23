@@ -22,6 +22,4 @@ public class Pause : MonoBehaviour {
             isPaused = false;
             BlockPanel.SetActive(false);
         }
-
-  
 }
