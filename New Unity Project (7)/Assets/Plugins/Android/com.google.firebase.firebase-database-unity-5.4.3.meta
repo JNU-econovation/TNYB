@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:New Unity Project (7)/Assets/Plugins/Android/com.google.firebase.firebase-database-unity-5.4.3.aar.meta
-guid: 164f0206c84f9b54498bc7d9dbec2157
-=======
-guid: 99da547123b60488396aaa9c8007f72f
->>>>>>> 4de19ecb65da0ecc4f319d0f11885eba21fc3f8f:New Unity Project (7)/Assets/Plugins/Android/com.google.firebase.firebase-database-unity-5.4.3.aar.meta
+guid: 161b6173836876a49b89462de0345bc6
 labels:
 - gpsr
+folderAsset: yes
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
