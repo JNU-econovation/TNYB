@@ -27,6 +27,7 @@ public class CinemaManager : MonoBehaviour
     private int Combo = 0;
 
     public Text scoreText;
+    public Text finishScore;
 
     private GameObject clickedTicket;
     private Transform TicketTf;
@@ -196,6 +197,7 @@ public class CinemaManager : MonoBehaviour
         else if (Combo < 40) score += 4;
         else score += 5;
         scoreText.text = "" + score;
+        finishScore.text = "Score : " + score;
     }
 
     public void WrongButton()
