@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/TitleLoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/TitleLoad.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +145,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+                <state relative-caret-position="375">
+                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
                   <folding>
                     <marker date="1548322930976" expanded="false" signature="6:78" ph="..." />
                     <marker date="1548322930976" expanded="true" signature="122:548" ph="{...}" />
@@ -380,12 +375,12 @@
       <workItem from="1548169235183" duration="427000" />
       <workItem from="1548209436969" duration="10035000" />
       <workItem from="1548248888147" duration="5337000" />
-      <workItem from="1548316908151" duration="3066000" />
+      <workItem from="1548316908151" duration="3245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18865000" />
+    <option name="totallyTimeSpent" value="19044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="375">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <marker date="1548322930976" expanded="false" signature="6:78" ph="..." />
             <marker date="1548322930976" expanded="true" signature="122:548" ph="{...}" />
