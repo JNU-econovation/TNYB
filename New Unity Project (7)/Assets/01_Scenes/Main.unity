@@ -609,16 +609,6 @@ PrefabInstance:
       propertyPath: m_MatchWidthOrHeight
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5407317962822229947, guid: adf7bf93dbd98114598253ad8d15d670,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407317962822229947, guid: adf7bf93dbd98114598253ad8d15d670,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5407317962622181215, guid: adf7bf93dbd98114598253ad8d15d670,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -643,11 +633,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407317961891975429, guid: adf7bf93dbd98114598253ad8d15d670,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf7bf93dbd98114598253ad8d15d670, type: 3}
