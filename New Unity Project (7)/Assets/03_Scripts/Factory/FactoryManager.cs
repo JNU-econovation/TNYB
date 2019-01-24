@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FactoryManager : MonoBehaviour {
 
     public Sprite transparent;
+    public Image changeImage1, changeImage2;
     public ParticleSystem particle;
     public static FactoryManager Instance;
     private bool isPaused = false;
@@ -16,6 +17,7 @@ public class FactoryManager : MonoBehaviour {
         "can","can","can","pet","paper", "bottle", "can"};
     private float moveSpeed=1;
 
+    public Image[] rightArrow = new Image[2];
     public Image[] objImage = new Image[8]; //세팅된 이미지
     public Text scoreText, resultText;
     private int score = 0;
@@ -75,19 +77,30 @@ public class FactoryManager : MonoBehaviour {
 
     void Update()
     {
+        changeImage1.GetComponent<Image>().sprite = trashImage[num[afterA]];
+        changeImage2.GetComponent<Image>().sprite = trashImage[num[afterB]];
+
         timer += Time.deltaTime;
         if (a)
         {
             Color color = new Color(255, 255, 255, 0.1f+timer);
             objImage[afterA].color = color;
             objImage[afterB].color = color;
+            Color redColor = new Color(255, 0, 0, 0.1f + timer);
+            rightArrow[0].color = redColor;
+            rightArrow[1].color = redColor;
+
         }
         else
         {
             Color color = new Color(255, 255, 255, 0.8f-timer);
             objImage[afterA].color = color;
             objImage[afterB].color = color;
+            Color redColor = new Color(255, 0, 0, 0.8f - timer);
+            rightArrow[0].color = redColor;
+            rightArrow[1].color = redColor;
         }
+        
 
         if (timer > waitingTime)
         {
@@ -260,6 +273,7 @@ public class FactoryManager : MonoBehaviour {
     }
     void changeTrash()
     {
+
         Color color = new Vector4(255, 255, 255, 1);
         objImage[afterA].color = color;
         objImage[afterB].color = color;
@@ -284,7 +298,9 @@ public class FactoryManager : MonoBehaviour {
         afterB = Random.Range(0, 8);
         while (afterA == afterB)
             afterB = Random.Range(0, 8);
-        
+
+
+
     }
 
     public void DeleteObj(int i)
