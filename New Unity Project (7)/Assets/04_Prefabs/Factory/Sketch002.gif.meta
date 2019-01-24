@@ -99,10 +99,10 @@ TextureImporter:
       name: Sketch002_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 179
-        width: 257
-        height: 177
+        x: 68
+        y: 425
+        width: 342
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,7 +110,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67542a965cc8d3c419eb68332100f925
+      spriteID: d81e6d71b0ddfd2419619675c7834fa7
       vertices: []
       indices: 
       edges: []
