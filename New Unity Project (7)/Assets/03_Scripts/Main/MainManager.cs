@@ -36,6 +36,8 @@ public class MainManager : MonoBehaviour {
     public void ClickExit()
     {
         exitPanel.SetActive(true);
+        GetComponent<AudioSource>().clip = clickSound;
+        GetComponent<AudioSource>().Play();
     }
     public void YesExit()
     {
