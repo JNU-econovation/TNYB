@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TitleLoad : MonoBehaviour
 {
+    private bool canGoUp = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,12 @@ public class TitleLoad : MonoBehaviour
         switch (Application.loadedLevel)
         {
             
-            case 2:
+            case 1:
                 // up
+                if (canGoUp)
+                    StartCoroutine(IeTitleGoUp());
+                break;
+            case 2:    
             case 3:
             case 4:
                 Destroy(gameObject);
@@ -25,5 +30,16 @@ public class TitleLoad : MonoBehaviour
             default:
                 return;
         }
+    }
+
+    private IEnumerator IeTitleGoUp()
+    {
+        yield return null;
+        for(int i =0; i < 13; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+            transform.Translate(Vector3.up * Time.deltaTime * 0.3f);	
+        }
+        canGoUp = false;
     }
 }
