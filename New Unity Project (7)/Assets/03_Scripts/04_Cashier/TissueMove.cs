@@ -49,6 +49,7 @@ public class TissueMove : MonoBehaviour
     {
         RespawnTissues();
         GameManager.Instance.playScannerSound();
+        if (!isHitTheGround) {GameManager.Instance.RespawnBonusEffect(this.transform);}
         addScore(beforeHitTheGround, afterHitTheGround);
         GameManager.Instance.generateTissue();
         Destroy(gameObject, 0.01f);

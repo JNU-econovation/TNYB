@@ -135,8 +135,6 @@ public class GameManager : MonoBehaviour
 			numberOfEgg++;
 		}
 		
-		
-		
 		GameObject tempMarchandise;
 		tempMarchandise = Instantiate(marchandisePrefabsList[marchandiseIndex]);
 		tempMarchandise.transform.position = marchandiseTfList[handTfIndex].position;

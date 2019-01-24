@@ -30,6 +30,7 @@ public class MilkMove : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager.Instance.setIsClear(true);
+        if (!isHitTheGround) {GameManager.Instance.RespawnBonusEffect(this.transform);}
         addScore(beforeHitTheGround, afterHitTheGround);
         GameManager.Instance.playScannerSound();
         Destroy(gameObject, 0.01f);

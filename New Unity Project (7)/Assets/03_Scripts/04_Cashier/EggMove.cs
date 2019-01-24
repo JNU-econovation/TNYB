@@ -33,6 +33,7 @@ public class EggMove : MonoBehaviour {
 		if(!isHitTheGround)
 		{
 			GameManager.Instance.setIsClear(true);
+			if (!isHitTheGround) {GameManager.Instance.RespawnBonusEffect(this.transform);}
 			addScore(beforeHitTheGround);
 			GameManager.Instance.playScannerSound();
 			Destroy(gameObject, 0.01f);

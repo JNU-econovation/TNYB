@@ -42,6 +42,7 @@ public class smallTissueMove : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager.Instance.clickTissue();
+        if (!isHitTheGround) {GameManager.Instance.RespawnBonusEffect(this.transform);}
         addScore(beforeHitTheGround, afterHitTheGround);
         if (GameManager.Instance.getNumberOfTissue() == 0)
         {
