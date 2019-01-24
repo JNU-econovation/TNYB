@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour {
     private bool sound= true, music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
     public Camera mainCamera;
+    public GameObject exitPanel;
   
     // Use this for initialization
     void Start () {
@@ -20,6 +21,7 @@ public class MainManager : MonoBehaviour {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
+        exitPanel.SetActive(false);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
     }
@@ -30,6 +32,18 @@ public class MainManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Escape))
                 Application.Quit();
 
+    }
+    public void ClickExit()
+    {
+        exitPanel.SetActive(true);
+    }
+    public void YesExit()
+    {
+        Application.Quit();
+    }
+    public void NoExit()
+    {
+        exitPanel.SetActive(false);
     }
     public void ClickPlay()
     {
