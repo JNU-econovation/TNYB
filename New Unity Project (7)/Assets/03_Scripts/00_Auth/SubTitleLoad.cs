@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleLoad : MonoBehaviour
+public class SubTitleLoad : MonoBehaviour
 {
     private bool canGoUp = true;
     // Start is called before the first frame update

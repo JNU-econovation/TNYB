@@ -6,18 +6,21 @@ using UnityEngine.UI;
 public class AuthManager : MonoBehaviour
 {
     public InputField nicknameInput;
-    
+    public Image checkImage;
     
     private void Awake()
     {
+        checkImage.enabled = false;
+        
         // 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
     }
 
-    void PopupCheck()
+    public void PopupCheck()
     {
-        
+        checkImage.enabled = true;
+        nicknameInput.DeactivateInputField();
     }
 
     // Start is called before the first frame update
