@@ -29,4 +29,8 @@ public class ChangeScenes : MonoBehaviour
         SceneManager.LoadScene(2);
         Time.timeScale = 1;
     }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+    }
 }

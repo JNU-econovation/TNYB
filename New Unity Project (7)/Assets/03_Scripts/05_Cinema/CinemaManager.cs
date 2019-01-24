@@ -194,11 +194,11 @@ public class CinemaManager : MonoBehaviour
     
     private void scoreUp()
     {
-        if(Combo<10) score++;
-        else if (Combo < 20) score += 2;
-        else if (Combo < 30) score += 3;
-        else if (Combo < 40) score += 4;
-        else score += 5;
+        if(Combo<10) score+=100;
+        else if (Combo < 20) score += 200;
+        else if (Combo < 30) score += 300;
+        else if (Combo < 40) score += 400;
+        else score += 500;
         scoreText.text = "" + score;
         finishScore.text = "Score\n" + score;
     }
