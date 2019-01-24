@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 	
 	List<GameObject> marchandisePrefabsList = new List<GameObject>();
 	public GameObject marchandise1, marchandise2, marchandise3, marchandise4, marchandise5, marchandise6, marchandise7, marchandise8;
+
+	public GameObject bonusEffect;
 	
 	// Text
 	public Text PriceTag;
@@ -138,6 +140,13 @@ public class GameManager : MonoBehaviour
 		GameObject tempMarchandise;
 		tempMarchandise = Instantiate(marchandisePrefabsList[marchandiseIndex]);
 		tempMarchandise.transform.position = marchandiseTfList[handTfIndex].position;
+	}
+
+	public void RespawnBonusEffect(Transform clickTransform)
+	{
+		GameObject tempHeart;
+		tempHeart = Instantiate(bonusEffect);
+		tempHeart.transform.position = clickTransform.transform.position;
 	}
 	
 	// Price Text

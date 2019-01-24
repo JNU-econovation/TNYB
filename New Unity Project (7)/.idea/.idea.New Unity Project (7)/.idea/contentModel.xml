@@ -18,6 +18,7 @@
             <e p="TitleLoad.cs" t="Include" />
           </e>
           <e p="04_Cashier" t="Include">
+            <e p="bonusEffect.cs" t="Include" />
             <e p="cheeseMove.cs" t="Include" />
             <e p="cherryMove.cs" t="Include" />
             <e p="CookieMove.cs" t="Include" />
