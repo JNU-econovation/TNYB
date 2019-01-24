@@ -200,7 +200,7 @@ public class CinemaManager : MonoBehaviour
         else if (Combo < 40) score += 4;
         else score += 5;
         scoreText.text = "" + score;
-        finishScore.text = "Score : " + score;
+        finishScore.text = "Score\n" + score;
     }
 
     public void WrongButton()
