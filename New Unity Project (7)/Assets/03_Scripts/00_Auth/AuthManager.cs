@@ -21,6 +21,11 @@ public class AuthManager : MonoBehaviour
     {
         checkImage.enabled = true;
         nicknameInput.DeactivateInputField();
+        GetComponent<AudioSource>().Play();
+    }
+    public void ClickStart()
+    {
+        GetComponent<AudioSource>().Play();
     }
 
     // Start is called before the first frame update
