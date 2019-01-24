@@ -68,10 +68,8 @@ public class FactoryManager : MonoBehaviour {
         comboText.text = "";
         makeTrash_1();
 
-
         timer = 0.0f;
         waitingTime = 0.7f;
-
     }
     
 
@@ -83,15 +81,12 @@ public class FactoryManager : MonoBehaviour {
             Color color = new Color(255, 255, 255, 0.1f+timer);
             objImage[afterA].color = color;
             objImage[afterB].color = color;
-      
         }
         else
         {
             Color color = new Color(255, 255, 255, 0.8f-timer);
             objImage[afterA].color = color;
             objImage[afterB].color = color;
-    
-
         }
 
         if (timer > waitingTime)
@@ -273,12 +268,12 @@ public class FactoryManager : MonoBehaviour {
         btn[beforeB].GetComponent<Button>().interactable = false;
 
        
-            objImage[beforeA].GetComponent<Image>().sprite = trashImage[num[beforeB]];
-            objImage[beforeB].GetComponent<Image>().sprite = trashImage[num[beforeA]];
+        objImage[beforeA].GetComponent<Image>().sprite = trashImage[num[beforeB]];
+        objImage[beforeB].GetComponent<Image>().sprite = trashImage[num[beforeA]];
 
-            int tmpnum = num[beforeB];
-            num[beforeB] = num[beforeA];
-            num[beforeA] = tmpnum;
+        int tmpnum = num[beforeB];
+        num[beforeB] = num[beforeA];
+        num[beforeA] = tmpnum;
         
 
         btn[beforeA].GetComponent<Button>().interactable = true;
@@ -289,10 +284,12 @@ public class FactoryManager : MonoBehaviour {
             afterB = Random.Range(0, 8);
         
     }
+
     public void DeleteObj(int i)
     {
         objImage[i].GetComponent<Image>().sprite = transparent;
     }
+
     IEnumerator Changing(float delay) //오브젝트 변경
     {
         while (true)
@@ -314,13 +311,14 @@ public class FactoryManager : MonoBehaviour {
         }
         obj.transform.position = originV;
     }
+
     public void pauseGame()
     {
         Time.timeScale = 0;
         isPaused = true;
         pausePanel.SetActive(true);
-        
     }
+
     public void ResumeGame()
     {
         Time.timeScale = 1;
