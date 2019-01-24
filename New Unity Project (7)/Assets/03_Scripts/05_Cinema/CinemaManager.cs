@@ -208,7 +208,7 @@ public class CinemaManager : MonoBehaviour
         GetComponent<AudioSource>().clip = a;
         GetComponent<AudioSource>().Play();
         StartCoroutine(ShakeCoroutine(clickedTicket));
-        score--;
+        score-=100;
         ComboReset();
         scoreText.text = "" + score;
     }
