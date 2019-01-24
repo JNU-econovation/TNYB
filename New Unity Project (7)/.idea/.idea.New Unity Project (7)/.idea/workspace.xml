@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="" />
+    <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/00_Auth.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,22 +25,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1810" />
+          <entry key="cs" value="1831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1810" />
+          <entry key="C#" value="1831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="13" />
+          <entry key="cs" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="13" />
+          <entry key="C#" value="14" />
         </counts>
       </usages-collector>
     </session>
@@ -76,33 +80,50 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+                <state relative-caret-position="210">
+                  <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
                   <folding>
-                    <marker date="1548320628396" expanded="false" signature="6:191" ph="..." />
-                    <marker date="1548320628396" expanded="true" signature="234:4239" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="641:1330" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="1405:1509" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="1551:1802" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="1618:1698" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="1641:1688" ph="/* 가져올 닉네임이 없다 ... */" />
-                    <marker date="1548320628396" expanded="true" signature="1711:1787" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="1839:1976" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="2074:2333" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="2339:2602" ph="/* private void WriteNewUser(string uid, string name, string email) ... */" />
-                    <marker date="1548320628396" expanded="true" signature="2640:3228" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="2730:3220" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="2764:2958" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="2990:3209" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="3264:3377" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="3467:4117" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="3512:4111" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="3649:3733" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="3802:4101" ph="{...}" />
-                    <marker date="1548320628396" expanded="true" signature="4151:4237" ph="{...}" />
+                    <marker date="1548326651498" expanded="false" signature="6:191" ph="..." />
+                    <marker date="1548326651498" expanded="true" signature="234:4261" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="641:1330" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="1405:1531" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="1420:1525" ph="/* LoginAdminAccount(); ... */" />
+                    <marker date="1548326651498" expanded="true" signature="1573:1824" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="1640:1720" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="1663:1710" ph="/* 가져올 닉네임이 없다 ... */" />
+                    <marker date="1548326651498" expanded="true" signature="1733:1809" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="1861:1998" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="2096:2355" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="2361:2624" ph="/* private void WriteNewUser(string uid, string name, string email) ... */" />
+                    <marker date="1548326651498" expanded="true" signature="2662:3250" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="2752:3242" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="2786:2980" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3012:3231" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3286:3399" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3489:4139" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3534:4133" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3671:3755" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="3824:4123" ph="{...}" />
+                    <marker date="1548326651498" expanded="true" signature="4173:4259" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthManager.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                  <folding>
+                    <marker date="1548327091456" expanded="true" signature="6:100" ph="..." />
+                    <marker date="1548327091456" expanded="true" signature="142:539" ph="{...}" />
+                    <marker date="1548327091456" expanded="true" signature="211:366" ph="{...}" />
+                    <marker date="1548327091456" expanded="true" signature="437:458" ph="{...}" />
+                    <marker date="1548327091456" expanded="true" signature="516:537" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -142,11 +163,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="375">
-                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+                  <caret line="27" selection-start-line="27" selection-end-line="27" />
                   <folding>
                     <marker date="1548322930976" expanded="false" signature="6:78" ph="..." />
                     <marker date="1548322930976" expanded="true" signature="122:548" ph="{...}" />
@@ -264,6 +285,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/EggMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Hand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -276,9 +298,10 @@
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebase_auth.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundLoad.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/Main/MainManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/TitleLoad.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs" />
+        <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs" />
+        <option value="$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthManager.cs" />
       </list>
     </option>
   </component>
@@ -375,12 +398,12 @@
       <workItem from="1548169235183" duration="427000" />
       <workItem from="1548209436969" duration="10035000" />
       <workItem from="1548248888147" duration="5337000" />
-      <workItem from="1548316908151" duration="3245000" />
+      <workItem from="1548316908151" duration="4045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19044000" />
+    <option name="totallyTimeSpent" value="19844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -478,36 +501,6 @@
             <marker date="1548225620043" expanded="true" signature="136:1152" ph="{...}" />
             <marker date="1548225620043" expanded="true" signature="235:674" ph="{...}" />
             <marker date="1548225620043" expanded="true" signature="681:1145" ph="/* public void InitDatabase() ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-          <folding>
-            <marker date="1548320628396" expanded="false" signature="6:191" ph="..." />
-            <marker date="1548320628396" expanded="true" signature="234:4239" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="641:1330" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="1405:1509" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="1551:1802" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="1618:1698" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="1641:1688" ph="/* 가져올 닉네임이 없다 ... */" />
-            <marker date="1548320628396" expanded="true" signature="1711:1787" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="1839:1976" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="2074:2333" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="2339:2602" ph="/* private void WriteNewUser(string uid, string name, string email) ... */" />
-            <marker date="1548320628396" expanded="true" signature="2640:3228" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="2730:3220" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="2764:2958" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="2990:3209" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="3264:3377" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="3467:4117" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="3512:4111" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="3649:3733" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="3802:4101" ph="{...}" />
-            <marker date="1548320628396" expanded="true" signature="4151:4237" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -612,6 +605,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <marker date="1548322930976" expanded="false" signature="6:78" ph="..." />
+            <marker date="1548322930976" expanded="true" signature="122:548" ph="{...}" />
+            <marker date="1548322930976" expanded="true" signature="194:250" ph="{...}" />
+            <marker date="1548322930976" expanded="true" signature="308:546" ph="{...}" />
+            <marker date="1548322930976" expanded="true" signature="355:540" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/BackgroundLoad.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -626,16 +633,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthAudioLoad.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/AuthManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <marker date="1548322930976" expanded="false" signature="6:78" ph="..." />
-            <marker date="1548322930976" expanded="true" signature="122:548" ph="{...}" />
-            <marker date="1548322930976" expanded="true" signature="194:250" ph="{...}" />
-            <marker date="1548322930976" expanded="true" signature="308:546" ph="{...}" />
-            <marker date="1548322930976" expanded="true" signature="355:540" ph="{...}" />
+            <marker date="1548327091456" expanded="true" signature="6:100" ph="..." />
+            <marker date="1548327091456" expanded="true" signature="142:539" ph="{...}" />
+            <marker date="1548327091456" expanded="true" signature="211:366" ph="{...}" />
+            <marker date="1548327091456" expanded="true" signature="437:458" ph="{...}" />
+            <marker date="1548327091456" expanded="true" signature="516:537" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/00_Auth/firebaseInit.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <marker date="1548326651498" expanded="false" signature="6:191" ph="..." />
+            <marker date="1548326651498" expanded="true" signature="234:4261" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="641:1330" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="1405:1531" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="1420:1525" ph="/* LoginAdminAccount(); ... */" />
+            <marker date="1548326651498" expanded="true" signature="1573:1824" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="1640:1720" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="1663:1710" ph="/* 가져올 닉네임이 없다 ... */" />
+            <marker date="1548326651498" expanded="true" signature="1733:1809" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="1861:1998" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="2096:2355" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="2361:2624" ph="/* private void WriteNewUser(string uid, string name, string email) ... */" />
+            <marker date="1548326651498" expanded="true" signature="2662:3250" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="2752:3242" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="2786:2980" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3012:3231" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3286:3399" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3489:4139" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3534:4133" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3671:3755" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="3824:4123" ph="{...}" />
+            <marker date="1548326651498" expanded="true" signature="4173:4259" ph="{...}" />
           </folding>
         </state>
       </provider>
