@@ -52,9 +52,8 @@ public class GameManager : MonoBehaviour
 
 		instance = this;
 
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(1080, 1920, true);
-        Screen.SetResolution(1080, 1920 * 9 / 16, true);
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
 
         handTfList.Add(handTf1);
 		handTfList.Add(handTf2);
