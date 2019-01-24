@@ -65,7 +65,7 @@ public class MainManager : MonoBehaviour {
     }
     public void ClickSetting()
     {
-        mainPanel.SetActive(false);
+//        mainPanel.SetActive(false);
         settingPanel.SetActive(true);
         if (sound)
         {
@@ -75,7 +75,7 @@ public class MainManager : MonoBehaviour {
     }
     public void CloseSetting()
     {
-        mainPanel.SetActive(true);
+//        mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         if (sound)
         {
@@ -85,7 +85,7 @@ public class MainManager : MonoBehaviour {
     }
     public void ClickRank()
     {
-        mainPanel.SetActive(false);
+//        mainPanel.SetActive(false);
         rankPanel.SetActive(true);
         if (sound)
         {
@@ -95,7 +95,7 @@ public class MainManager : MonoBehaviour {
     }
     public void CloseRank()
     {
-        mainPanel.SetActive(true);
+//        mainPanel.SetActive(true);
         rankPanel.SetActive(false);
         if (sound)
         {
