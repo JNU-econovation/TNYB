@@ -113,15 +113,17 @@ public class FactoryManager : MonoBehaviour {
                 comboText.text = "";
             timer = 0;
         }
-
-        left += moveSpeed;
-        right += moveSpeed;
-        if(left > 1000)
+        if (!isPaused)
         {
-            left = right = 0;
+            left += moveSpeed;
+            right += moveSpeed;
+            if (left > 1000)
+            {
+                left = right = 0;
+            }
+            selector.GetComponent<RectTransform>().offsetMin = new Vector2(left, 0);//left-bottom
+            selector.GetComponent<RectTransform>().offsetMax = new Vector2(right, 0);//right-top
         }
-        selector.GetComponent<RectTransform>().offsetMin = new Vector2(left, 0);//left-bottom
-        selector.GetComponent<RectTransform>().offsetMax = new Vector2(right, 0);//right-top
         
     }
 
