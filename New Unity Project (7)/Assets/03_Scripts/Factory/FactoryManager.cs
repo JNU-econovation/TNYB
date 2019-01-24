@@ -7,7 +7,6 @@ public class FactoryManager : MonoBehaviour {
 
     public Sprite transparent;
     public Image changeImage1, changeImage2;
-    public ParticleSystem particle;
     public static FactoryManager Instance;
     private bool isPaused = false;
     public Image selector;
@@ -153,7 +152,7 @@ public class FactoryManager : MonoBehaviour {
             moveSpeed = 1f;
         }
         scoreText.text =  score.ToString();
-        resultText.text = "Score : " + score.ToString();
+        resultText.text = "Score\n" + score.ToString();
         
     }
 
@@ -164,12 +163,12 @@ public class FactoryManager : MonoBehaviour {
         {
             score -= 50;
             scoreText.text = score.ToString();
-            resultText.text = "Score : " + score.ToString();
+            resultText.text = "Score\n" + score.ToString();
         }
         else
         {
             scoreText.text = "0";
-            resultText.text = "Score : " + score.ToString();
+            resultText.text = "Score\n" + score.ToString();
         }
         speed = 4.0f;
         
