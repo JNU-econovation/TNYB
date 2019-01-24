@@ -8,12 +8,10 @@ public class Timer : MonoBehaviour {
 	private Image timeBar;
 	public float maxTime = 10f;
 	private float timeLeft;
-	public GameObject timesUpText;
     public GameObject finishPanel;
 
 	// Use this for initialization
 	void Start () {
-		timesUpText.SetActive(false);
 		timeBar = GetComponent<Image>();
 		timeLeft = maxTime;
         finishPanel.SetActive(false);
@@ -29,7 +27,6 @@ public class Timer : MonoBehaviour {
 		}
 		else
 		{
-			timesUpText.SetActive(true);
 			Time.timeScale = 0;
 		}
 	}
