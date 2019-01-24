@@ -9,6 +9,11 @@ public class Pause : MonoBehaviour {
     bool isPaused = true;
  
 
+    void Start()
+    {
+        BlockPanel.SetActive(false);
+    }
+
         public void pauseGame()
         {
             Time.timeScale = 0;
