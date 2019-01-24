@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 	// Text
 	public Text PriceTag;
 	public Text ScoreText;
+    public Text resultScore;
+
 	
 	// Score
 	private int score;
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		ScoreText.text = score.ToString();
+        resultScore.text = "Score\n" + ScoreText.text;
 	}
 
 	private void RespawnRandomTfHand()
