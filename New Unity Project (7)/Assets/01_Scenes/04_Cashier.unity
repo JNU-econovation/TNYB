@@ -911,7 +911,7 @@ MonoBehaviour:
     type: 3}
   marchandise8: {fileID: 1945224712305406, guid: 030eb06ffe1d546cd9ae8534da73cf5e,
     type: 3}
-  bonusEffect: {fileID: 7875005599488502490, guid: 4459be792dc21445fb90311db54e45b2,
+  bonusEffect: {fileID: 8255174774707962595, guid: f6fd08e8eef5f46c9a96c550c64854f0,
     type: 3}
   PriceTag: {fileID: 1313909193}
   ScoreText: {fileID: 296535354}
