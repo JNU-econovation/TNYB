@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4202212089158612012}
   - component: {fileID: 4202212089158612013}
   - component: {fileID: 4202212089158612010}
-  - component: {fileID: 4202212089158612011}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -59,6 +58,7 @@ MonoBehaviour:
   buttonFalse: {fileID: 114403527345398254, guid: 0f6cfaecccce0334a877a553dd78f707,
     type: 3}
   mainCamera: {fileID: 0}
+  exitPanel: {fileID: 0}
 --- !u!82 &4202212089158612010
 AudioSource:
   m_ObjectHideFlags: 0
@@ -155,11 +155,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &4202212089158612011
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4202212089158612014}
-  m_Enabled: 1

@@ -48,6 +48,8 @@
           <e p="Main" t="Include">
             <e p="ChangeScenes.cs" t="Include" />
             <e p="MainManager.cs" t="Include" />
+            <e p="MusicManager.cs" t="Include" />
+            <e p="SfxManager.cs" t="Include" />
             <e p="TextMoveA.cs" t="Include" />
             <e p="TextMoveB.cs" t="Include" />
           </e>

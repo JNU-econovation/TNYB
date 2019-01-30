@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    public AudioClip clickSound, backSound;
     public GameObject mainPanel, playPanel;
     public GameObject settingPanel;
     public GameObject rankPanel;
     public Button soundButton, vibrationButton, musicButton;
-    private bool sound= true, music = true, vibration = true;
+    private bool music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
-    public Camera mainCamera;
     public GameObject exitPanel;
   
     // Use this for initialization
@@ -31,13 +29,11 @@ public class MainManager : MonoBehaviour {
         if (Application.platform == RuntimePlatform.Android) //백버튼 종료
             if (Input.GetKeyDown(KeyCode.Escape))
                 Application.Quit();
-
     }
     public void ClickExit()
     {
         exitPanel.SetActive(true);
-        GetComponent<AudioSource>().clip = clickSound;
-        GetComponent<AudioSource>().Play();
+        SfxManager.Instance.playClick();
     }
     public void YesExit()
     {
@@ -46,94 +42,66 @@ public class MainManager : MonoBehaviour {
     public void NoExit()
     {
         exitPanel.SetActive(false);
+        SfxManager.Instance.playClick();
     }
     public void ClickPlay()
     {
         playPanel.SetActive(true);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = clickSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playClick();
     }
     public void ClosePlay()
     {
         playPanel.SetActive(false);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = backSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playBack();
     }
     public void ClickSetting()
     {
 //        mainPanel.SetActive(false);
         settingPanel.SetActive(true);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = clickSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playClick();
     }
     public void CloseSetting()
     {
 //        mainPanel.SetActive(true);
         settingPanel.SetActive(false);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = backSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playBack();
     }
     public void ClickRank()
     {
 //        mainPanel.SetActive(false);
         rankPanel.SetActive(true);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = clickSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playClick();
     }
     public void CloseRank()
     {
-//        mainPanel.SetActive(true);
         rankPanel.SetActive(false);
-        if (sound)
-        {
-            GetComponent<AudioSource>().clip = backSound;
-            GetComponent<AudioSource>().Play();
-        }
+        SfxManager.Instance.playBack();
     }
     public void SoundButton()
     {
-        if (sound)
+        if (!SfxManager.Instance.getIsMute())
         {
-          soundButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
-            sound = false;
+            soundButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
+            SfxManager.Instance.setIsMute(true);
         }
         else
         {
             soundButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
-            sound = true;
+            SfxManager.Instance.setIsMute(false);
         }
            
     }
     public void MusicButton()
     {
-        if (music)
+        if (!MusicManager.Instance.audioSource.mute)
         {
             musicButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
-            music = false;
-            mainCamera.GetComponent<AudioSource>().Stop();
         }
         else
         {
             musicButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
-            music = true;
-            mainCamera.GetComponent<AudioSource>().Play();
-            
         }
+        MusicManager.Instance.SwitchMute();
     }
     public void VibrationButton()
     {
