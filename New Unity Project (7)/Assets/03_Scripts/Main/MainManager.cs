@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    public GameObject mainPanel, playPanel;
-    public GameObject settingPanel;
-    public GameObject rankPanel;
+    public GameObject mainPanel, playPanel, settingPanel, rankPanel, loginPanel, exitPanel;
     public Button soundButton, vibrationButton, musicButton;
     private bool music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
-    public GameObject exitPanel;
   
     // Use this for initialization
     void Start () {
         playPanel.SetActive(false);
-        mainPanel.SetActive(true);
+        mainPanel.SetActive(false);
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
         exitPanel.SetActive(false);
@@ -77,6 +74,14 @@ public class MainManager : MonoBehaviour {
         rankPanel.SetActive(false);
         SfxManager.Instance.playBack();
     }
+
+    public void ClickStart()
+    {
+        SfxManager.Instance.playClick();
+        loginPanel.SetActive(false);
+        mainPanel.SetActive(true);
+    }
+    
     public void SoundButton()
     {
         if (!SfxManager.Instance.getIsMute())
