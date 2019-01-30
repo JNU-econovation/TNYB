@@ -3,15 +3,13 @@
 --- !u!1 &5822179816313078804
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 825129865040489221, guid: a2bcf7b6f3b9f4157b1ecf5a6e740770,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5822179816313078806}
   - component: {fileID: 5822179816313078807}
-  - component: {fileID: 5822179816313078800}
   - component: {fileID: 5822179816313078801}
   m_Layer: 0
   m_Name: Title
@@ -23,8 +21,7 @@ GameObject:
 --- !u!4 &5822179816313078806
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 825129865040489223, guid: a2bcf7b6f3b9f4157b1ecf5a6e740770,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5822179816313078804}
@@ -38,8 +35,7 @@ Transform:
 --- !u!212 &5822179816313078807
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 825129865040489222, guid: a2bcf7b6f3b9f4157b1ecf5a6e740770,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5822179816313078804}
@@ -84,31 +80,10 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5822179816313078800
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 825129865040489217, guid: a2bcf7b6f3b9f4157b1ecf5a6e740770,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5822179816313078804}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1143c4ef3cba24d589372498da3feffa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5822179816313078801
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 825129865040489216, guid: a2bcf7b6f3b9f4157b1ecf5a6e740770,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5822179816313078804}
