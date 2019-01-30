@@ -81,6 +81,19 @@ public class MainManager : MonoBehaviour {
         loginPanel.SetActive(false);
         mainPanel.SetActive(true);
     }
+
+    public void ClickLogOut()
+    {
+        SfxManager.Instance.playClick();
+        loginPanel.SetActive(true);
+        mainPanel.SetActive(false);
+    }
+
+    public void ClickSignUp()
+    {
+        SfxManager.Instance.playClick();
+        loginPanel.SetActive(false);
+    }
     
     public void SoundButton()
     {
