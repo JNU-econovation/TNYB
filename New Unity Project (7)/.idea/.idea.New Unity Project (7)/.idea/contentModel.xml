@@ -40,6 +40,7 @@
             <e p="Login.cs" t="Include" />
             <e p="MainManager.cs" t="Include" />
             <e p="MusicManager.cs" t="Include" />
+            <e p="RealtimeDatabase.cs" t="Include" />
             <e p="SfxManager.cs" t="Include" />
           </e>
         </e>
@@ -47,7 +48,9 @@
           <e p="Editor" t="Include">
             <e p="AppDependencies.xml" t="Include" />
             <e p="AuthDependencies.xml" t="Include" />
+            <e p="DatabaseDependencies.xml" t="Include" />
             <e p="FirebaseAuth_version-5.4.4_manifest.txt" t="Include" />
+            <e p="FirebaseDatabase_version-5.4.4_manifest.txt" t="Include" />
           </e>
           <e p="m2repository" t="Include">
             <e p="com" t="Include">
@@ -59,11 +62,17 @@
                   <e p="firebase-auth-unity" t="Include">
                     <e p="maven-metadata.xml" t="Include" />
                   </e>
+                  <e p="firebase-database-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
                 </e>
               </e>
             </e>
           </e>
           <e p="Plugins" t="Include">
+            <e p="Http" t="Include">
+              <e p="link.xml" t="Include" />
+            </e>
             <e p="link.xml" t="Include" />
           </e>
         </e>
