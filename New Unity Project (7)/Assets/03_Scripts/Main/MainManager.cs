@@ -124,8 +124,16 @@ public class MainManager : MonoBehaviour {
 
     public void toSignInPanel()
     {
+        SfxManager.Instance.playClick();
         signupPanel.SetActive(false);
         signinPanel.SetActive(true);
+    }
+
+    public void toMainPanel()
+    {
+        SfxManager.Instance.playClick();
+        mainPanel.SetActive(true);
+        signinPanel.SetActive(false);
     }
     
     public void SoundButton()

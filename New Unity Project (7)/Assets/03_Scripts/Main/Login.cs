@@ -84,7 +84,7 @@ public class Login : MonoBehaviour
         SignInEmail = SignInInputEmail.text;
         SignInPassword = SignInInputPassword.text;
         
-        Debug.Log("email: " + SignInEmail + ", password: " + SignInPassword);
+        Debug.Log("Sign In - email: " + SignInEmail + ", password: " + SignInPassword);
  
         LoginUser();
     }
@@ -94,18 +94,21 @@ public class Login : MonoBehaviour
         auth.SignInWithEmailAndPasswordAsync(SignInEmail, SignInPassword).ContinueWith(task => {
             if (task.IsCanceled)
             {
-                Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");            
+                Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
+                SfxManager.Instance.playWrong();
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                SfxManager.Instance.playWrong();
                 return;
             }
  
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+            MainManager.Instance.toMainPanel();
         });
     }
     
