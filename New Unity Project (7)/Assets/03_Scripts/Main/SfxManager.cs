@@ -6,7 +6,7 @@ public class SfxManager : MonoBehaviour
 {
     private bool isMute = false;
 
-    public AudioClip click, back;
+    public AudioClip click, back, wrong;
     
     private AudioSource audioSource;
     
@@ -43,6 +43,15 @@ public class SfxManager : MonoBehaviour
         if (!isMute)
         {
             audioSource.clip = back;
+            audioSource.Play();    
+        }
+    }
+    
+    public void playWrong()
+    {
+        if (!isMute)
+        {
+            audioSource.clip = wrong;
             audioSource.Play();    
         }
     }

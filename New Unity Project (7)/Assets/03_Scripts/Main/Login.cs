@@ -6,45 +6,59 @@ using Firebase.Auth;
 
 public class Login : MonoBehaviour
 {
-    [SerializeField] private string email;
-    [SerializeField] private string password;
-    [SerializeField] private string confirmedPassword;
+    [SerializeField] private string SignInEmail;
+    [SerializeField] private string SignInPassword;
+    
+    [SerializeField] private string SignUpEmail;
+    [SerializeField] private string SignUpPassword;
+    [SerializeField] private string SignUpConfirmedPassword;
 
-    public InputField inputEmail;
-    public InputField inputPassword;
-    public InputField inputConfirmedPassword;
+    public InputField SignInInputEmail;
+    public InputField SignInInputPassword;
+    
+    public InputField SignUpInputEmail;
+    public InputField SignUpInputPassword;
+    public InputField SignUpInputConfirmedPassword;
 
     private FirebaseAuth auth;
+    private FirebaseUser user;
 
     private void Awake()
     {
         //초기화
         auth = FirebaseAuth.DefaultInstance;
+        auth.StateChanged += AuthStateChanged;
+        AuthStateChanged(this, null);
     }
 
     public void ClickSignUpBtn()
     {
         SfxManager.Instance.playClick();
-        email = inputEmail.text;
-        password = inputPassword.text;
-        confirmedPassword = inputConfirmedPassword.text;
+        SignUpEmail = SignUpInputEmail.text;
+        SignUpPassword = SignUpInputPassword.text;
+        SignUpConfirmedPassword = SignUpInputConfirmedPassword.text;
 
-        if (password == confirmedPassword)
+        if (SignUpPassword == null || SignUpPassword == "")
         {
-            Debug.Log("email: " + email + ", password: " + password);
+            SfxManager.Instance.playWrong();
+            return;
+        }
+        
+        if (SignUpPassword == SignUpConfirmedPassword)
+        {
+            Debug.Log("email: " + SignUpEmail + ", password: " + SignUpPassword);
             CreateUser();
-            MainManager.Instance.toSignInPanel();
         }
         else
         {
-            SfxManager.Instance.playBack();
+            SfxManager.Instance.playWrong();
             // 비밀번호가 다릅니다.
         }
     }
 
     private void CreateUser()
     {
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.CreateUserWithEmailAndPasswordAsync(SignUpEmail, SignUpPassword).ContinueWith(task =>
         {
             if (task.IsCanceled)
             {
@@ -61,18 +75,54 @@ public class Login : MonoBehaviour
             // Firebase User has been created.
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("Firebase user created successfully: {0} ({1})", newUser.DisplayName, newUser.UserId);
+            MainManager.Instance.toSignInPanel();
         });
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ClickSignInBtn()
     {
+        SignInEmail = SignInInputEmail.text;
+        SignInPassword = SignInInputPassword.text;
         
+        Debug.Log("email: " + SignInEmail + ", password: " + SignInPassword);
+ 
+        LoginUser();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoginUser()
     {
-        
+        auth.SignInWithEmailAndPasswordAsync(SignInEmail, SignInPassword).ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");            
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                return;
+            }
+ 
+            Firebase.Auth.FirebaseUser newUser = task.Result;
+            Debug.LogFormat("User signed in successfully: {0} ({1})",
+                newUser.DisplayName, newUser.UserId);
+        });
+    }
+    
+    void AuthStateChanged(object sender, System.EventArgs eventArgs)
+    {
+        if (auth.CurrentUser != user)
+        {
+            bool signedIn = user != auth.CurrentUser && auth.CurrentUser != null;
+            if (!signedIn && user != null)
+            {
+                Debug.Log("Signed out " + user.UserId);
+            }
+            user = auth.CurrentUser;
+            if (signedIn)
+            {
+                Debug.Log("Signed in " + user.UserId);
+            }
+        }
     }
 }

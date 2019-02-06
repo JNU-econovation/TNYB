@@ -347,11 +347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1153694072}
+      objectReference: {fileID: 2076203791}
     - target: {fileID: 591071754114714751, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickStart
+      value: ClickSignInBtn
       objectReference: {fileID: 0}
     - target: {fileID: 591071752631549375, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -451,6 +451,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ba41032018da4abdaf51e7e27f0d136, type: 3}
+--- !u!114 &318885776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 279074131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &337528641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3682,7 +3694,7 @@ PrefabInstance:
     - target: {fileID: 591071752641627175, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 591071752641627174, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -4524,6 +4536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   click: {fileID: 8300000, guid: 9423c88764923c543b9a8bb6e795ef1d, type: 3}
   back: {fileID: 8300000, guid: 811e31b503032df4199d8d6bca6c6af1, type: 3}
+  wrong: {fileID: 8300000, guid: 7a20d01946b938f408fad3de22145459, type: 3}
 --- !u!4 &1422241622
 Transform:
   m_ObjectHideFlags: 0
@@ -5361,6 +5374,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938489183}
   m_CullTransparentMesh: 0
+--- !u!114 &1987825122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238486678134341837, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 279074131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2004451651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5407317962313770603, guid: adf7bf93dbd98114598253ad8d15d670,
@@ -5410,13 +5435,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4b681f527a3495288989d1e7eccf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email: 
-  password: 
-  confirmedPassword: 
-  mainManager: {fileID: 0}
-  inputEmail: {fileID: 503722023}
-  inputPassword: {fileID: 1807701880}
-  inputConfirmedPassword: {fileID: 699822000}
+  SignInEmail: 
+  SignInPassword: 
+  SignUpEmail: 
+  SignUpPassword: 
+  SignUpConfirmedPassword: 
+  SignInInputEmail: {fileID: 318885776}
+  SignInInputPassword: {fileID: 1987825122}
+  SignUpInputEmail: {fileID: 503722023}
+  SignUpInputPassword: {fileID: 1807701880}
+  SignUpInputConfirmedPassword: {fileID: 699822000}
 --- !u!1 &2142480528
 GameObject:
   m_ObjectHideFlags: 0
