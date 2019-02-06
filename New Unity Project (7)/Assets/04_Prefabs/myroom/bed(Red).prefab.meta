@@ -1,9 +1,6 @@
 fileFormatVersion: 2
-guid: 2ca810c430a34a68a0c55db26a66a2c1
-labels:
-- gvh
-- gvh_version-1.2.98.0
-DefaultImporter:
+guid: 4b933ff96ec5f47ef9a70730c94097a4
+PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
