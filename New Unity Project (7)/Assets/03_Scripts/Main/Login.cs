@@ -9,7 +9,6 @@ public class Login : MonoBehaviour
     [SerializeField] private string email;
     [SerializeField] private string password;
     [SerializeField] private string confirmedPassword;
-    [SerializeField] private GameObject mainManager;
 
     public InputField inputEmail;
     public InputField inputPassword;
@@ -34,6 +33,7 @@ public class Login : MonoBehaviour
         {
             Debug.Log("email: " + email + ", password: " + password);
             CreateUser();
+            MainManager.Instance.toSignInPanel();
         }
         else
         {

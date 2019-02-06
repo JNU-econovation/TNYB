@@ -9,7 +9,25 @@ public class MainManager : MonoBehaviour {
     public Button soundButton, vibrationButton, musicButton;
     private bool music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
-  
+
+    private static MainManager instance;
+
+    public static MainManager Instance
+    {
+        get { return instance; }
+    }
+
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
     // Use this for initialization
     void Start () {
         playPanel.SetActive(false);
@@ -100,6 +118,12 @@ public class MainManager : MonoBehaviour {
     public void ClickSignUpBack()
     {
         SfxManager.Instance.playClick();
+        signupPanel.SetActive(false);
+        signinPanel.SetActive(true);
+    }
+
+    public void toSignInPanel()
+    {
         signupPanel.SetActive(false);
         signinPanel.SetActive(true);
     }
