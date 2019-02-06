@@ -537,6 +537,18 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &503722023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 1354066277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &631520981
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD574\uC8FC\uC138\uC694"
+  m_Text: "\uBE44\uBC00\uBC88\uD638 \uD655\uC778"
 --- !u!222 &631520984
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3636,6 +3648,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1354066277}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1273607051
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273607049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfd8d45de0e7740d988ef863d273128a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1354066277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3827,11 +3858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1153694072}
+      objectReference: {fileID: 2076203791}
     - target: {fileID: 591071754114714751, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickNewSignUp
+      value: ClickSignUpBtn
       objectReference: {fileID: 0}
     - target: {fileID: 591071752631549375, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -3978,6 +4009,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300036, guid: 5b06fa4b0391b4fb2829025f632dd93b,
         type: 3}
+    - target: {fileID: 591071753832365377, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uC544\uC774\uB514"
+      objectReference: {fileID: 0}
     - target: {fileID: 591071754234082546, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_Text
@@ -3987,6 +4023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486956431069445331, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uBE44\uBC00\uBC88\uD638"
       objectReference: {fileID: 0}
     - target: {fileID: 3402827569373585048, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -5100,6 +5141,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798798724}
   m_CullTransparentMesh: 0
+--- !u!114 &1807701880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238486678134341837, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 1354066277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867410863
 GameObject:
   m_ObjectHideFlags: 0
@@ -5323,6 +5376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2076203790}
+  - component: {fileID: 2076203791}
   m_Layer: 0
   m_Name: FirebaseManager
   m_TagString: Untagged
@@ -5344,6 +5398,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076203791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076203789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4b681f527a3495288989d1e7eccf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  email: 
+  password: 
+  confirmedPassword: 
+  mainManager: {fileID: 0}
+  inputEmail: {fileID: 503722023}
+  inputPassword: {fileID: 1807701880}
+  inputConfirmedPassword: {fileID: 699822000}
 --- !u!1 &2142480528
 GameObject:
   m_ObjectHideFlags: 0

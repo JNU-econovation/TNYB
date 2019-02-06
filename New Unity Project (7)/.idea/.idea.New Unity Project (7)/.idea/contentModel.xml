@@ -10,7 +10,6 @@
             <e p="AuthAudioLoad.cs" t="Include" />
             <e p="AuthManager.cs" t="Include" />
             <e p="BackgroundLoad.cs" t="Include" />
-            <e p="BackgroundRepeat.cs" t="Include" />
             <e p="firebase_auth.cs" t="Include" />
             <e p="firebaseInit.cs" t="Include" />
             <e p="RealtimeDatabase.cs" t="Include" />
@@ -46,12 +45,12 @@
             <e p="TimerScript.cs" t="Include" />
           </e>
           <e p="Main" t="Include">
+            <e p="BackgroundRepeat.cs" t="Include" />
             <e p="ChangeScenes.cs" t="Include" />
+            <e p="Login.cs" t="Include" />
             <e p="MainManager.cs" t="Include" />
             <e p="MusicManager.cs" t="Include" />
             <e p="SfxManager.cs" t="Include" />
-            <e p="TextMoveA.cs" t="Include" />
-            <e p="TextMoveB.cs" t="Include" />
           </e>
         </e>
         <e p="Firebase" t="Include">

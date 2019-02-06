@@ -103,12 +103,6 @@ public class MainManager : MonoBehaviour {
         signupPanel.SetActive(false);
         signinPanel.SetActive(true);
     }
-
-    public void ClickNewSignUp()
-    {
-        SfxManager.Instance.playClick();
-        // 회원가입 버튼
-    }
     
     public void SoundButton()
     {
