@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    public GameObject mainPanel, playPanel, settingPanel, rankPanel, loginPanel, exitPanel;
+    public GameObject mainPanel, playPanel, settingPanel, rankPanel, signinPanel, exitPanel, signupPanel;
     public Button soundButton, vibrationButton, musicButton;
     private bool music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
@@ -17,6 +17,7 @@ public class MainManager : MonoBehaviour {
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
         exitPanel.SetActive(false);
+        signupPanel.SetActive(false);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
     }
@@ -78,21 +79,35 @@ public class MainManager : MonoBehaviour {
     public void ClickStart()
     {
         SfxManager.Instance.playClick();
-        loginPanel.SetActive(false);
+        signinPanel.SetActive(false);
         mainPanel.SetActive(true);
     }
 
     public void ClickLogOut()
     {
         SfxManager.Instance.playClick();
-        loginPanel.SetActive(true);
+        signinPanel.SetActive(true);
         mainPanel.SetActive(false);
     }
 
     public void ClickSignUp()
     {
         SfxManager.Instance.playClick();
-        loginPanel.SetActive(false);
+        signupPanel.SetActive(true);
+        signinPanel.SetActive(false);
+    }
+
+    public void ClickSignUpBack()
+    {
+        SfxManager.Instance.playClick();
+        signupPanel.SetActive(false);
+        signinPanel.SetActive(true);
+    }
+
+    public void ClickNewSignUp()
+    {
+        SfxManager.Instance.playClick();
+        // 회원가입 버튼
     }
     
     public void SoundButton()
