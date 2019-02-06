@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    public GameObject mainPanel, playPanel, settingPanel, rankPanel, signinPanel, exitPanel, signupPanel;
+    public GameObject mainPanel, playPanel, settingPanel, rankPanel, signinPanel, exitPanel, signupPanel, nicknamePanel;
     public Button soundButton, vibrationButton, musicButton;
     private bool music = true, vibration = true;
     public Image buttonTrue, buttonFalse;
@@ -35,7 +35,9 @@ public class MainManager : MonoBehaviour {
         settingPanel.SetActive(false);
         rankPanel.SetActive(false);
         exitPanel.SetActive(false);
+        signinPanel.SetActive(true);
         signupPanel.SetActive(false);
+        nicknamePanel.SetActive(false);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
     }
@@ -133,6 +135,13 @@ public class MainManager : MonoBehaviour {
     {
         SfxManager.Instance.playClick();
         mainPanel.SetActive(true);
+        nicknamePanel.SetActive(false);
+    }
+
+    public void toNicknamePanel()
+    {
+        SfxManager.Instance.playClick();
+        nicknamePanel.SetActive(true);
         signinPanel.SetActive(false);
     }
     

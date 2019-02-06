@@ -108,7 +108,9 @@ public class Login : MonoBehaviour
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
-            MainManager.Instance.toMainPanel();
+            
+            // 로그인 완료 닉네임 체크
+            MainManager.Instance.toNicknamePanel();
         });
     }
     

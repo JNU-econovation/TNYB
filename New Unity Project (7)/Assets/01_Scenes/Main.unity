@@ -782,6 +782,11 @@ PrefabInstance:
       propertyPath: signinPanel
       value: 
       objectReference: {fileID: 646757240}
+    - target: {fileID: 4202212089158612013, guid: 585fabda645306449b72fa909cd0491a,
+        type: 3}
+      propertyPath: nicknamePanel
+      value: 
+      objectReference: {fileID: 2080219969}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585fabda645306449b72fa909cd0491a, type: 3}
 --- !u!1 &668004488
@@ -5569,7 +5574,7 @@ PrefabInstance:
     - target: {fileID: 591071752641627175, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 591071752641627174, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -5902,6 +5907,12 @@ PrefabInstance:
 --- !u!224 &2080219968 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 591071752641627174, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080219967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2080219969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 591071752641627175, guid: 7ba41032018da4abdaf51e7e27f0d136,
     type: 3}
   m_PrefabInstance: {fileID: 2080219967}
   m_PrefabAsset: {fileID: 0}
