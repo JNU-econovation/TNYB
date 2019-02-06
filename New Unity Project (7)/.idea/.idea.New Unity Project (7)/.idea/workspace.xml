@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/Main/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/Main/MainManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,22 +23,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="4956" />
+          <entry key="cs" value="4986" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4956" />
+          <entry key="C#" value="4986" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="41" />
+          <entry key="cs" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="41" />
+          <entry key="C#" value="42" />
         </counts>
       </usages-collector>
     </session>
@@ -91,11 +90,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="548">
-                  <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+                  <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
                   <folding>
                     <marker date="1549448777221" expanded="false" signature="6:121" ph="..." />
                     <marker date="1549448777221" expanded="true" signature="157:4047" ph="{...}" />
@@ -117,6 +116,48 @@
                     <marker date="1549448777221" expanded="true" signature="3664:4039" ph="{...}" />
                     <marker date="1549448777221" expanded="true" signature="3799:3883" ph="{...}" />
                     <marker date="1549448777221" expanded="true" signature="3946:4029" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                  <folding>
+                    <marker date="1549449897455" expanded="true" signature="46:253" ph="..." />
+                    <marker date="1549449897455" expanded="true" signature="297:11071" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="429:502" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="585:1008" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="912:1002" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="1089:1217" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="1300:1377" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="1458:1585" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="1671:1751" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="1835:1965" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2048:2125" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2206:2333" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2417:2495" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2577:2705" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2793:2896" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="2982:3080" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3163:3459" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3490:3640" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3550:3634" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3675:3832" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3742:3826" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3865:4020" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="3930:4014" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="4045:10050" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="4293:4591" ph="/* Inits Firebase using Firebase Secret Key as Auth ... */" />
+                    <marker date="1549449897455" expanded="true" signature="5823:5930" ph="{...}" />
+                    <marker date="1549449897455" expanded="true" signature="6731:6849" ph="/* Test ##1: Test all firebase commands, using FirebaseQueueManager ... */" />
+                    <marker date="1549449897455" expanded="true" signature="7922:8045" ph="/* Test ##2: Calls without using FirebaseQueueManager ... */" />
+                    <marker date="1549449897455" expanded="true" signature="8389:8586" ph="/* Please note that orderBy &quot;rating&quot; is possible because I already defined the index on the Rule. ... */" />
+                    <marker date="1549449897455" expanded="true" signature="8966:9215" ph="/* We need to clear the queue as the queue is left with one error command (the one we deliberately inserted last  ... */" />
+                    <marker date="1549449897455" expanded="true" signature="10105:11069" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -207,6 +248,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/MainManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/Factory/FactoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/05_Cinema/CinemaManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -261,6 +303,7 @@
         <option value="$PROJECT_DIR$/Assets/03_Scripts/Main/RealtimeDatabase.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/Main/MainManager.cs" />
         <option value="$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs" />
+        <option value="$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs" />
       </list>
     </option>
   </component>
@@ -359,12 +402,12 @@
       <workItem from="1548248888147" duration="5337000" />
       <workItem from="1548316908151" duration="10704000" />
       <workItem from="1548813197820" duration="7720000" />
-      <workItem from="1549438809494" duration="5816000" />
+      <workItem from="1549438809494" duration="6193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40039000" />
+    <option name="totallyTimeSpent" value="40416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -693,7 +736,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/Login.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
-          <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+          <caret line="111" column="28" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
           <folding>
             <marker date="1549448777221" expanded="false" signature="6:121" ph="..." />
             <marker date="1549448777221" expanded="true" signature="157:4047" ph="{...}" />
@@ -715,6 +758,46 @@
             <marker date="1549448777221" expanded="true" signature="3664:4039" ph="{...}" />
             <marker date="1549448777221" expanded="true" signature="3799:3883" ph="{...}" />
             <marker date="1549448777221" expanded="true" signature="3946:4029" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/SimpleFirebaseUnity/Sample/SampleScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <marker date="1549449897455" expanded="true" signature="46:253" ph="..." />
+            <marker date="1549449897455" expanded="true" signature="297:11071" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="429:502" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="585:1008" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="912:1002" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="1089:1217" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="1300:1377" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="1458:1585" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="1671:1751" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="1835:1965" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2048:2125" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2206:2333" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2417:2495" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2577:2705" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2793:2896" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="2982:3080" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3163:3459" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3490:3640" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3550:3634" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3675:3832" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3742:3826" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3865:4020" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="3930:4014" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="4045:10050" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="4293:4591" ph="/* Inits Firebase using Firebase Secret Key as Auth ... */" />
+            <marker date="1549449897455" expanded="true" signature="5823:5930" ph="{...}" />
+            <marker date="1549449897455" expanded="true" signature="6731:6849" ph="/* Test ##1: Test all firebase commands, using FirebaseQueueManager ... */" />
+            <marker date="1549449897455" expanded="true" signature="7922:8045" ph="/* Test ##2: Calls without using FirebaseQueueManager ... */" />
+            <marker date="1549449897455" expanded="true" signature="8389:8586" ph="/* Please note that orderBy &quot;rating&quot; is possible because I already defined the index on the Rule. ... */" />
+            <marker date="1549449897455" expanded="true" signature="8966:9215" ph="/* We need to clear the queue as the queue is left with one error command (the one we deliberately inserted last  ... */" />
+            <marker date="1549449897455" expanded="true" signature="10105:11069" ph="{...}" />
           </folding>
         </state>
       </provider>

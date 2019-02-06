@@ -108,6 +108,29 @@
             </e>
           </e>
         </e>
+        <e p="SimpleFirebaseUnity" t="Include">
+          <e p="Plugins" t="Include">
+            <e p="Android" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+            </e>
+          </e>
+          <e p="Sample" t="Include">
+            <e p="AutoRotate.cs" t="Include" />
+            <e p="MoveControl.cs" t="Include" />
+            <e p="SampleScript.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="DataSnapshot.cs" t="Include" />
+            <e p="Firebase.cs" t="Include" />
+            <e p="FirebaseError.cs" t="Include" />
+            <e p="FirebaseManager.cs" t="Include" />
+            <e p="FirebaseObserver.cs" t="Include" />
+            <e p="FirebaseParam.cs" t="Include" />
+            <e p="FirebaseQueue.cs" t="Include" />
+            <e p="FirebaseRoot.cs" t="Include" />
+            <e p="miniJSON.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="New Unity Project (7).sln" t="IncludeFlat" />
