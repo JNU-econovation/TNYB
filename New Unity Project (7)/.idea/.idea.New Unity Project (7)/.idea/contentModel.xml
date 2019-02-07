@@ -42,6 +42,10 @@
             <e p="MusicManager.cs" t="Include" />
             <e p="RealtimeDatabase.cs" t="Include" />
             <e p="SfxManager.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
+          <e p="MyRoom" t="Include">
+            <e p="RoomManager.cs" t="Include" />
           </e>
         </e>
         <e p="Firebase" t="Include">
@@ -106,29 +110,6 @@
                 <e p="README.txt" t="Include" />
               </e>
             </e>
-          </e>
-        </e>
-        <e p="SimpleFirebaseUnity" t="Include">
-          <e p="Plugins" t="Include">
-            <e p="Android" t="Include">
-              <e p="AndroidManifest.xml" t="Include" />
-            </e>
-          </e>
-          <e p="Sample" t="Include">
-            <e p="AutoRotate.cs" t="Include" />
-            <e p="MoveControl.cs" t="Include" />
-            <e p="SampleScript.cs" t="Include" />
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="DataSnapshot.cs" t="Include" />
-            <e p="Firebase.cs" t="Include" />
-            <e p="FirebaseError.cs" t="Include" />
-            <e p="FirebaseManager.cs" t="Include" />
-            <e p="FirebaseObserver.cs" t="Include" />
-            <e p="FirebaseParam.cs" t="Include" />
-            <e p="FirebaseQueue.cs" t="Include" />
-            <e p="FirebaseRoot.cs" t="Include" />
-            <e p="miniJSON.cs" t="Include" />
           </e>
         </e>
       </e>
