@@ -112,6 +112,7 @@ public class Login : MonoBehaviour
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully - DisplayName:({0}), UserId:({1})",
                 newUser.DisplayName, newUser.UserId);
+            user = newUser;
             RealtimeDatabase.Instance.InitDatabase();
             
             // 로그인 완료 닉네임 체크

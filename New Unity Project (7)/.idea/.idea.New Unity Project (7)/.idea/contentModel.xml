@@ -42,7 +42,6 @@
             <e p="MusicManager.cs" t="Include" />
             <e p="RealtimeDatabase.cs" t="Include" />
             <e p="SfxManager.cs" t="Include" />
-            <e p="User.cs" t="Include" />
           </e>
           <e p="MyRoom" t="Include">
             <e p="RoomManager.cs" t="Include" />
