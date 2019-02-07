@@ -13,9 +13,44 @@ public class RoomManager : MonoBehaviour
     public GameObject picture, picture_red;
     public GameObject chair_gray, chair_red;
     public GameObject door;
-
+    public GameObject ItemInventory;
+    public GameObject ButtonPanel;
+    public GameObject SelectGamePanel;
+    public GameObject RankingPanel;
     private void Start()
     {
         door.SetActive(true);
+    }
+    public void OpenRankingPanel()
+    {
+        RankingPanel.SetActive(true);
+        ButtonPanel.SetActive(false);
+    }
+    public void CloseRankingPanel()
+    {
+        RankingPanel.SetActive(false);
+        ButtonPanel.SetActive(true);
+    }
+    public void OpendSelectGame()
+    {
+        SelectGamePanel.SetActive(true);
+        ButtonPanel.SetActive(false);
+
+    }
+    public void CloseSlelectGame()
+    {
+        SelectGamePanel.SetActive(false);
+        ButtonPanel.SetActive(true);
+    }
+
+    public void OpenInventory()
+    {
+        ItemInventory.SetActive(true);
+        ButtonPanel.SetActive(false);
+    }
+    public void CloseInventory()
+    {
+        ItemInventory.SetActive(false);
+        ButtonPanel.SetActive(true);
     }
 }
