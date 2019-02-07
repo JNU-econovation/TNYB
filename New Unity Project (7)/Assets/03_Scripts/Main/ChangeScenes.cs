@@ -9,7 +9,7 @@ public class ChangeScenes : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    public void ToMain_aka_Exit()
+    public void ToMyRoom()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
