@@ -113,16 +113,16 @@ public class Login : MonoBehaviour
             Debug.LogFormat("User signed in successfully - DisplayName:({0}), UserId:({1})",
                 newUser.DisplayName, newUser.UserId);
             user = newUser;
-            RealtimeDatabase.Instance.InitDatabase();
-            
-            // 로그인 완료 닉네임 체크
-            if (newUser.DisplayName == "" || newUser.DisplayName == null)
-            {
-                MainManager.Instance.toNicknamePanel();
-            } else
-            {
-                MainManager.Instance.toMainPanel();
-            }
+
+//            if (RealtimeDatabase.Instance.isNicknameExist())
+//            {
+//                MainManager.Instance.toMainPanel();
+//            }
+//            else
+//            {
+//                RealtimeDatabase.Instance.InitDatabase();
+//                MainManager.Instance.toNicknamePanel();
+//            }
         });
     }
     

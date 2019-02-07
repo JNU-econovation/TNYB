@@ -58,6 +58,53 @@ public class RealtimeDatabase : MonoBehaviour
         databaseReference.Child("users").Child(Login.user.UserId).Child("nickname").SetValueAsync(nickname);        
     }
     
+    public void showNickname()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    
+                    if (snapshot.Child(Login.user.UserId).Child("nickname").Value == null || snapshot.Child(Login.user.UserId).Child("nickname").Value == "")
+                    {
+                        return;
+                    }
+                    Debug.Log("nickname : " + snapshot.Child(Login.user.UserId).Child("nickname").Value);
+                }
+                
+            });
+    }
+
+    public bool isNicknameExist()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    Debug.Log("nickname : " + snapshot.Child(Login.user.UserId).Child("nickname").Value);
+                    if (snapshot.Child(Login.user.UserId).Child("nickname").Value == null || snapshot.Child(Login.user.UserId).Child("nickname").Value == "")
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            });
+        return false;
+    }
+    
     public bool isDuplication(string nickname)
     {
         // 닉네임 중복 검사
