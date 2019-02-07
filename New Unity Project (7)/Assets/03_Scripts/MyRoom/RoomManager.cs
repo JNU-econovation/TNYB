@@ -19,6 +19,7 @@ public class RoomManager : MonoBehaviour
     public GameObject RankingPanel;
     private void Start()
     {
+        SelectGamePanel.SetActive(false);
         door.SetActive(true);
     }
     public void OpenRankingPanel()
