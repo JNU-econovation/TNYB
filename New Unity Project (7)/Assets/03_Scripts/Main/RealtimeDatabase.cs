@@ -40,8 +40,8 @@ public class RealtimeDatabase : MonoBehaviour
     {
         if (Login.user != null)
         {
-            Debug.LogFormat("Write user - DisplayName:({0}), UserId:({1}), UserEmail:({2})",
-                Login.user.DisplayName, Login.user.UserId, Login.user.Email);
+//            Debug.LogFormat("Write user - DisplayName:({0}), UserId:({1}), UserEmail:({2})",
+//                Login.user.DisplayName, Login.user.UserId, Login.user.Email);
             WriteNewUser(Login.user.UserId, Login.user.DisplayName, Login.user.Email);   
         }
     }
@@ -58,7 +58,7 @@ public class RealtimeDatabase : MonoBehaviour
         databaseReference.Child("users").Child(Login.user.UserId).Child("nickname").SetValueAsync(nickname);        
     }
     
-    public void showNickname()
+    public void checkNickname()
     {
         FirebaseDatabase.DefaultInstance.GetReference("users")
             .GetValueAsync().ContinueWith(task =>
@@ -70,39 +70,15 @@ public class RealtimeDatabase : MonoBehaviour
                 else if (task.IsCompleted)
                 {
                     DataSnapshot snapshot = task.Result;
-                    
                     if (snapshot.Child(Login.user.UserId).Child("nickname").Value == null || snapshot.Child(Login.user.UserId).Child("nickname").Value == "")
                     {
+                        InitDatabase();
+                        MainManager.Instance.toNicknamePanel();
                         return;
                     }
-                    Debug.Log("nickname : " + snapshot.Child(Login.user.UserId).Child("nickname").Value);
+                    MainManager.Instance.toMainPanel();
                 }
-                
             });
-    }
-
-    public bool isNicknameExist()
-    {
-        FirebaseDatabase.DefaultInstance.GetReference("users")
-            .GetValueAsync().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-
-                }
-                else if (task.IsCompleted)
-                {
-                    DataSnapshot snapshot = task.Result;
-                    Debug.Log("nickname : " + snapshot.Child(Login.user.UserId).Child("nickname").Value);
-                    if (snapshot.Child(Login.user.UserId).Child("nickname").Value == null || snapshot.Child(Login.user.UserId).Child("nickname").Value == "")
-                    {
-                        return false;
-                    }
-                    return true;
-                }
-                return false;
-            });
-        return false;
     }
     
     public bool isDuplication(string nickname)

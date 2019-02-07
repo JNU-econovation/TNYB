@@ -113,22 +113,14 @@ public class Login : MonoBehaviour
             Debug.LogFormat("User signed in successfully - DisplayName:({0}), UserId:({1})",
                 newUser.DisplayName, newUser.UserId);
             user = newUser;
-
-//            if (RealtimeDatabase.Instance.isNicknameExist())
-//            {
-//                MainManager.Instance.toMainPanel();
-//            }
-//            else
-//            {
-//                RealtimeDatabase.Instance.InitDatabase();
-//                MainManager.Instance.toNicknamePanel();
-//            }
+            
+            RealtimeDatabase.Instance.checkNickname();
         });
     }
     
     public void ClickStartOnNicknamePanel()
     {
-        // 검사
+        // 검사하는데 이것도 firebase는 callback이므로 여기에서 이렇게 검사하면 안된다.
         Nickname = InputNickname.text;
         if (!RealtimeDatabase.Instance.isDuplication(Nickname))
         {
