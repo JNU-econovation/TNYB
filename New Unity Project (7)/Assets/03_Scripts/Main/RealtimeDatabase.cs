@@ -22,9 +22,18 @@ public class RealtimeDatabase : MonoBehaviour
         FirebaseApp.DefaultInstance.SetEditorP12Password("notasecret");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitDatabase()
     {
-        
+        if (Login.user != null)
+        {
+            WriteNewUser(Login.user.UserId, Login.user.DisplayName, Login.user.Email);   
+        }
+    }
+    
+    private void WriteNewUser(string uid, string name, string email)
+    {
+        User user = new User(name, email);
+        string json = JsonUtility.ToJson(user);
+        databaseReference.Child("users").Child(uid).SetRawJsonValueAsync(json);
     }
 }

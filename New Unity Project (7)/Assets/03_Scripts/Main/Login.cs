@@ -21,7 +21,7 @@ public class Login : MonoBehaviour
     public InputField SignUpInputConfirmedPassword;
 
     private FirebaseAuth auth;
-    private FirebaseUser user;
+    public static FirebaseUser user;
 
     private void Awake()
     {
@@ -74,7 +74,7 @@ public class Login : MonoBehaviour
 
             // Firebase User has been created.
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Firebase user created successfully: {0} ({1})", newUser.DisplayName, newUser.UserId);
+            Debug.LogFormat("Firebase user created successfully - DisplayName: {0} , UserId: ({1})", newUser.DisplayName, newUser.UserId);
             MainManager.Instance.toSignInPanel();
         });
     }
@@ -106,7 +106,7 @@ public class Login : MonoBehaviour
             }
  
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",
+            Debug.LogFormat("User signed in successfully - DisplayName: {0} , UserId: ({1})",
                 newUser.DisplayName, newUser.UserId);
             
             // 로그인 완료 닉네임 체크
