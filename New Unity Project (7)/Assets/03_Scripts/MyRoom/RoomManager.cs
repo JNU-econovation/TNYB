@@ -17,10 +17,13 @@ public class RoomManager : MonoBehaviour
     public GameObject ButtonPanel;
     public GameObject SelectGamePanel;
     public GameObject RankingPanel;
+    public GameObject PurchasePanel;
+    public int gameMoney = 10000;
+    
     private void Start()
     {
-        SelectGamePanel.SetActive(false);
-        door.SetActive(true);
+        //PurchasePanel.SetActive(false);
+        //door.SetActive(true);
     }
     public void OpenRankingPanel()
     {
@@ -53,5 +56,18 @@ public class RoomManager : MonoBehaviour
     {
         ItemInventory.SetActive(false);
         ButtonPanel.SetActive(true);
+    }
+    public void ItemPurchase()
+    {
+         bed_red.SetActive(true);
+         //table.SetActive(true);
+    }
+    public void OpenPurchasePanel()
+    {
+        PurchasePanel.SetActive(true);
+    }
+    public void ClosePurchasePanel()
+    {
+        PurchasePanel.SetActive(false);
     }
 }

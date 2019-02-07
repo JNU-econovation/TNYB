@@ -3,7 +3,37 @@ guid: c62881c44368d44c4bac413812ec5aee
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tile_yellow: {instanceID: 0}
+  - tile_green: {instanceID: 0}
+  - tile_blue: {instanceID: 0}
+  - tile_gray: {instanceID: 0}
+  - bed_blue: {instanceID: 0}
+  - bed_red: {instanceID: 0}
+  - table_1: {instanceID: 0}
+  - table_2: {instanceID: 0}
+  - tv_table: {instanceID: 0}
+  - table_blue: {instanceID: 0}
+  - sofa_1: {instanceID: 0}
+  - sofa_2: {instanceID: 0}
+  - sofa_blue: {instanceID: 0}
+  - sofa2_blue: {instanceID: 0}
+  - computer: {instanceID: 0}
+  - TV: {instanceID: 0}
+  - rug: {instanceID: 0}
+  - trashcan: {instanceID: 0}
+  - lamp: {instanceID: 0}
+  - closet: {instanceID: 0}
+  - library: {instanceID: 0}
+  - picture: {instanceID: 0}
+  - picture_red: {instanceID: 0}
+  - chair_gray: {instanceID: 0}
+  - chair_red: {instanceID: 0}
+  - door: {instanceID: 0}
+  - ItemInventory: {instanceID: 0}
+  - ButtonPanel: {instanceID: 0}
+  - SelectGamePanel: {instanceID: 0}
+  - RankingPanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
