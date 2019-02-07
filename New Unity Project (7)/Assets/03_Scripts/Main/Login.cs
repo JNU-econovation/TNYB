@@ -132,6 +132,9 @@ public class Login : MonoBehaviour
         if (!RealtimeDatabase.Instance.isDuplication(Nickname))
         {
             RealtimeDatabase.Instance.setNickname(Nickname);
+            Debug.LogFormat("User nickname set successfully - DisplayName:({0})",
+                user.DisplayName);
+            MainManager.Instance.toMainPanel();
         }
     }
     

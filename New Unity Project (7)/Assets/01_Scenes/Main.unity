@@ -5871,17 +5871,17 @@ PrefabInstance:
     - target: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_ContentType
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_KeyboardType
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_CharacterValidation
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3916292741869621286, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
