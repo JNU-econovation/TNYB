@@ -10,9 +10,23 @@ public class RealtimeDatabase : MonoBehaviour
     private FirebaseApp firebaseApp;
     private DatabaseReference databaseReference;
     
-    // Start is called before the first frame update
+    private static RealtimeDatabase instance;
+
+    public static RealtimeDatabase Instance
+    {
+        get { return instance; }
+    }
+    
     void Awake()
     {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        
         firebaseApp = FirebaseDatabase.DefaultInstance.App;
         firebaseApp.SetEditorDatabaseUrl("https://ddak-8f8b5.firebaseio.com/");
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
@@ -35,5 +49,16 @@ public class RealtimeDatabase : MonoBehaviour
         User user = new User(name, email);
         string json = JsonUtility.ToJson(user);
         databaseReference.Child("users").Child(uid).SetRawJsonValueAsync(json);
+    }
+
+    public void setNickname(string nickname)
+    {
+        databaseReference.Child("users").Child(Login.user.UserId).Child("username").SetValueAsync(nickname);        
+    }
+    
+    public bool isDuplication(string nickname)
+    {
+        // 닉네임 중복 검사
+        return false;
     }
 }

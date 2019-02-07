@@ -1278,6 +1278,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888634383}
   m_CullTransparentMesh: 0
+--- !u!114 &905917244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080219967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &906578781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2394,7 +2406,7 @@ PrefabInstance:
     - target: {fileID: 5407317962622181214, guid: adf7bf93dbd98114598253ad8d15d670,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 87.90042
+      value: 87.902374
       objectReference: {fileID: 0}
     - target: {fileID: 5407317962622181214, guid: adf7bf93dbd98114598253ad8d15d670,
         type: 3}
@@ -3435,6 +3447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1144889826}
+  - component: {fileID: 1144889827}
   m_Layer: 0
   m_Name: DatabaseManager
   m_TagString: Untagged
@@ -3456,6 +3469,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1144889827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144889825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4af9233462bb4f7f92ff7f67c440cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1153694072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4202212089158612013, guid: 585fabda645306449b72fa909cd0491a,
@@ -5549,16 +5574,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4b681f527a3495288989d1e7eccf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SignInEmail: 
-  SignInPassword: 
-  SignUpEmail: 
-  SignUpPassword: 
-  SignUpConfirmedPassword: 
   SignInInputEmail: {fileID: 318885776}
   SignInInputPassword: {fileID: 1987825122}
   SignUpInputEmail: {fileID: 503722023}
   SignUpInputPassword: {fileID: 1807701880}
   SignUpInputConfirmedPassword: {fileID: 699822000}
+  InputNickname: {fileID: 905917244}
 --- !u!1001 &2080219967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5739,7 +5760,7 @@ PrefabInstance:
     - target: {fileID: 591071754114714751, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickSignInBtn
+      value: ClickStartOnNicknamePanel
       objectReference: {fileID: 0}
     - target: {fileID: 591071752631549375, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
@@ -5847,16 +5868,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3367026849601785994, guid: 7ba41032018da4abdaf51e7e27f0d136,
-        type: 3}
-      propertyPath: m_Name
-      value: SignInPWInput
-      objectReference: {fileID: 0}
-    - target: {fileID: 3367026849601785994, guid: 7ba41032018da4abdaf51e7e27f0d136,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 591071753548087449, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_ContentType
@@ -5901,6 +5912,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NickCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367026849601785994, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_Name
+      value: SignInPWInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367026849601785994, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ba41032018da4abdaf51e7e27f0d136, type: 3}

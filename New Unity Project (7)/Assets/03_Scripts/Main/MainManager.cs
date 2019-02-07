@@ -136,6 +136,7 @@ public class MainManager : MonoBehaviour {
         SfxManager.Instance.playClick();
         mainPanel.SetActive(true);
         nicknamePanel.SetActive(false);
+        signinPanel.SetActive(false);
     }
 
     public void toNicknamePanel()

@@ -6,12 +6,14 @@ using Firebase.Auth;
 
 public class Login : MonoBehaviour
 {
-    [SerializeField] private string SignInEmail;
-    [SerializeField] private string SignInPassword;
+    private string SignInEmail;
+    private string SignInPassword;
     
-    [SerializeField] private string SignUpEmail;
-    [SerializeField] private string SignUpPassword;
-    [SerializeField] private string SignUpConfirmedPassword;
+    private string SignUpEmail;
+    private string SignUpPassword;
+    private string SignUpConfirmedPassword;
+
+    private string Nickname;
 
     public InputField SignInInputEmail;
     public InputField SignInInputPassword;
@@ -19,6 +21,8 @@ public class Login : MonoBehaviour
     public InputField SignUpInputEmail;
     public InputField SignUpInputPassword;
     public InputField SignUpInputConfirmedPassword;
+
+    public InputField InputNickname;
 
     private FirebaseAuth auth;
     public static FirebaseUser user;
@@ -74,7 +78,7 @@ public class Login : MonoBehaviour
 
             // Firebase User has been created.
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Firebase user created successfully - DisplayName: {0} , UserId: ({1})", newUser.DisplayName, newUser.UserId);
+            Debug.LogFormat("Firebase user created successfully - DisplayName:({0}), UserId:({1})", newUser.DisplayName, newUser.UserId);
             MainManager.Instance.toSignInPanel();
         });
     }
@@ -106,12 +110,29 @@ public class Login : MonoBehaviour
             }
  
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully - DisplayName: {0} , UserId: ({1})",
+            Debug.LogFormat("User signed in successfully - DisplayName:({0}), UserId:({1})",
                 newUser.DisplayName, newUser.UserId);
+            RealtimeDatabase.Instance.InitDatabase();
             
             // 로그인 완료 닉네임 체크
-            MainManager.Instance.toNicknamePanel();
+            if (newUser.DisplayName == "" || newUser.DisplayName == null)
+            {
+                MainManager.Instance.toNicknamePanel();
+            } else
+            {
+                MainManager.Instance.toMainPanel();
+            }
         });
+    }
+    
+    public void ClickStartOnNicknamePanel()
+    {
+        // 검사
+        Nickname = InputNickname.text;
+        if (!RealtimeDatabase.Instance.isDuplication(Nickname))
+        {
+            RealtimeDatabase.Instance.setNickname(Nickname);
+        }
     }
     
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
