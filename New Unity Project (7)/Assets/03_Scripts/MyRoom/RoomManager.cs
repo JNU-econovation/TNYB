@@ -6,52 +6,28 @@ using UnityEngine.EventSystems;
 
 public class RoomManager : MonoBehaviour
 {
-    public GameObject tile_yellow, tile_green, tile_blue, tile_gray;
-    public GameObject bed_blue, bed_red, bed_purple;
-    public GameObject pctable, table_2, tv_table, pctable_blue, pctable_red;
-    public GameObject sofa_red, sofa2_red, sofa_blue, sofa2_blue, sofa_green, sofa2_green;
-    public GameObject computer, TV;
-    public GameObject rug, trashcan, lamp, closet, library;
-    public GameObject picture_yellow, picture_red, picture_blue;
-    public GameObject chair_gray, chair_red, chair_blue;
+    public GameObject[] tile = new GameObject[4];// 0: yellow, 1: green, 2: blue, 3: gray
+    public GameObject[] bed = new GameObject[3]; //0: red, 1: blue, 2: purple
+    public GameObject[] table = new GameObject[5]; //0: pc-table_gray 1: pc-table_red 2: pc-table_blue 3: table_2 4: tv-table;
+    public GameObject[] sofa = new GameObject[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
+    public GameObject[] chair = new GameObject[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
+    public GameObject[] picture = new GameObject[3]; //0: picture_yellow, 1:picture_red, 2:picture_blue
+    public GameObject[] appliance = new GameObject[3]; //0: computer, 1:tv, 2:lamp
+    public GameObject[] etc = new GameObject[2]; //0: trashcan 1: rug
+    public GameObject[] furniture = new GameObject[2]; //0: closet, 1: library
     public GameObject door; //문 포함 32개
 
-    private bool[] tile = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
+    private bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
+    private bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
+    private bool[] table_bool = new bool[5]; //0: pc-table_gray 1: pc-table_blue 2: pc-table_red 3: table_2 4: tv-table;
+    private bool[] sofa_bool = new bool[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
+    private bool[] chair_bool = new bool[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
+    private bool[] picture_bool = new bool[3];//0: picture_yellow, 1:picture_red, 2:picture_blue
+    private bool[] appliance_bool = new bool[3];//0: computer, 1:tv, 2:lamp
+    private bool[] furniture_bool = new bool[2];
+    private bool[] etc_bool = new bool[2]; //0:trashcan 1: rug
 
-   
-    public void ClickButton_Tile()
-    {
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
 
-        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
-
-        if (tile[a])
-        {
-
-            tile[a] = false;
-            if (a == 0)
-                UnSetTile_Yellow();
-            else if (a == 1)
-                UnSetTile_Green();
-            else if (a == 2)
-                UnSetTile_Blue();
-            else if (a == 3)
-                SetTile_Gray();
-        }
-        else
-        {
-            if (a == 0)
-                SetTile_Yellow();
-            else if (a == 1)
-                SetTile_Green();
-            else if (a == 2)
-                SetTile_Blue();
-            else if (a == 3)
-                SetTile_Gray();
-            tile = new bool[4];
-            tile[a] = true;
-        }
-    }
 
     public GameObject ItemInventory;
     public GameObject ButtonPanel;
@@ -60,11 +36,7 @@ public class RoomManager : MonoBehaviour
     public GameObject PurchasePanel;
     public int gameMoney = 10000;
     
-    private void Start()
-    {
-        //PurchasePanel.SetActive(false);
-//        door.SetActive(true);
-    }
+  
     public void OpenRankingPanel()
     {
         RankingPanel.SetActive(true);
@@ -99,7 +71,7 @@ public class RoomManager : MonoBehaviour
     }
     public void ItemPurchase()
     {
-         bed_red.SetActive(true);
+         
          //table.SetActive(true);
     }
     public void OpenPurchasePanel()
@@ -110,218 +82,245 @@ public class RoomManager : MonoBehaviour
     {
         PurchasePanel.SetActive(false);
     }
-
+    //=========================================
     //타일 설정 함수
-    void SetTile_Yellow()
+    void SetTile(int a)
     {
-        tile_yellow.SetActive(true);
-        tile_blue.SetActive(false);
-        tile_gray.SetActive(false);
-        tile_green.SetActive(false);
+        for (int i = 0; i < tile.Length; i++)
+            tile[i].SetActive(false);
+        tile[a].SetActive(true);
     }
-    void UnSetTile_Yellow(){tile_yellow.SetActive(false);}
-
-    void SetTile_Gray()
-    {
-        tile_yellow.SetActive(false);
-        tile_blue.SetActive(false);
-        tile_gray.SetActive(true);
-        tile_green.SetActive(false);
-    }
-    void UnSetTile_Gray(){tile_gray.SetActive(false);}
-
-    void SetTile_Green()
-    {
-        tile_yellow.SetActive(false);
-        tile_blue.SetActive(false);
-        tile_gray.SetActive(false);
-        tile_green.SetActive(true);
-    }
-    void UnSetTile_Green(){tile_green.SetActive(false);}
-
-    void SetTile_Blue()
-    {
-        tile_yellow.SetActive(false);
-        tile_blue.SetActive(true);
-        tile_gray.SetActive(false);
-        tile_green.SetActive(false);
-    }
-    void UnSetTile_Blue(){tile_blue.SetActive(false);}
-
+    void UnSetTile(int a){tile[a].SetActive(false);}
 
     //침대 설정 함수
-    void SetBed_Blue()
+    void SetBed(int a)
     {
-        bed_red.SetActive(false);
-        bed_blue.SetActive(true);
-        bed_purple.SetActive(false);
+        for (int i = 0; i < bed.Length; i++)
+            bed[i].SetActive(false);
+        bed[a].SetActive(true);
     }
-    void UnSetBed_Blue(){bed_blue.SetActive(false);}
-
-    void SetBed_Red()
-    {
-        bed_red.SetActive(true);
-        bed_blue.SetActive(false);
-        bed_purple.SetActive(false);
-    }
-    void UnSetBed_Red(){bed_red.SetActive(false);}
-
-    void SetBed_PurPle()
-    {
-        bed_red.SetActive(false);
-        bed_blue.SetActive(false);
-        bed_purple.SetActive(true);
-    }
-    void UnSetBed_Purple(){bed_purple.SetActive(false);}
+    void UnSetBed(int a){bed[a].SetActive(false);}
 
     //table 설정 함수
-    void SetPCTable()
+    void SetTable(int a)
     {
-        pctable.SetActive(true);
-        pctable_red.SetActive(false);
-        pctable_blue.SetActive(false);
+        if (a < 3)
+        {
+            for (int i = 0; i < 3; i++)
+                table[i].SetActive(false);
+            table[a].SetActive(true);
+        }
+        else
+        {
+            table[a].SetActive(true);
+        }
     }
-    void UnSetPCTable(){pctable.SetActive(false);}
-
-    void SetPCTable_Red(){
-        pctable.SetActive(false);
-        pctable_red.SetActive(true);
-        pctable_blue.SetActive(false);
-    }
-    void UnSetPCTable_Red(){pctable_red.SetActive(false);}
-
-    void SetPCTable_Blue()
-    {
-        pctable.SetActive(false);
-        pctable_red.SetActive(false);
-        pctable_blue.SetActive(true);
-    }
-    void UnSetPCTable_Blue(){pctable_blue.SetActive(false);}
-
-    void SetTVTable(){tv_table.SetActive(true);}
-    void UnSetTVTable(){tv_table.SetActive(false);}
-
-    void SetTable2(){table_2.SetActive(true);}
-    void UnSetTable2(){table_2.SetActive(false);}
+    void UnSetTable(int a){table[a].SetActive(false);}
 
     // 소파 설정 함수
-    void SetSofa_Red()
+    void SetSofa(int a)
     {
-        sofa_red.SetActive(true);
-        sofa_blue.SetActive(false);
-        sofa_green.SetActive(false);
+        if (a < 3)
+        {
+            for (int i = 0; i < 3; i++)
+                sofa[i].SetActive(false);
+            sofa[a].SetActive(true);
+        }
+        else
+        {
+            for (int i = 3; i < sofa.Length; i++)
+                sofa[i].SetActive(false);
+            sofa[a].SetActive(true);
+        }
+
     }
-    void UnSetSofa_Red(){sofa_red.SetActive(false);}
-
-    void SetSofa_Blue()
-    {
-        sofa_red.SetActive(false);
-        sofa_blue.SetActive(true);
-        sofa_green.SetActive(false);
-    }
-    void UnSetSofa_Blue(){sofa_blue.SetActive(false);}
-
-    void SetSofa_Green()
-    {
-        sofa_red.SetActive(false);
-        sofa_blue.SetActive(false);
-        sofa_green.SetActive(true);
-    }
-    void UnSetSofa_Green(){sofa_green.SetActive(false);}
-
-    void SetSofa2_Red()
-    {
-        sofa2_red.SetActive(true);
-        sofa2_blue.SetActive(false);
-        sofa2_green.SetActive(false);
-    }
-    void UnSetSofa2_Red() { sofa2_red.SetActive(false);}
-
-    void SetSofa2_Blue()
-    {
-        sofa2_red.SetActive(false);
-        sofa2_blue.SetActive(true);
-        sofa2_green.SetActive(false);
-    }
-    void UnSetSofa2_Blue(){ sofa2_blue.SetActive(false);}
-
-    void SetSofa2_Green()
-    {
-        sofa2_red.SetActive(false);
-        sofa2_blue.SetActive(false);
-        sofa2_green.SetActive(true);
-    }
-    void UnSetSofa2_Green(){sofa2_green.SetActive(false);}
-
-    //기타 설정 함수
-    void SetTv(){TV.SetActive(true);}
-    void UnSetTV() { TV.SetActive(false); }
-
-    void SetComputer(){computer.SetActive(true);}
-    void UnSetComputer() { computer.SetActive(false); }
-
-    void SetRug(){rug.SetActive(true);}
-    void UnSetRug() { rug.SetActive(false); }
-
-    void SetTrashCan(){trashcan.SetActive(true);}
-    void UnSetTrashCan() { trashcan.SetActive(false); }
-
-    void SetLamp(){lamp.SetActive(true);}
-    void UnSetLamp() { lamp.SetActive(false); }
-
-    void SetCloset(){closet.SetActive(true);}
-    void UnSetCloset() { closet.SetActive(false); }
-
-    void SetLibrary(){library.SetActive(true);}
-    void UnSetLibrary() { library.SetActive(false); }
-
-    //액자 설정 함수
-    void SetPicture_Yellow()
-    {
-        picture_yellow.SetActive(true);
-        picture_red.SetActive(false);
-        picture_blue.SetActive(false);
-    }
-    void UnSetPicture_yellow() { picture_yellow.SetActive(false); }
-
-    void SetPicture_Red()
-    {
-        picture_yellow.SetActive(false);
-        picture_red.SetActive(true);
-        picture_blue.SetActive(false);
-    }
-    void UnSetPicture_red() { picture_red.SetActive(false); }
-
-    void SetPicture_Blue()
-    {
-        picture_yellow.SetActive(false);
-        picture_red.SetActive(false);
-        picture_blue.SetActive(true);
-    }
-    void UnSetPicture_blue() { picture_blue.SetActive(false); }
+    void UnSetSofa(int a){sofa[a].SetActive(false);}
 
     //의자 설정 함수
-    void SetChair_Gray()
+    void SetChair(int a)
     {
-        chair_red.SetActive(false);
-        chair_blue.SetActive(false);
-        chair_gray.SetActive(true);
+        for (int i = 0; i < chair.Length; i++)
+            chair[i].SetActive(false);
+        chair[a].SetActive(true);
     }
-    void UnSetChair_Gray() { chair_gray.SetActive(false); }
+    void UnSetChair(int a){chair[a].SetActive(false);}
 
-    void SetChair_Blue()
+    //액자 설정 함수
+    void SetPicture(int a)
     {
-        chair_red.SetActive(false);
-        chair_blue.SetActive(true);
-        chair_gray.SetActive(false);
+        for (int i = 0; i < picture.Length; i++)
+            picture[i].SetActive(false);
+        picture[a].SetActive(true);
     }
-    void UnSetChair_Blue() { chair_blue.SetActive(false); }
+    void UnSetPicture(int a) { picture[a].SetActive(false); }
 
-    void SetChair_Red()
+    //전자기기 설정 함수
+    void SetAppliance(int a){appliance[a].SetActive(true);}
+    void UnSetAppliance(int a) { appliance[a].SetActive(false); }
+
+    //가구 설정 함수
+    void SetFurniture(int a){furniture[a].SetActive(true);}
+    void UnSetFurniture(int a) { furniture[a].SetActive(false); }
+
+    //기타 설정 함수
+    void SetEtc(int a){etc[a].SetActive(true);}
+    void UnSetEtc(int a) { etc[a].SetActive(false); }
+
+    //==================================================
+    //클릭 함수
+    public void ClickButton_Tile()
     {
-        chair_red.SetActive(true);
-        chair_blue.SetActive(false);
-        chair_gray.SetActive(false);
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (tile_bool[a])
+        {
+            tile_bool[a] = false;
+            UnSetTile(a);
+        }
+        else
+        {
+            SetTile(a);
+            tile_bool = new bool[4];
+            tile_bool[a] = true;
+        }
     }
-    void UnSetChair_Red() { chair_red.SetActive(false); }
+    public void ClickButton_Bed()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (bed_bool[a])
+        {
+            bed_bool[a] = false;
+            UnSetBed(a);
+        }
+        else
+        {
+            bed_bool = new bool[3];
+            bed_bool[a] = true;
+            SetBed(a);
+        }
+    }
+    public void ClickButton_Table()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (table_bool[a])
+        {
+            table_bool[a] = false;
+            UnSetTable(a);
+        }
+        else
+        {
+            table_bool = new bool[3];
+            table_bool[a] = true;
+
+            SetTable(a);
+        }
+    }
+    public void ClickButton_Sofa()
+    {
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name[0]);
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (sofa_bool[a])
+        {
+            sofa_bool[a] = false;
+            UnSetSofa(a);
+        }
+        else
+        {
+            if(a<3)
+            {
+                for (int i = 0; i < 3; i++)
+                    sofa_bool[i] = false;
+            }
+            else
+            {
+                for (int i = 3; i < 6; i++)
+                    sofa_bool[i] = false;
+            }
+            sofa_bool[a] = true;
+            SetSofa(a);
+        }
+    }
+    public void ClickButton_Chair()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (chair_bool[a])
+        {
+            chair_bool[a] = false;
+            UnSetChair(a);
+        }
+        else
+        {
+            chair_bool = new bool[3];
+            chair_bool[a] = true;
+            SetChair(a);
+        }
+    }
+    public void ClickButton_Picture()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (picture_bool[a])
+        {
+            picture_bool[a] = false;
+            UnSetPicture(a);
+        }
+        else
+        {
+            picture_bool = new bool[3];
+            picture_bool[a] = true;
+            SetPicture(a);
+        }
+    }
+    public void ClickButton_Appliance()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (appliance_bool[a])
+        {
+            appliance_bool[a] = false;
+            UnSetAppliance(a);
+        }
+        else
+        {
+            appliance_bool[a] = true;
+            SetAppliance(a);
+        }
+    }
+    public void ClickButton_Furniture()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (furniture_bool[a])
+        {
+            furniture_bool[a] = false;
+            UnSetFurniture(a);
+        }
+        else
+        {
+            furniture_bool[a] = true;
+            SetFurniture(a);
+        }
+    }
+    public void ClickButton_Etc()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (etc_bool[a])
+        {
+            etc_bool[a] = false;
+            UnSetEtc(a);
+        }
+        else
+        {
+            etc_bool[a] = true;
+            SetEtc(a);
+        }
+    }
+    //=======================================================
 }

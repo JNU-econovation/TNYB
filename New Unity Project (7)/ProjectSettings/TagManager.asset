@@ -16,6 +16,10 @@ TagManager:
   - fakeTicketR
   - fakeTicketC
   - bottom
+  - 0
+  - 1
+  - 2
+  - 3
   layers:
   - Default
   - TransparentFX
