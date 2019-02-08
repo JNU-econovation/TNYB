@@ -81,15 +81,38 @@ public class RealtimeDatabase : MonoBehaviour
             });
     }
 
-    public void checkNicknameDuplication()
-    {
-        
-    }
-    
-    public bool isDuplication(string nickname)
-    {
-        // 닉네임 중복 검사
-        return false;
+    public void checkNicknameDuplication(string nickname)
+    {   
+        FirebaseDatabase.DefaultInstance
+            .GetReference("users") // 읽어올 데이터 이름
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    
+                    // DataSnapshot 타입에 저장된 값 불러오기
+                    foreach (var item in snapshot.Children)
+                    {
+                        // Debug.Log("value : " + item.Child("nickname").Value);
+                        if (nickname == (string) item.Child("nickname").Value)
+                        {
+                            // 중복 감지
+                            Login.Instance.handleNicknameDuplication();
+                        }
+                    }                    
+                    // Debug.Log("1");
+                    if (!Login.Instance.getIsDuplicate())
+                    {
+                        // Debug.Log("2");
+                        Login.Instance.NicknameComplete(nickname);
+                    }
+                    
+                }
+            });
     }
 }
 
@@ -97,16 +120,19 @@ class User {
     public string nickname;
     public string email;
     
-    /*
     public int score_cashier;
     public int score_cinema;
     public int score_factory;
     
     public int money;
-    */
     
     public User(string nickname, string email) {
         this.nickname = nickname;
         this.email = email;
+        
+        score_cashier = 0;
+        score_cinema = 0;
+        score_factory = 0;
+        money = 0;
     }
 }

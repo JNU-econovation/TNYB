@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class RoomManager : MonoBehaviour
@@ -35,8 +34,12 @@ public class RoomManager : MonoBehaviour
     public GameObject RankingPanel;
     public GameObject PurchasePanel;
     public int gameMoney = 10000;
-    
-  
+
+    private void Start()
+    {
+        //PurchasePanel.SetActive(false);
+        door.SetActive(true);
+    }
     public void OpenRankingPanel()
     {
         RankingPanel.SetActive(true);
@@ -132,6 +135,7 @@ public class RoomManager : MonoBehaviour
                 sofa[i].SetActive(false);
             sofa[a].SetActive(true);
         }
+
 
     }
     void UnSetSofa(int a){sofa[a].SetActive(false);}
