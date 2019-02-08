@@ -142,6 +142,8 @@ public class Login : MonoBehaviour
             // 공백 존재
             SfxManager.Instance.playWrong();
             NickWarningText.text = warn_blank;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
             return;
         };
 
@@ -150,6 +152,8 @@ public class Login : MonoBehaviour
             // 길이 초과
             SfxManager.Instance.playWrong();
             NickWarningText.text = warn_length_long;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
             return;
         }
         
@@ -158,10 +162,13 @@ public class Login : MonoBehaviour
             // 길이 미만
             SfxManager.Instance.playWrong();
             NickWarningText.text = warn_length_short;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
             return;
         }
         
         NickWarningText.GetComponent<Text>().enabled = false;
+        SfxManager.Instance.playClick();
         NicknameOK.SetActive(true);
 
         /*
