@@ -58,7 +58,7 @@ public class RealtimeDatabase : MonoBehaviour
         databaseReference.Child("users").Child(Login.user.UserId).Child("nickname").SetValueAsync(nickname);        
     }
     
-    public void checkNickname()
+    public void checkNicknameExistence()
     {
         FirebaseDatabase.DefaultInstance.GetReference("users")
             .GetValueAsync().ContinueWith(task =>
@@ -79,6 +79,11 @@ public class RealtimeDatabase : MonoBehaviour
                     MainManager.Instance.toMainPanel();
                 }
             });
+    }
+
+    public void checkNicknameDuplication()
+    {
+        
     }
     
     public bool isDuplication(string nickname)
