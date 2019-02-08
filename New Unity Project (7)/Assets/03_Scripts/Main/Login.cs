@@ -24,6 +24,14 @@ public class Login : MonoBehaviour
 
     public InputField InputNickname;
 
+    public Text NickWarningText;
+    public GameObject NicknameOK;
+
+    private const string warn_blank = "공백없이 입력해주세요";
+    private const string warn_duplication = "이미 사용하고 있는 닉네임입니다";
+    private const string warn_length_long = "닉네임이 너무 길어요";
+    private const string warn_length_short = "닉네임이 너무 짧아요";
+
     private FirebaseAuth auth;
     public static FirebaseUser user;
 
@@ -114,14 +122,56 @@ public class Login : MonoBehaviour
                 newUser.DisplayName, newUser.UserId);
             user = newUser;
             
-            RealtimeDatabase.Instance.checkNickname();
+            RealtimeDatabase.Instance.checkNicknameExistence();
         });
     }
     
     public void ClickStartOnNicknamePanel()
     {
         // 검사하는데 이것도 firebase는 callback이므로 여기에서 이렇게 검사하면 안된다.
+        // 닉네임 공백 제거 할 것
+        
         Nickname = InputNickname.text;
+        Debug.Log("Nickname Input : "+InputNickname.text);
+        Debug.Log("Nickname Input Length : "+InputNickname.text.Length);
+        Debug.Log("Nickname no blank : "+InputNickname.text.Replace(" ", ""));
+        Debug.Log("Nickname no blank Length: "+InputNickname.text.Replace(" ", "").Length);
+        
+        if (InputNickname.text.Length > InputNickname.text.Replace(" ", "").Length)
+        {
+            // 공백 존재
+            SfxManager.Instance.playWrong();
+            NickWarningText.text = warn_blank;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
+            return;
+        };
+
+        if (InputNickname.text.Length > 8)
+        {
+            // 길이 초과
+            SfxManager.Instance.playWrong();
+            NickWarningText.text = warn_length_long;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
+            return;
+        }
+        
+        if (InputNickname.text.Length < 2)
+        {
+            // 길이 미만
+            SfxManager.Instance.playWrong();
+            NickWarningText.text = warn_length_short;
+            NickWarningText.GetComponent<Text>().enabled = true;
+            NicknameOK.SetActive(false);
+            return;
+        }
+        
+        NickWarningText.GetComponent<Text>().enabled = false;
+        SfxManager.Instance.playClick();
+        NicknameOK.SetActive(true);
+
+        /*
         if (!RealtimeDatabase.Instance.isDuplication(Nickname))
         {
             RealtimeDatabase.Instance.setNickname(Nickname);
@@ -129,6 +179,7 @@ public class Login : MonoBehaviour
                 user.DisplayName);
             MainManager.Instance.toMainPanel();
         }
+        */
     }
     
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
