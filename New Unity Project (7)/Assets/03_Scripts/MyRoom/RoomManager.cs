@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class RoomManager : MonoBehaviour
 {
@@ -13,7 +15,43 @@ public class RoomManager : MonoBehaviour
     public GameObject picture_yellow, picture_red, picture_blue;
     public GameObject chair_gray, chair_red, chair_blue;
     public GameObject door; //문 포함 32개
-    private bool[] itemButton = new bool[31];
+
+    private bool[] tile = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
+
+   
+    public void ClickButton_Tile()
+    {
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (tile[a])
+        {
+
+            tile[a] = false;
+            if (a == 0)
+                UnSetTile_Yellow();
+            else if (a == 1)
+                UnSetTile_Green();
+            else if (a == 2)
+                UnSetTile_Blue();
+            else if (a == 3)
+                SetTile_Gray();
+        }
+        else
+        {
+            if (a == 0)
+                SetTile_Yellow();
+            else if (a == 1)
+                SetTile_Green();
+            else if (a == 2)
+                SetTile_Blue();
+            else if (a == 3)
+                SetTile_Gray();
+            tile = new bool[4];
+            tile[a] = true;
+        }
+    }
 
     public GameObject ItemInventory;
     public GameObject ButtonPanel;
@@ -25,7 +63,7 @@ public class RoomManager : MonoBehaviour
     private void Start()
     {
         //PurchasePanel.SetActive(false);
-        door.SetActive(true);
+//        door.SetActive(true);
     }
     public void OpenRankingPanel()
     {
@@ -109,6 +147,7 @@ public class RoomManager : MonoBehaviour
         tile_green.SetActive(false);
     }
     void UnSetTile_Blue(){tile_blue.SetActive(false);}
+
 
     //침대 설정 함수
     void SetBed_Blue()
