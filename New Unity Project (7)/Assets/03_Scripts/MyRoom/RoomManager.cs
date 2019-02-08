@@ -217,7 +217,10 @@ public class RoomManager : MonoBehaviour
         }
         else
         {
-            table_bool = new bool[3];
+            if (a < 3)
+                for (int i = 0; i < 3; i++)
+                    table_bool[i] = false;
+
             table_bool[a] = true;
 
             SetTable(a);
