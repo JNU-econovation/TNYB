@@ -4772,6 +4772,7 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 9423c88764923c543b9a8bb6e795ef1d, type: 3}
   back: {fileID: 8300000, guid: 811e31b503032df4199d8d6bca6c6af1, type: 3}
   wrong: {fileID: 8300000, guid: 7a20d01946b938f408fad3de22145459, type: 3}
+  check: {fileID: 8300000, guid: 8164c438d6e3e97409deccb2423a3199, type: 3}
 --- !u!4 &1422241622
 Transform:
   m_ObjectHideFlags: 0

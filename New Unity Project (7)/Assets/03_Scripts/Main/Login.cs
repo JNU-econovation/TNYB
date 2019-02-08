@@ -212,10 +212,7 @@ public class Login : MonoBehaviour
     {
         NickWarningText.GetComponent<Text>().enabled = false;
         NicknameOK.SetActive(true);
-        if (confirmedNickname == nickname)
-        {
-            SfxManager.Instance.playClick();
-        }
+        SfxManager.Instance.playCheck();
         NicknameOK.SetActive(true);
         
         // 검증된 닉네임에 저장
