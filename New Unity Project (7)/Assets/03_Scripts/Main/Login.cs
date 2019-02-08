@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Auth;
@@ -27,16 +28,35 @@ public class Login : MonoBehaviour
     public Text NickWarningText;
     public GameObject NicknameOK;
 
+    private string confirmedNickname;
+
     private const string warn_blank = "공백없이 입력해주세요";
     private const string warn_duplication = "이미 사용하고 있는 닉네임입니다";
     private const string warn_length_long = "닉네임이 너무 길어요";
     private const string warn_length_short = "닉네임이 너무 짧아요";
 
+    private bool isDuplicate = false;
+
     private FirebaseAuth auth;
     public static FirebaseUser user;
 
+    public static Login instance;
+
+    public static Login Instance
+    {
+        get { return instance; }
+    }
+
     private void Awake()
     {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        
         //초기화
         auth = FirebaseAuth.DefaultInstance;
         auth.StateChanged += AuthStateChanged;
@@ -96,7 +116,7 @@ public class Login : MonoBehaviour
         SignInEmail = SignInInputEmail.text;
         SignInPassword = SignInInputPassword.text;
         
-        Debug.Log("Sign In - email: " + SignInEmail + ", password: " + SignInPassword);
+        // Debug.Log("Sign In - email: " + SignInEmail + ", password: " + SignInPassword);
  
         LoginUser();
     }
@@ -126,18 +146,13 @@ public class Login : MonoBehaviour
         });
     }
     
-    public void ClickStartOnNicknamePanel()
+    public void ClickCheckOnNicknamePanel()
     {
-        // 검사하는데 이것도 firebase는 callback이므로 여기에서 이렇게 검사하면 안된다.
-        // 닉네임 공백 제거 할 것
-        
+        isDuplicate = false;
         Nickname = InputNickname.text;
-        Debug.Log("Nickname Input : "+InputNickname.text);
-        Debug.Log("Nickname Input Length : "+InputNickname.text.Length);
-        Debug.Log("Nickname no blank : "+InputNickname.text.Replace(" ", ""));
-        Debug.Log("Nickname no blank Length: "+InputNickname.text.Replace(" ", "").Length);
+        // 검사하는데 이것도 firebase는 callback이므로 여기에서 이렇게 검사하면 안된다.
         
-        if (InputNickname.text.Length > InputNickname.text.Replace(" ", "").Length)
+        if (Nickname.Length > Nickname.Replace(" ", "").Length)
         {
             // 공백 존재
             SfxManager.Instance.playWrong();
@@ -147,7 +162,7 @@ public class Login : MonoBehaviour
             return;
         };
 
-        if (InputNickname.text.Length > 8)
+        if (Nickname.Length > 8)
         {
             // 길이 초과
             SfxManager.Instance.playWrong();
@@ -157,7 +172,7 @@ public class Login : MonoBehaviour
             return;
         }
         
-        if (InputNickname.text.Length < 2)
+        if (Nickname.Length < 2)
         {
             // 길이 미만
             SfxManager.Instance.playWrong();
@@ -166,20 +181,45 @@ public class Login : MonoBehaviour
             NicknameOK.SetActive(false);
             return;
         }
-        
-        NickWarningText.GetComponent<Text>().enabled = false;
-        SfxManager.Instance.playClick();
-        NicknameOK.SetActive(true);
 
-        /*
-        if (!RealtimeDatabase.Instance.isDuplication(Nickname))
+        RealtimeDatabase.Instance.checkNicknameDuplication(Nickname);
+    }
+
+    public void ClickStartButtonOnNicknamePanel()
+    {
+        if (confirmedNickname == Nickname)
         {
             RealtimeDatabase.Instance.setNickname(Nickname);
-            Debug.LogFormat("User nickname set successfully - DisplayName:({0})",
-                user.DisplayName);
             MainManager.Instance.toMainPanel();
+            return;
         }
-        */
+        SfxManager.Instance.playWrong();
+        NicknameOK.SetActive(false);
+        NickWarningText.GetComponent<Text>().enabled = true;
+        NickWarningText.text = "다시 검사하세요";
+    }
+
+    public void handleNicknameDuplication()
+    {
+        isDuplicate = true;
+        SfxManager.Instance.playWrong();
+        NickWarningText.text = warn_duplication;
+        NickWarningText.GetComponent<Text>().enabled = true;
+        NicknameOK.SetActive(false);
+    }
+
+    public void NicknameComplete(string nickname)
+    {
+        NickWarningText.GetComponent<Text>().enabled = false;
+        NicknameOK.SetActive(true);
+        if (confirmedNickname == nickname)
+        {
+            SfxManager.Instance.playClick();
+        }
+        NicknameOK.SetActive(true);
+        
+        // 검증된 닉네임에 저장
+        confirmedNickname = nickname;
     }
     
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
@@ -197,5 +237,10 @@ public class Login : MonoBehaviour
                 Debug.Log("Signed in " + user.UserId);
             }
         }
+    }
+
+    public bool getIsDuplicate()
+    {
+        return isDuplicate;
     }
 }
