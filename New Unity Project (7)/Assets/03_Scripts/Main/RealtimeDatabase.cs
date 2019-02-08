@@ -24,6 +24,8 @@ public class RealtimeDatabase : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        
+        DontDestroyOnLoad(gameObject);
 
         instance = this;
         
@@ -136,3 +138,4 @@ class User {
         money = 0;
     }
 }
+
