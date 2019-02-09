@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
     // Main Sounds
     public AudioClip mainMusic;
    
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     
     private static MusicManager instance;
     public static MusicManager Instance

@@ -7,7 +7,7 @@ public class CashierMusicManager : MonoBehaviour
     // Main Sounds
     public AudioClip mainMusic;
    
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     
     private static CashierMusicManager instance;
     public static CashierMusicManager Instance
