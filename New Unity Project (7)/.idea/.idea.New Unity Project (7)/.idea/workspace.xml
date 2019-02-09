@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/Fire/factory.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/factory.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -489,12 +490,12 @@
       <workItem from="1548813197820" duration="7720000" />
       <workItem from="1549438809494" duration="21025000" />
       <workItem from="1549597002481" duration="344000" />
-      <workItem from="1549597521862" duration="15782000" />
+      <workItem from="1549597521862" duration="16179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71374000" />
+    <option name="totallyTimeSpent" value="71771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
