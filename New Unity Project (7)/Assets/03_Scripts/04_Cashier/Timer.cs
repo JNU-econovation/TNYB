@@ -20,6 +20,9 @@ public class Timer : MonoBehaviour {
 	void Update () {
         if(timeLeft < 0)
             finishPanel.SetActive(true);
+			// textEffect
+		GameManager.Instance.IEresultScoreEffect();
+		
         if (timeLeft > 0)
 		{
 			timeLeft -= Time.deltaTime;
