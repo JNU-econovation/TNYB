@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		ScoreText.text = score.ToString();
-        resultScore.text = ScoreText.text;
+//        resultScore.text = ScoreText.text;
 	}
 
 	private void RespawnRandomTfHand()
@@ -155,15 +155,17 @@ public class GameManager : MonoBehaviour
 		PriceTag.text = price.ToString() + "$";
 	}
 	
-	public IEnumerator IEresultScoreEffect()
+	public IEnumerator IeResultScoreEffect()
 	{
-		yield return null;
 		int tempScore = 0;
-		while (tempScore != score)
+		while (tempScore > score)
 		{
-			resultScore.text = tempScore.ToString();
 			tempScore += 100;
+			tempScore += tempScore;
+			resultScore.text = tempScore.ToString();
+			yield return null;
 		}
+		resultScore.text = score.ToString();
 	}
 
 	public void addScore(int score)

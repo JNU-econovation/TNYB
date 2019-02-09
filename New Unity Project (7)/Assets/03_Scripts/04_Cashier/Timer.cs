@@ -18,11 +18,12 @@ public class Timer : MonoBehaviour {
 	}
 	
 	void Update () {
-        if(timeLeft < 0)
-            finishPanel.SetActive(true);
+		if (timeLeft < 0)
+		{
+			finishPanel.SetActive(true);
 			// textEffect
-		GameManager.Instance.IEresultScoreEffect();
-		
+			GameManager.Instance.IeResultScoreEffect();
+		}
         if (timeLeft > 0)
 		{
 			timeLeft -= Time.deltaTime;
