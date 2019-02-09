@@ -7,14 +7,20 @@ public class Timer : MonoBehaviour {
     
 	private Image timeBar;
 	public float maxTime = 10f;
+	public float warnTime = 15f;
 	private float timeLeft;
     public GameObject finishPanel;
 	private bool isResultShowed;
+	public string timeBarColor_norm = "FFBB06";
 	public string timeBarColor_10 = "FF3A06";
 
-	// Use this for initialization
-	void Start () {
+	private void Awake()
+	{
 		timeBar = GetComponent<Image>();
+		timeBar.color = GetColorFromString(timeBarColor_norm);
+	}
+
+	void Start () {
 		timeLeft = maxTime;
         finishPanel.SetActive(false);
 		isResultShowed = false;
@@ -24,15 +30,16 @@ public class Timer : MonoBehaviour {
 		
 		if (timeLeft < 0)
 		{
+			CashierMusicManager.Instance.stopMusic();
 			finishPanel.SetActive(true);
 			if (!isResultShowed)
 			{
 				isResultShowed = true;
-				StartCoroutine(GameManager.Instance.IeResultScoreEffect());
+				StartCoroutine(GameManager.Instance.IeResultScoreCountEffect());
 			}
 		}
 
-		if (timeLeft < 10)
+		if (timeLeft < warnTime)
 		{
 			timeBar.color = GetColorFromString(timeBarColor_10);
 		}

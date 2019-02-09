@@ -54,7 +54,6 @@ public class EggMove : MonoBehaviour {
 
 			audioSource.Play();
 			
-			// 얼마 뒤에 제거
 			StartCoroutine(IeAlphaDownCoroutine());
 			StartCoroutine(IeDestroyCrushedEggAfterWaiting());
 		}

@@ -33,6 +33,11 @@ public class CashierMusicManager : MonoBehaviour
         audioSource.clip = mainMusic;
         audioSource.Play();
     }
+    
+    public void stopMusic()
+    {
+        audioSource.Stop();
+    }
 
     public void SwitchMute()
     {

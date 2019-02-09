@@ -155,16 +155,21 @@ public class GameManager : MonoBehaviour
 		PriceTag.text = price.ToString() + "$";
 	}
 	
-	public IEnumerator IeResultScoreEffect()
+	public IEnumerator IeResultScoreCountEffect()
 	{
 		int tempScore = 0;
+		// count sfx
+		CashierSfxManager.Instance.playScoreCount();
+		
 		while (tempScore <= score)
 		{
 			tempScore += 1;
-			tempScore += tempScore/3;
+			tempScore += tempScore/8;
 			yield return null;
 			resultScore.text = tempScore.ToString();
 		}
+		// count done sfx
+		CashierSfxManager.Instance.playCountOver();
 		resultScore.text = score.ToString();
 	}
 

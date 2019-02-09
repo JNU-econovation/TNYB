@@ -6,7 +6,7 @@ public class CashierSfxManager : MonoBehaviour
 {
     private bool isMute = false;
 
-    public AudioClip scanner, click, back;
+    public AudioClip scanner, click, back, Count, CountOver;
     
     private AudioSource audioSource;
     
@@ -32,6 +32,26 @@ public class CashierSfxManager : MonoBehaviour
     public void clickMute()
     {
         isMute = !isMute;
+    }
+
+    public void playScoreCount()
+    {
+        if (!isMute)
+        {
+            audioSource.loop = true;
+            audioSource.clip = Count;
+            audioSource.Play();  
+        }
+    }
+    
+    public void playCountOver()
+    {
+        if (!isMute)
+        {
+            audioSource.loop = false;
+            audioSource.clip = CountOver;
+            audioSource.Play();  
+        }
     }
 
     public void playScanner()

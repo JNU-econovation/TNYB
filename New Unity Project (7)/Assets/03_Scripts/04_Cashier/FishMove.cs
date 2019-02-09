@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class FishMove : MonoBehaviour {
 
-	public PhysicsMaterial2D pm2d;
 	private Rigidbody2D rb2d;
 	public float randPowerStandard = 10.0f;
 	private AudioSource audioSource;
 	private const string bottomTag = "bottom";
-	private bool isHitTheGround = false;
+	private bool isHitTheGround;
 	public int beforeHitTheGround = 250;
 	public int afterHitTheGround = 100;
 	
-	// Use this for initialization
 	void Awake ()
 	{
-		pm2d.bounciness = Random.Range(0.9f, 1.0f);
 		audioSource = GetComponent<AudioSource>();
 		rb2d = GetComponent<Rigidbody2D>();
 	}
 	
 	private void Start()
 	{
+		isHitTheGround = false;
 		audioSource.Play();
 		float randPower = Random.Range(randPowerStandard - 3, randPowerStandard + 3);
 		rb2d.AddForce(Vector3.up * randPower);
@@ -57,11 +55,5 @@ public class FishMove : MonoBehaviour {
 		int score = (isHitTheGround) ? afterHitTheGround : beforeHitTheGround;
 		GameManager.Instance.changePriceText(score);
 		GameManager.Instance.addScore(score);
-	}
-
-	public void Click()
-	{
-		// 
-		// 점수 +
 	}
 }
