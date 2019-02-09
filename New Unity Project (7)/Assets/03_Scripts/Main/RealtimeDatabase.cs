@@ -122,6 +122,10 @@ public class RealtimeDatabase : MonoBehaviour
         for(int i=0; i<array.Length; i++)
          databaseReference.Child("users").Child(Login.user.UserId).Child(str).Child(i.ToString()).SetValueAsync(array[i]);
     }
+    public void SetPurchaseData(string str, int num)
+    {
+       databaseReference.Child("users").Child(Login.user.UserId).Child(str).Child(num.ToString()).SetValueAsync(true);
+    }
 
 }
 class User {
@@ -143,6 +147,8 @@ class User {
     public bool[] appliance_bool = new bool[3];//0: computer, 1:tv, 2:lamp
     public bool[] furniture_bool = new bool[2];
     public bool[] etc_bool = new bool[2]; //0:trashcan 1: rug
+
+    public bool[] purchase = new bool[31];
 
     public User(string nickname, string email) {
         this.nickname = nickname;
