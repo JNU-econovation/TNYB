@@ -25,17 +25,19 @@ public class RoomManager : MonoBehaviour
 
     public bool[] purchase = new bool[31]; // 위 코드 순서 false 노구매 true 구매
 
-    private bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
-    private bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
-    private bool[] table_bool = new bool[5]; //0: pc-table_gray 1: pc-table_blue 2: pc-table_red 3: table_2 4: tv-table;
-    private bool[] sofa_bool = new bool[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
-    private bool[] chair_bool = new bool[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
-    private bool[] picture_bool = new bool[3];//0: picture_yellow, 1:picture_red, 2:picture_blue
-    private bool[] appliance_bool = new bool[3];//0: computer, 1:tv, 2:lamp
-    private bool[] furniture_bool = new bool[2];
-    private bool[] etc_bool = new bool[2]; //0:trashcan 1: rug
+    public bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
+    public bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
+    public bool[] table_bool = new bool[5]; //0: pc-table_gray 1: pc-table_blue 2: pc-table_red 3: table_2 4: tv-table;
+    public bool[] sofa_bool = new bool[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
+    public bool[] chair_bool = new bool[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
+    public bool[] picture_bool = new bool[3];//0: picture_yellow, 1:picture_red, 2:picture_blue
+    public bool[] appliance_bool = new bool[3];//0: computer, 1:tv, 2:lamp
+    public bool[] furniture_bool = new bool[2];
+    public bool[] etc_bool = new bool[2]; //0:trashcan 1: rug
 
     private int Button_number;
+
+
 
     public GameObject ItemInventory;
     public GameObject ButtonPanel;
@@ -53,17 +55,14 @@ public class RoomManager : MonoBehaviour
         instance = this;
 
     }
-    public void TruePurchase(int i)
-    {
-        Debug.Log("hihih");
-        purchase[i] = true;
-    }
+
     private void Start()
     {
         Button_number =-1;
        // PurchasePanel.SetActive(false);
       //  door.SetActive(true);
         RealtimeDatabase.Instance.GetpurchaseDB();
+        RealtimeDatabase.Instance.SetRoomDB();
     }
     public void OpenRankingPanel()
     {
@@ -440,5 +439,52 @@ public class RoomManager : MonoBehaviour
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_etc", etc_bool);
         }
     }
+
+
     //=======================================================
+    //DB
+    public void SettingRoom()
+    {
+        for (int i = 0; i < tile_bool.Length; i++)
+            if (tile_bool[i])
+                tile[i].SetActive(true);
+
+        for (int i = 0; i < bed_bool.Length; i++)
+            if (bed_bool[i])
+                bed[i].SetActive(true);
+
+        for (int i = 0; i < table_bool.Length; i++)
+            if (table_bool[i])
+                table[i].SetActive(true);
+
+        for (int i = 0; i < sofa_bool.Length; i++)
+            if (sofa_bool[i])
+                sofa[i].SetActive(true);
+
+        for (int i = 0; i < chair_bool.Length; i++)
+            if (chair_bool[i])
+                chair[i].SetActive(true);
+
+        for (int i = 0; i < picture_bool.Length; i++)
+            if (picture_bool[i])
+                picture[i].SetActive(true);
+
+        for (int i = 0; i < appliance_bool.Length; i++)
+            if (appliance_bool[i])
+                appliance[i].SetActive(true);
+
+        for (int i = 0; i < furniture_bool.Length; i++)
+            if (furniture_bool[i])
+                furniture[i].SetActive(true);
+
+        for (int i = 0; i < etc_bool.Length; i++)
+            if (etc_bool[i])
+                etc[i].SetActive(true);
+
+
+    }
+    public void TruePurchase(int i)
+    {
+        purchase[i] = true;
+    }
 }

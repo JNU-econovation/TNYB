@@ -136,10 +136,66 @@ public class RealtimeDatabase : MonoBehaviour
                         for(int i=0; i<31; i++)
                          if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child(i.ToString()).Value == true)
                     {
-                        Debug.Log("제발제발");
+                       // Debug.Log("제발제발");
                            RoomManager.Instance.TruePurchase(i);
                     }
                     }
+
+
+            });
+    }
+    public void SetRoomDB()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
+
+                    for (int i = 0; i < 4; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_tile").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.tile_bool[i] = true;
+
+                    for (int i = 0; i < 3; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_bed").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.bed_bool[i] = true;
+
+                    for (int i = 0; i < 5; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_table").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.table_bool[i] = true;
+
+                    for (int i = 0; i < 6; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_sofa").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.sofa_bool[i] = true;
+
+                    for (int i = 0; i < 3; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_chair").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.chair_bool[i] = true;
+
+                    for (int i = 0; i < 3; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_picture").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.picture_bool[i] = true;
+
+                    for (int i = 0; i < 3; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_appliance").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.appliance_bool[i] = true;
+
+                    for (int i = 0; i < 2; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_furniture").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.furniture_bool[i] = true;
+
+                    for (int i = 0; i < 2; i++)
+                        if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_etc").Child(i.ToString()).Value == true)
+                            RoomManager.Instance.etc_bool[i] = true;
+
+                }
+                RoomManager.Instance.SettingRoom();
 
 
             });
@@ -188,8 +244,6 @@ class User {
         score_factory = 0;
         money = 0;
 
-        for (int i = 0; i < MyRoom_purchase.Length; i++)
-            MyRoom_purchase[i] = false;
     }
 }
 
