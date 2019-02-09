@@ -138,17 +138,17 @@ class User {
     
     public int money;
 
-    public bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
-    public bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
-    public bool[] table_bool = new bool[5]; //0: pc-table_gray 1: pc-table_blue 2: pc-table_red 3: table_2 4: tv-table;
-    public bool[] sofa_bool = new bool[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
-    public bool[] chair_bool = new bool[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
-    public bool[] picture_bool = new bool[3];//0: picture_yellow, 1:picture_red, 2:picture_blue
-    public bool[] appliance_bool = new bool[3];//0: computer, 1:tv, 2:lamp
-    public bool[] furniture_bool = new bool[2];
-    public bool[] etc_bool = new bool[2]; //0:trashcan 1: rug
+    public bool[] MyRoom_tile = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
+    public bool[] MyRoom_bed = new bool[3]; // 0: red, 1: blue, 2: purple
+    public bool[] MyRoom_table = new bool[5]; //0: pc-table_gray 1: pc-table_blue 2: pc-table_red 3: table_2 4: tv-table;
+    public bool[] MyRoom_sofa = new bool[6]; // 0: sofa_red, 1:sofa_blue 2: sofa_green 3: sofa2_red, 4: sofa2_blue, 5: sofa2_green;
+    public bool[] MyRoom_chair = new bool[3]; //0: chair_gray, 1: chair_red, 2:chair_blue
+    public bool[] MyRoom_picture = new bool[3];//0: picture_yellow, 1:picture_red, 2:picture_blue
+    public bool[] MyRoom_appliance = new bool[3];//0: computer, 1:tv, 2:lamp
+    public bool[] MyRoom_furniture= new bool[2];
+    public bool[] MyRoom_etc = new bool[2]; //0:trashcan 1: rug
 
-    public bool[] purchase = new bool[31];
+    public bool[] MyRoom_purchase = new bool[31];
 
     public User(string nickname, string email) {
         this.nickname = nickname;

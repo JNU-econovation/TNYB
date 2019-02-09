@@ -92,7 +92,7 @@ public class RoomManager : MonoBehaviour
     {
         PurchasePanel.SetActive(false);
         purchase[Button_number] = true;
-        RealtimeDatabase.Instance.SetPurchaseData("purchase", Button_number);
+        RealtimeDatabase.Instance.SetPurchaseData("MyRoom_purchase", Button_number);
     }
     //=========================================
     //타일 설정 함수
@@ -201,7 +201,7 @@ public class RoomManager : MonoBehaviour
                 tile_bool = new bool[4];
                 tile_bool[a] = true;
             }
-            RealtimeDatabase.Instance.SetMyRoomData("tile_bool", tile_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_tile", tile_bool);
         }
         else //구매 안했을때
         {
@@ -231,7 +231,7 @@ public class RoomManager : MonoBehaviour
                 bed_bool[a] = true;
                 SetBed(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("bed_bool", bed_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_bed", bed_bool);
         }
     }
     public void ClickButton_Table()
@@ -260,7 +260,7 @@ public class RoomManager : MonoBehaviour
 
                 SetTable(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("table_bool", table_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_table", table_bool);
         }
     }
     public void ClickButton_Sofa()
@@ -295,7 +295,7 @@ public class RoomManager : MonoBehaviour
                 sofa_bool[a] = true;
                 SetSofa(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("sofa_bool", sofa_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_sofa", sofa_bool);
         }
     }
     public void ClickButton_Chair()
@@ -320,7 +320,7 @@ public class RoomManager : MonoBehaviour
                 chair_bool[a] = true;
                 SetChair(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("chair_bool", chair_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_chair", chair_bool);
         }
     }
     public void ClickButton_Picture()
@@ -345,7 +345,7 @@ public class RoomManager : MonoBehaviour
                 picture_bool[a] = true;
                 SetPicture(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("picture_bool", picture_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_picture", picture_bool);
         }
     }
     public void ClickButton_Appliance()
@@ -368,7 +368,7 @@ public class RoomManager : MonoBehaviour
                 appliance_bool[a] = true;
                 SetAppliance(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("appliance_bool", appliance_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_appliance", appliance_bool);
         }
     }
     public void ClickButton_Furniture()
@@ -392,7 +392,7 @@ public class RoomManager : MonoBehaviour
                 furniture_bool[a] = true;
                 SetFurniture(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("furniture_bool", furniture_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_furniture", furniture_bool);
         }
     }
     public void ClickButton_Etc()
@@ -415,7 +415,7 @@ public class RoomManager : MonoBehaviour
                 etc_bool[a] = true;
                 SetEtc(a);
             }
-            RealtimeDatabase.Instance.SetMyRoomData("etc_bool", etc_bool);
+            RealtimeDatabase.Instance.SetMyRoomData("MyRoom_etc", etc_bool);
         }
     }
     //=======================================================
