@@ -21,7 +21,6 @@ public class FactoryManager : MonoBehaviour {
     public Text scoreText, resultText;
     private int score = 0;
     private int clickCount;
-    public Text comboText;
     int beforeA, beforeB, afterA, afterB;
 
     public Image[] image = new Image[4];
@@ -44,6 +43,7 @@ public class FactoryManager : MonoBehaviour {
     public GameObject gameOverPanel;
     private bool combo = false;
 
+    public Text remainCount;
     float timer;
     float waitingTime;
     bool a = false;
@@ -64,8 +64,7 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        StartCoroutine(Changing(speed));
-        comboText.text = "";
+       //StartCoroutine(Changing(speed));
         makeTrash_1();
 
         timer = 0.0f;
@@ -75,15 +74,15 @@ public class FactoryManager : MonoBehaviour {
 
     void Update()
     {
-        changeImage1.GetComponent<Image>().sprite = trashImage[num[afterA]];
-        changeImage2.GetComponent<Image>().sprite = trashImage[num[afterB]];
+       //changeImage1.GetComponent<Image>().sprite = trashImage[num[afterA]];
+       //changeImage2.GetComponent<Image>().sprite = trashImage[num[afterB]];
 
         timer += Time.deltaTime;
         if (a)
         {
             Color color = new Color(255, 255, 255, 0.1f+timer);
-            objImage[afterA].color = color;
-            objImage[afterB].color = color;
+            //objImage[afterA].color = color;
+            //objImage[afterB].color = color;
             Color redColor = new Color(255, 0, 0, 0.1f + timer);
             rightArrow[0].color = redColor;
             rightArrow[1].color = redColor;
@@ -91,9 +90,9 @@ public class FactoryManager : MonoBehaviour {
         }
         else
         {
-            Color color = new Color(255, 255, 255, 0.8f-timer);
-            objImage[afterA].color = color;
-            objImage[afterB].color = color;
+           //Color color = new Color(255, 255, 255, 0.8f-timer);
+            //objImage[afterA].color = color;
+           //objImage[afterB].color = color;
             Color redColor = new Color(255, 0, 0, 0.8f - timer);
             rightArrow[0].color = redColor;
             rightArrow[1].color = redColor;
@@ -111,24 +110,20 @@ public class FactoryManager : MonoBehaviour {
             {
                 if (a)
                 {
-                    comboText.text = "X2";
                     a = false;
                 }
                 else
                 {
-                    comboText.text = "";
                     a = true;
                 }
             }
-            else
-                comboText.text = "";
             timer = 0;
         }
         if (!isPaused)
         {
             left += moveSpeed;
             right += moveSpeed;
-            if (left > 1000)
+            if (left > 700)
             {
                 left = right = 0;
             }
@@ -150,6 +145,7 @@ public class FactoryManager : MonoBehaviour {
             score += 100;
             moveSpeed = 1f;
         }
+
         scoreText.text =  score.ToString();
         resultText.text = "Score\n" + score.ToString();
         
@@ -228,6 +224,7 @@ public class FactoryManager : MonoBehaviour {
             objImage[ran].GetComponent<Image>().sprite = trashImage[tmpran];
             count++;
         }
+        remainCount.text = "남은 개수 : " + count.ToString();
     }  
     public void ItemDestroy(int i)
     {
@@ -256,6 +253,9 @@ public class FactoryManager : MonoBehaviour {
                 DownScore();
             }
         }
+
+        remainCount.text = "남은 개수 : " + count.ToString();
+
     }
 
     void Shake(Image obj)
