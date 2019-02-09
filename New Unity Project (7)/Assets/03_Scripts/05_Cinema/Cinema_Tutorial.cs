@@ -33,12 +33,15 @@ public class Cinema_Tutorial : MonoBehaviour
         Screen.SetResolution(Screen.width, (Screen.width * 16) / 9, true);
 
     }
-    // Start is called before the first frame update
+    /*
     void Start()
     {
         canRespawn = true;
         RespawnTicket();
     }
+    
+      
+     
     public void RespawnTicket()
     {
         canRespawn = false;
@@ -192,4 +195,5 @@ public class Cinema_Tutorial : MonoBehaviour
    
         RespawnTicket();
     }
+    */
 }
