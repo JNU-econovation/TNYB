@@ -66,9 +66,12 @@ public class Hand : MonoBehaviour
 
 	private void playThrowSound()
 	{
-		int randIndex = Random.Range(0, audioClipList.Count);
-		audioSource.clip = audioClipList[randIndex];
-		audioSource.Play();
+		if (!CashierSfxManager.Instance.getIsMute())
+		{
+			int randIndex = Random.Range(0, audioClipList.Count);
+			audioSource.clip = audioClipList[randIndex];
+			audioSource.Play();	
+		}
 	}
 
 	private IEnumerator IeMoveDownCoroutine()
