@@ -40,6 +40,7 @@ public class RealtimeDatabase : MonoBehaviour
     private void Start()
     {
         RoomManager.Instance.TruePurchase(0);
+
     }
     public void InitDatabase()
     {

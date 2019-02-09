@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FactoryManager : MonoBehaviour {
 
+   
     public Sprite transparent;
     public Image changeImage1, changeImage2;
     public static FactoryManager Instance;
@@ -39,6 +40,7 @@ public class FactoryManager : MonoBehaviour {
     private int[] num = new int[8];
     private float left, right = 0;
 
+  
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -234,6 +236,7 @@ public class FactoryManager : MonoBehaviour {
             clickCount -= 1;
             if ( kind[num[i]] == select)
             {
+
                 GetComponent<AudioSource>().Play();
                 objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
