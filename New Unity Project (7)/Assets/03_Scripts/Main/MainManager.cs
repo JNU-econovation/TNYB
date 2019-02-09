@@ -162,15 +162,15 @@ public class MainManager : MonoBehaviour {
     }
     public void MusicButton()
     {
-        if (!MusicManager.Instance.audioSource.mute)
-        {
-            musicButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
-        }
-        else
-        {
-            musicButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
-        }
-        MusicManager.Instance.SwitchMute();
+        //if (!MusicManager.Instance.audioSource.mute)
+        //{
+        //    musicButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
+        //}
+        //else
+        //{
+        //    musicButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
+        //}
+        //MusicManager.Instance.SwitchMute();
     }
     public void VibrationButton()
     {

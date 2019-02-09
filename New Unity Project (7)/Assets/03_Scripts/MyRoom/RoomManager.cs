@@ -5,6 +5,13 @@ using UnityEngine.EventSystems;
 
 public class RoomManager : MonoBehaviour
 {
+    private static RoomManager instance;
+
+    public static RoomManager Instance
+    {
+        get { return instance; }
+    }
+
     public GameObject[] tile = new GameObject[4];// 0: yellow, 1: green, 2: blue, 3: gray===0-3
     public GameObject[] bed = new GameObject[3]; //0: red, 1: blue, 2: purple=== 4-6
     public GameObject[] table = new GameObject[5]; //0: pc-table_gray 1: pc-table_red 2: pc-table_blue 3: table_2 4: tv-table;=== 7-11
@@ -16,7 +23,7 @@ public class RoomManager : MonoBehaviour
     public GameObject[] furniture = new GameObject[2]; //0: closet, 1: library=== 29 - 30
     public GameObject door; //문 포함 32개
 
-    private bool[] purchase = new bool[31]; // 위 코드 순서 false 노구매 true 구매
+    public bool[] purchase = new bool[31]; // 위 코드 순서 false 노구매 true 구매
 
     private bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
     private bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
@@ -36,12 +43,22 @@ public class RoomManager : MonoBehaviour
     public GameObject RankingPanel;
     public GameObject PurchasePanel;
     public int gameMoney = 10000;
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+    }
 
     private void Start()
     {
         Button_number =-1;
        // PurchasePanel.SetActive(false);
         door.SetActive(true);
+        RealtimeDatabase.Instance.GetpurchaseDB();
     }
     public void OpenRankingPanel()
     {

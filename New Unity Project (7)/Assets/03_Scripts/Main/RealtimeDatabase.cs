@@ -116,6 +116,29 @@ public class RealtimeDatabase : MonoBehaviour
                 }
             });
     }
+    public void GetpurchaseDB()
+    {
+        FirebaseDatabase.DefaultInstance
+            .GetReference("users") // 읽어올 데이터 이름
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+
+                    // DataSnapshot 타입에 저장된 값 불러오기
+                    foreach (var item in snapshot.Children)
+                    {
+                        Debug.Log(item.Child("MyRoom_purchase").Child("0").Value);
+
+                    }
+
+                }
+            });
+    }
 
     public void SetMyRoomData(string str, bool[] array)
     {
@@ -158,6 +181,9 @@ class User {
         score_cinema = 0;
         score_factory = 0;
         money = 0;
+
+        for (int i = 0; i < MyRoom_purchase.Length; i++)
+            MyRoom_purchase[i] = false;
     }
 }
 

@@ -64,6 +64,7 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
+
        //StartCoroutine(Changing(speed));
         makeTrash_1();
 
