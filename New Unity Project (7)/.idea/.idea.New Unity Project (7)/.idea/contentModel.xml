@@ -34,6 +34,10 @@
             <e p="SelectChange.cs" t="Include" />
             <e p="TimerScript.cs" t="Include" />
           </e>
+          <e p="GUI" t="Include">
+            <e p="UIGradient.cs" t="Include" />
+            <e p="UIGradientUtils.cs" t="Include" />
+          </e>
           <e p="Main" t="Include">
             <e p="BackgroundRepeat.cs" t="Include" />
             <e p="ChangeScenes.cs" t="Include" />
@@ -97,6 +101,13 @@
           <e p="04_Cashier" t="Include">
             <e p="FreePixelFood" t="Include">
               <e p="README.txt" t="Include" />
+            </e>
+          </e>
+          <e p="CartoonPixelGUI" t="Include">
+            <e p="Assets" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="Chris'Shaders-TopParticle-AlphaBlend.shader" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Low Poly UI Kit - v.1.1c" t="Include">
