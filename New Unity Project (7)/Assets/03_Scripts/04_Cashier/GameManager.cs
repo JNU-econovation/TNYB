@@ -158,13 +158,12 @@ public class GameManager : MonoBehaviour
 	public IEnumerator IeResultScoreEffect()
 	{
 		int tempScore = 0;
-		Debug.Log("score : " + score);
 		while (tempScore <= score)
 		{
 			tempScore += 1;
-			tempScore += tempScore;
-			resultScore.text = tempScore.ToString();
+			tempScore += tempScore/2;
 			yield return null;
+			resultScore.text = tempScore.ToString();
 		}
 		resultScore.text = score.ToString();
 	}
