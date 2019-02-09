@@ -20,18 +20,18 @@ public class Timer : MonoBehaviour {
 	}
 	
 	void Update () {
+		
 		if (timeLeft < 0)
 		{
 			finishPanel.SetActive(true);
-			// textEffect
 			if (!isResultShowed)
 			{
 				isResultShowed = true;
-				Debug.Log("play!!");
 				StartCoroutine(GameManager.Instance.IeResultScoreEffect());
 			}
 			
 		}
+		
         if (timeLeft > 0)
 		{
 			timeLeft -= Time.deltaTime;
