@@ -9,12 +9,14 @@ public class Timer : MonoBehaviour {
 	public float maxTime = 10f;
 	private float timeLeft;
     public GameObject finishPanel;
+	private bool isResultShowed;
 
 	// Use this for initialization
 	void Start () {
 		timeBar = GetComponent<Image>();
 		timeLeft = maxTime;
         finishPanel.SetActive(false);
+		isResultShowed = false;
 	}
 	
 	void Update () {
@@ -22,7 +24,13 @@ public class Timer : MonoBehaviour {
 		{
 			finishPanel.SetActive(true);
 			// textEffect
-			GameManager.Instance.IeResultScoreEffect();
+			if (!isResultShowed)
+			{
+				isResultShowed = true;
+				Debug.Log("play!!");
+				StartCoroutine(GameManager.Instance.IeResultScoreEffect());
+			}
+			
 		}
         if (timeLeft > 0)
 		{

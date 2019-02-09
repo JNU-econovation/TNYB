@@ -158,9 +158,10 @@ public class GameManager : MonoBehaviour
 	public IEnumerator IeResultScoreEffect()
 	{
 		int tempScore = 0;
-		while (tempScore > score)
+		Debug.Log("score : " + score);
+		while (tempScore <= score)
 		{
-			tempScore += 100;
+			tempScore += 1;
 			tempScore += tempScore;
 			resultScore.text = tempScore.ToString();
 			yield return null;
