@@ -8,6 +8,8 @@
         <e p="03_Scripts" t="Include">
           <e p="04_Cashier" t="Include">
             <e p="bonusEffect.cs" t="Include" />
+            <e p="CashierMusicManager.cs" t="Include" />
+            <e p="CashierSfxManager.cs" t="Include" />
             <e p="cheeseMove.cs" t="Include" />
             <e p="cherryMove.cs" t="Include" />
             <e p="CookieMove.cs" t="Include" />

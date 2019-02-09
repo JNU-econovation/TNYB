@@ -2,8 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/Fire/factory.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/factory.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_a.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_a.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_b.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_b.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_c.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_c.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_d.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_d.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_e.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_3_e.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_c.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_c.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_d.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_d.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_e.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_4_e.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_c.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_c.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_d.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_d.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_e.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_5_e.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_a.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_a.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_b.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_b.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_c.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_c.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_d.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_d.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_e.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Sounds/Score and Times - Game Sound Solutions/Electronic/Score_swap_6_e.wav.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +195,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/GameManager.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="358">
@@ -202,11 +232,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="345">
-                  <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+                  <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
                   <folding>
                     <marker date="1549718597336" expanded="false" signature="6:100" ph="..." />
                     <marker date="1549718597336" expanded="true" signature="137:827" ph="{...}" />
@@ -490,12 +520,12 @@
       <workItem from="1548813197820" duration="7720000" />
       <workItem from="1549438809494" duration="21025000" />
       <workItem from="1549597002481" duration="344000" />
-      <workItem from="1549597521862" duration="16179000" />
+      <workItem from="1549597521862" duration="16493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71771000" />
+    <option name="totallyTimeSpent" value="72085000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -961,6 +991,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <marker date="1549718597336" expanded="false" signature="6:100" ph="..." />
+            <marker date="1549718597336" expanded="true" signature="137:827" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="335:460" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="479:825" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="503:672" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="563:664" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="701:784" ph="{...}" />
+            <marker date="1549718597336" expanded="true" signature="791:822" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -992,23 +1039,6 @@
             <marker date="1549718344468" expanded="true" signature="4332:4360" ph="{...}" />
             <marker date="1549718344468" expanded="true" signature="4389:4415" ph="{...}" />
             <marker date="1549718344468" expanded="true" signature="4448:4479" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/04_Cashier/Timer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <marker date="1549718597336" expanded="false" signature="6:100" ph="..." />
-            <marker date="1549718597336" expanded="true" signature="137:827" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="335:460" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="479:825" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="503:672" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="563:664" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="701:784" ph="{...}" />
-            <marker date="1549718597336" expanded="true" signature="791:822" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+public class CashierMusicManager : MonoBehaviour
 {   
     // Main Sounds
     public AudioClip mainMusic;
    
     private AudioSource audioSource;
     
-    private static MusicManager instance;
-    public static MusicManager Instance
+    private static CashierMusicManager instance;
+    public static CashierMusicManager Instance
     {
         get { return instance; }
     }

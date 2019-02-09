@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
 		while (tempScore <= score)
 		{
 			tempScore += 1;
-			tempScore += tempScore/2;
+			tempScore += tempScore/3;
 			yield return null;
 			resultScore.text = tempScore.ToString();
 		}
