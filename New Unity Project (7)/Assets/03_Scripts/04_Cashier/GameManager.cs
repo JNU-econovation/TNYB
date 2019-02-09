@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
 	// Tissue Zone
 	private int numberOfTissue;
 
-	private bool bCanHandRespawn = false;
-	private bool bCanMarchandiseRespawn = false;
-	private bool isClear = true;
+	private bool bCanHandRespawn;
+	private bool bCanMarchandiseRespawn;
+	private bool isClear;
 
 	private static GameManager instance;
 
@@ -85,8 +85,10 @@ public class GameManager : MonoBehaviour
 	
 	void Start ()
 	{
+		Time.timeScale = 1;
         pausePanel.SetActive(false);
         bCanHandRespawn = true;
+		isClear = true;
 	}
 
     public void pauseGame()
@@ -102,8 +104,11 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
 	{
+//		Debug.Log("bCanHandRespawn : " + bCanHandRespawn);
+//		Debug.Log("isClear : " + isClear);
 		if (bCanHandRespawn && isClear)
 		{
+//			Debug.Log("RESPAWN!");
 			RespawnRandomTfHand();
 		}
 		
@@ -126,17 +131,11 @@ public class GameManager : MonoBehaviour
 		tempHand.transform.position = handTfList[handTfIndex].position;
 	}
 
-	private int numberOfEgg;
-	
 	public void RespawnMarchandise()
 	{
 		isClear = false;
 
 		int marchandiseIndex = Random.Range(0, marchandisePrefabsList.Count);
-		if (marchandiseIndex == 7)
-		{
-			numberOfEgg++;
-		}
 		
 		GameObject tempMarchandise;
 		tempMarchandise = Instantiate(marchandisePrefabsList[marchandiseIndex]);
