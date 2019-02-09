@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6555f332645e34dac83acbd224de187b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
+  maxTime: 60
   finishPanel: {fileID: 731544263}
 --- !u!1001 &1504564189
 PrefabInstance:
