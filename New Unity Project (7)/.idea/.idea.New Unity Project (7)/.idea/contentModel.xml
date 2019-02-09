@@ -23,6 +23,7 @@
             <e p="TissueMove.cs" t="Include" />
           </e>
           <e p="05_Cinema" t="Include">
+            <e p="Cinema_Tutorial.cs" t="Include" />
             <e p="CinemaManager.cs" t="Include" />
             <e p="Pause.cs" t="Include" />
             <e p="TicketMove.cs" t="Include" />
@@ -35,6 +36,7 @@
             <e p="TimerScript.cs" t="Include" />
           </e>
           <e p="GUI" t="Include">
+            <e p="ScoreTextEffect.cs" t="Include" />
             <e p="UIGradient.cs" t="Include" />
             <e p="UIGradientUtils.cs" t="Include" />
           </e>
