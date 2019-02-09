@@ -37,7 +37,10 @@ public class RealtimeDatabase : MonoBehaviour
         // 아래 비밀번호에는 특별하게 설정한거 없으면 notasecret 일 겁니다.
         FirebaseApp.DefaultInstance.SetEditorP12Password("notasecret");
     }
-
+    private void Start()
+    {
+        RoomManager.Instance.TruePurchase(0);
+    }
     public void InitDatabase()
     {
         if (Login.user != null)
@@ -118,25 +121,27 @@ public class RealtimeDatabase : MonoBehaviour
     }
     public void GetpurchaseDB()
     {
-        FirebaseDatabase.DefaultInstance
-            .GetReference("users") // 읽어올 데이터 이름
+        FirebaseDatabase.DefaultInstance.GetReference("users")
             .GetValueAsync().ContinueWith(task =>
             {
                 if (task.IsFaulted)
                 {
+
                 }
                 else if (task.IsCompleted)
                 {
                     DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
 
-                    // DataSnapshot 타입에 저장된 값 불러오기
-                    foreach (var item in snapshot.Children)
+                        for(int i=0; i<31; i++)
+                         if ((bool)snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child(i.ToString()).Value == true)
                     {
-                        Debug.Log(item.Child("MyRoom_purchase").Child("0").Value);
-
+                        Debug.Log("제발제발");
+                           RoomManager.Instance.TruePurchase(i);
+                    }
                     }
 
-                }
+
             });
     }
 
@@ -173,6 +178,7 @@ class User {
 
     public bool[] MyRoom_purchase = new bool[31];
 
+   
     public User(string nickname, string email) {
         this.nickname = nickname;
         this.email = email;

@@ -21,7 +21,7 @@ public class RoomManager : MonoBehaviour
     public GameObject[] appliance = new GameObject[3]; //0: computer, 1:tv, 2:lamp=== 24-26
     public GameObject[] etc = new GameObject[2]; //0: trashcan 1: rug=== 27-28
     public GameObject[] furniture = new GameObject[2]; //0: closet, 1: library=== 29 - 30
-    public GameObject door; //문 포함 32개
+    //public GameObject door; //문 포함 32개
 
     public bool[] purchase = new bool[31]; // 위 코드 순서 false 노구매 true 구매
 
@@ -45,19 +45,24 @@ public class RoomManager : MonoBehaviour
     public int gameMoney = 10000;
     private void Awake()
     {
-        if (instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        //if (instance)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+        instance = this;
 
     }
-
+    public void TruePurchase(int i)
+    {
+        Debug.Log("hihih");
+        purchase[i] = true;
+    }
     private void Start()
     {
         Button_number =-1;
        // PurchasePanel.SetActive(false);
-        door.SetActive(true);
+      //  door.SetActive(true);
         RealtimeDatabase.Instance.GetpurchaseDB();
     }
     public void OpenRankingPanel()
