@@ -66,7 +66,7 @@ public class Hand : MonoBehaviour
 
 	private void playThrowSound()
 	{
-		if (!SfxManager.Instance.getIsSfxMute())
+		if (!CashierSfxManager.Instance.getIsSfxMute())
 		{
 			int randIndex = Random.Range(0, audioClipList.Count);
 			audioSource.clip = audioClipList[randIndex];

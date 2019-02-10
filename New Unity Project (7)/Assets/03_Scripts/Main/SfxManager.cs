@@ -40,16 +40,17 @@ public class SfxManager : MonoBehaviour
     
     public void clickSfxMute()
     {
-        if (isSfxMute)
+        if (!isSfxMute)
         {
             // 음소거 해제
-            PlayerPrefs.SetInt("isSfxMute", 0);
+            PlayerPrefs.SetInt("isSfxMute", 1);
+            isSfxMute = true;
         }
         else
         {
-            PlayerPrefs.SetInt("isSfxMute", 1);
+            PlayerPrefs.SetInt("isSfxMute", 0);
+            isSfxMute = true;
         }
-        isSfxMute = !isSfxMute;
     }
 
     public void playClick()
