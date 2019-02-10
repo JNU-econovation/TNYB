@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CashierMusicManager : MonoBehaviour
-{   
-    // Main Sounds
+{
+    private bool isMusicMute = false;
     public AudioClip mainMusic;
    
     public AudioSource audioSource;
@@ -26,6 +26,15 @@ public class CashierMusicManager : MonoBehaviour
         instance = this;
         
         audioSource = GetComponent<AudioSource>();
+        
+        if (PlayerPrefs.GetInt("isMusicMute", 0) == 1)
+        {
+            isMusicMute = true;
+        }
+        else
+        {
+            isMusicMute = false;
+        }
     }
 
     private void Start()
@@ -41,15 +50,28 @@ public class CashierMusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (MusicManager.Instance.getIsMusicMute())
+        if (isMusicMute)
         {
             audioSource.volume = 0;
         }
-        audioSource.volume = 0.8f;
+        else if(!isMusicMute)
+        {
+            audioSource.volume = 0.8f;    
+        }
     }
 
     public void ClickMusicMute()
     {
-        MusicManager.Instance.clickMusicMute();
+        if (!isMusicMute)
+        {
+            // 음소거 아닐때
+            PlayerPrefs.SetInt("isMusicMute", 1);
+            isMusicMute = true;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isMusicMute", 0);
+            isMusicMute = false;
+        }
     }
 }

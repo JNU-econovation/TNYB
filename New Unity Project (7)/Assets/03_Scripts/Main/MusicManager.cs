@@ -25,8 +25,6 @@ public class MusicManager : MonoBehaviour
 
         instance = this;
         
-//        DontDestroyOnLoad(gameObject);
-        
         audioSource = GetComponent<AudioSource>();
         
         if (PlayerPrefs.GetInt("isMusicMute", 0) == 1)
@@ -45,22 +43,18 @@ public class MusicManager : MonoBehaviour
         audioSource.Play();
     }
     
-    public void clickMusicMute()
+    public void ClickMusicMute()
     {
-        if (isMusicMute)
+        if (!isMusicMute)
         {
-            // 음소거 해제
-            PlayerPrefs.SetInt("isMusicMute", 0);
+            // 음소거 아닐때
+            PlayerPrefs.SetInt("isMusicMute", 1);
+            isMusicMute = true;
         }
         else
         {
-            PlayerPrefs.SetInt("isMusicMute", 1);
+            PlayerPrefs.SetInt("isMusicMute", 0);
+            isMusicMute = false;
         }
-        isMusicMute = !isMusicMute;
-    }
-
-    public bool getIsMusicMute()
-    {
-        return isMusicMute;
     }
 }
