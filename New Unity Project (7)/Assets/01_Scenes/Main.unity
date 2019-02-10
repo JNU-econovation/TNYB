@@ -6416,6 +6416,16 @@ PrefabInstance:
       propertyPath: m_CharacterValidation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 591071753278080765, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591071753278080765, guid: 7ba41032018da4abdaf51e7e27f0d136,
+        type: 3}
+      propertyPath: m_Name
+      value: NickCheck
+      objectReference: {fileID: 0}
     - target: {fileID: 3916292741869621286, guid: 7ba41032018da4abdaf51e7e27f0d136,
         type: 3}
       propertyPath: m_IsActive
@@ -6446,16 +6456,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 591071753278080765, guid: 7ba41032018da4abdaf51e7e27f0d136,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591071753278080765, guid: 7ba41032018da4abdaf51e7e27f0d136,
-        type: 3}
-      propertyPath: m_Name
-      value: NickCheck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ba41032018da4abdaf51e7e27f0d136, type: 3}
