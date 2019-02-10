@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class RoomManager : MonoBehaviour
@@ -37,7 +38,10 @@ public class RoomManager : MonoBehaviour
 
     private int Button_number;
 
-
+    public Sprite[] ButtonImage = new Sprite[2];
+    private bool[] settingButtons_bool = new bool[3];
+    public Button[] settingButton = new Button[3];
+    public GameObject SettingPaenl;
 
     public GameObject ItemInventory;
     public GameObject ButtonPanel;
@@ -58,11 +62,36 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        settingButtons_bool[0] = settingButtons_bool[1] = settingButtons_bool[2] = true;
         Button_number =-1;
        // PurchasePanel.SetActive(false);
       //  door.SetActive(true);
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
+    }
+    public void OpenSettingPanel()
+    {
+        SettingPaenl.SetActive(true);
+    }
+
+    public void ClickSettingButton()
+    {
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+
+        if (settingButtons_bool[a])
+        {
+            settingButton[a].GetComponent<Image>().sprite = ButtonImage[0];
+            settingButtons_bool[a] = false;
+        }
+        else
+        {
+            settingButton[a].GetComponent<Image>().sprite = ButtonImage[1];
+            settingButtons_bool[a] = true;
+        }
+    }
+    public void CloseSettingPanel()
+    {
+        SettingPaenl.SetActive(false);
     }
     public void OpenRankingPanel()
     {
