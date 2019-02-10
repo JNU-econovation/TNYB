@@ -23,6 +23,7 @@ public class CinemaManager : MonoBehaviour
     public Transform TicketTfC;
     public Transform TicketTfL;
     public Transform TicketTfR;
+    public GameObject SettingPanel;
 
     private int Combo = 0;
     public Text scoreText;
@@ -32,7 +33,7 @@ public class CinemaManager : MonoBehaviour
     private Transform TicketTf;
 
     public static int cinema_score = 0;
-    public static int cinema_HighScore = 0;
+    //public static int cinema_HighScore = 0;
     bool canRespawn = false;
 
     //Singleton
@@ -256,5 +257,13 @@ public class CinemaManager : MonoBehaviour
         speedUp();//
         ComboUp();
         RespawnTicket();
+    }
+    public void OpenSetting()
+    {
+        SettingPanel.SetActive(true);
+    }
+    public void CloseSetting()
+    {
+        SettingPanel.SetActive(false);
     }
 }
