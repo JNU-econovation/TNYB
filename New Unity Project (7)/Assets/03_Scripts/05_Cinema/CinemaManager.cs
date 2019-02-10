@@ -25,15 +25,14 @@ public class CinemaManager : MonoBehaviour
     public Transform TicketTfR;
 
     private int Combo = 0;
-
     public Text scoreText;
     public Text finishScore;
 
     private GameObject clickedTicket;
     private Transform TicketTf;
 
-    private int score = 0;
-
+    public static int cinema_score = 0;
+    public static int cinema_HighScore = 0;
     bool canRespawn = false;
 
     //Singleton
@@ -194,13 +193,13 @@ public class CinemaManager : MonoBehaviour
     
     private void scoreUp()
     {
-        if(Combo<10) score+=100;
-        else if (Combo < 20) score += 200;
-        else if (Combo < 30) score += 300;
-        else if (Combo < 40) score += 400;
-        else score += 500;
-        scoreText.text = "" + score;
-        finishScore.text = "Score\n" + score;
+        if(Combo<10) cinema_score+=100;
+        else if (Combo < 20) cinema_score += 200;
+        else if (Combo < 30) cinema_score += 300;
+        else if (Combo < 40) cinema_score += 400;
+        else cinema_score += 500;
+        scoreText.text = "" + cinema_score;
+        finishScore.text = "Score\n" + cinema_score;
     }
 
     public void WrongButton()
@@ -208,9 +207,9 @@ public class CinemaManager : MonoBehaviour
         GetComponent<AudioSource>().clip = a;
         GetComponent<AudioSource>().Play();
         StartCoroutine(ShakeCoroutine(clickedTicket));
-        score-=100;
+        cinema_score -= 100;
         ComboReset();
-        scoreText.text = "" + score;
+        scoreText.text = "" + cinema_score;
     }
 
     // Update is called once per frame

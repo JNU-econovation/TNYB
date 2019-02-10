@@ -18,9 +18,15 @@ public class TimerScript_cinema : MonoBehaviour {
         if(timeLeft < 0)
         {
             finishPanel.SetActive(true);
+            /*if (CinemaManager.cinema_score > CinemaManager.cinema_HighScore)
+            {
+                CinemaManager.cinema_HighScore = CinemaManager.cinema_score;
+                PlayerPrefs.SetInt("Cinema_MaxSc", CinemaManager.cinema_HighScore);
+            }*/
         }
         if (timeLeft > 0)
-        {   
+        {
+            //if()
             timeLeft -= Time.deltaTime;
             timerBar.fillAmount = timeLeft / maxTime;
         }
