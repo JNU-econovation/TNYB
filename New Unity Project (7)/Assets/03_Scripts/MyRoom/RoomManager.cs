@@ -96,12 +96,12 @@ public class RoomManager : MonoBehaviour
     public void OpenRankingPanel()
     {
         RankingPanel.SetActive(true);
-        ButtonPanel.SetActive(false);
+        //ButtonPanel.SetActive(false);
     }
     public void CloseRankingPanel()
     {
         RankingPanel.SetActive(false);
-        ButtonPanel.SetActive(true);
+        //ButtonPanel.SetActive(true);
     }
     public void OpendSelectGame()
     {
@@ -118,12 +118,12 @@ public class RoomManager : MonoBehaviour
     public void OpenInventory()
     {
         ItemInventory.SetActive(true);
-        ButtonPanel.SetActive(false);
+        //ButtonPanel.SetActive(false);
     }
     public void CloseInventory()
     {
         ItemInventory.SetActive(false);
-        ButtonPanel.SetActive(true);
+        //ButtonPanel.SetActive(true);
     }
     public void ItemPurchase()
     {
