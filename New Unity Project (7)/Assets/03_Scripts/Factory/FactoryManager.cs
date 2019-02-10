@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class FactoryManager : MonoBehaviour {
 
-   
+
+    public Text recycleText;
     public Sprite transparent;
     public Image changeImage1, changeImage2;
     public static FactoryManager Instance;
@@ -83,7 +84,7 @@ public class FactoryManager : MonoBehaviour {
         timer += Time.deltaTime;
         if (a)
         {
-            Color color = new Color(255, 255, 255, 0.1f+timer);
+            //Color color = new Color(255, 255, 255, 0.1f+timer);
             //objImage[afterA].color = color;
             //objImage[afterB].color = color;
             Color redColor = new Color(255, 0, 0, 0.1f + timer);
@@ -173,6 +174,7 @@ public class FactoryManager : MonoBehaviour {
     }
    void setSelector() //위에 pet, can, bottle, paper 선택창 세팅
     {
+        recycleText.text = select;
         left = right = 0;
         if(select == recycleName[0])
         {
