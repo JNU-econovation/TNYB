@@ -38,8 +38,20 @@ public class ChangeScenes : MonoBehaviour
     {
         int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
 
-        SceneManager.LoadScene(a + 2); // 2: 마트 3: 시네마 4: 공
-
-
+        SceneManager.LoadScene(a + 2); // 2: 마트 3: 시네마 4: 공장
     }
+    private bool myroom_bool;
+    public void ClickMyRoom()
+    {
+        if (myroom_bool)
+        {
+            myroom_bool = false;
+        }
+        else
+        {
+            myroom_bool = true;
+        }
+    }
+
+
 }
