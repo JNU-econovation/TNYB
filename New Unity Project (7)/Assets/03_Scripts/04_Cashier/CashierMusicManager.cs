@@ -39,15 +39,17 @@ public class CashierMusicManager : MonoBehaviour
         audioSource.Stop();
     }
 
-    public void SwitchMute()
+    private void Update()
     {
-        if (!audioSource.mute)
+        if (MusicManager.Instance.getIsMusicMute())
         {
-            audioSource.volume = 0;    
+            audioSource.volume = 0;
         }
-        else
-        {
-            audioSource.volume = 100;
-        }
+        audioSource.volume = 0.8f;
+    }
+
+    public void ClickMusicMute()
+    {
+        MusicManager.Instance.clickMusicMute();
     }
 }

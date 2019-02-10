@@ -25,7 +25,6 @@
             <e p="TissueMove.cs" t="Include" />
           </e>
           <e p="05_Cinema" t="Include">
-            <e p="Cinema_Tutorial.cs" t="Include" />
             <e p="CinemaManager.cs" t="Include" />
             <e p="Pause.cs" t="Include" />
             <e p="TicketMove.cs" t="Include" />

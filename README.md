@@ -1,6 +1,6 @@
 # 네 알바 아냐
 
-####That's None of Your Business
+#### That's None of Your Business
 
 > Game
 
@@ -10,6 +10,8 @@ tool : Unity
 
 language: C#
 
+
+---
 
 
 > commit 규칙
@@ -36,9 +38,9 @@ language: C#
 
 `fix: object respawn error`
 
-
+---
 
 > development process
 
 Scrum using trello
-
+![trelloscreenshot](https://github.com/JNU-econovation/TNYB/blob/master/ReadmeImage/scrum_trello.png)

@@ -145,33 +145,7 @@ public class MainManager : MonoBehaviour {
         nicknamePanel.SetActive(true);
         signinPanel.SetActive(false);
     }
-    
-    public void SoundButton()
-    {
-        if (!SfxManager.Instance.getIsMute())
-        {
-            soundButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
-            SfxManager.Instance.setIsMute(true);
-        }
-        else
-        {
-            soundButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
-            SfxManager.Instance.setIsMute(false);
-        }
-           
-    }
-    public void MusicButton()
-    {
-        //if (!MusicManager.Instance.audioSource.mute)
-        //{
-        //    musicButton.GetComponent<Image>().sprite = buttonFalse.GetComponent<Image>().sprite;
-        //}
-        //else
-        //{
-        //    musicButton.GetComponent<Image>().sprite = buttonTrue.GetComponent<Image>().sprite;
-        //}
-        //MusicManager.Instance.SwitchMute();
-    }
+
     public void VibrationButton()
     {
         if (vibration)
