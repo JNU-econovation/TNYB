@@ -21,7 +21,12 @@ public class FishMove : MonoBehaviour {
 	private void Start()
 	{
 		isHitTheGround = false;
-		audioSource.Play();
+		
+		if (!CashierSfxManager.Instance.getIsSfxMute())
+		{
+			audioSource.Play();
+		}
+		
 		float randPower = Random.Range(randPowerStandard - 3, randPowerStandard + 3);
 		rb2d.AddForce(Vector3.up * randPower);
 	}
@@ -30,14 +35,20 @@ public class FishMove : MonoBehaviour {
 	{	
 		if (isHitTheGround)
 		{
-			audioSource.Play();
+			if (!CashierSfxManager.Instance.getIsSfxMute())
+			{
+				audioSource.Play();
+			}
 			return;
 		}
 		
 		if (col.gameObject.tag.Equals(bottomTag))
 		{
 			isHitTheGround = true;
-			audioSource.Play();
+			if (!CashierSfxManager.Instance.getIsSfxMute())
+			{
+				audioSource.Play();
+			}
 		}
 	}
 

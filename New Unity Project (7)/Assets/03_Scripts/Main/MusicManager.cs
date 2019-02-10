@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
-{   
-    // Main Sounds
+{
+    private bool isMusicMute = false;
     public AudioClip mainMusic;
    
     public AudioSource audioSource;
@@ -26,23 +26,35 @@ public class MusicManager : MonoBehaviour
         instance = this;
         
         audioSource = GetComponent<AudioSource>();
+        
+        if (PlayerPrefs.GetInt("isMusicMute", 0) == 1)
+        {
+            isMusicMute = true;
+        }
+        else
+        {
+            isMusicMute = false;
+        }
     }
-
+    
     private void Start()
     {
         audioSource.clip = mainMusic;
         audioSource.Play();
     }
-
-    public void SwitchMute()
+    
+    public void ClickMusicMute()
     {
-        if (!audioSource.mute)
+        if (!isMusicMute)
         {
-            audioSource.volume = 0;    
+            // 음소거 아닐때
+            PlayerPrefs.SetInt("isMusicMute", 1);
+            isMusicMute = true;
         }
         else
         {
-            audioSource.volume = 100;
+            PlayerPrefs.SetInt("isMusicMute", 0);
+            isMusicMute = false;
         }
     }
 }

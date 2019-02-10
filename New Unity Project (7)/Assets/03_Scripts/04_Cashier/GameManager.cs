@@ -181,7 +181,10 @@ public class GameManager : MonoBehaviour
 	// Play Audio
 	public void playScannerSound()
 	{
-		audioSource.Play();
+		if (!CashierSfxManager.Instance.getIsSfxMute())
+		{
+			audioSource.Play();	
+		}
 	}
 
 	public void setbCanHandRespawn(bool b)

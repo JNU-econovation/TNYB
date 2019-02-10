@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SfxManager : MonoBehaviour
 {
-    private bool isMute = false;
+    private bool isSfxMute = false;
 
     public AudioClip click, back, wrong, check;
     
@@ -27,11 +27,35 @@ public class SfxManager : MonoBehaviour
         instance = this;
         
         audioSource = GetComponent<AudioSource>();
+        
+        if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
+        {
+            isSfxMute = true;
+        }
+        else
+        {
+            isSfxMute = false;
+        }
+    }
+    
+    public void clickSfxMute()
+    {
+        if (!isSfxMute)
+        {
+            // 음소거 해제
+            PlayerPrefs.SetInt("isSfxMute", 1);
+            isSfxMute = true;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isSfxMute", 0);
+            isSfxMute = true;
+        }
     }
 
     public void playClick()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = click;
             audioSource.Play();    
@@ -40,7 +64,7 @@ public class SfxManager : MonoBehaviour
     
     public void playBack()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = back;
             audioSource.Play();    
@@ -49,7 +73,7 @@ public class SfxManager : MonoBehaviour
     
     public void playWrong()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = wrong;
             audioSource.Play();    
@@ -58,20 +82,20 @@ public class SfxManager : MonoBehaviour
 
     public void playCheck()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = check;
             audioSource.Play();    
         }
     }
-
-    public bool getIsMute()
+    
+    public bool getIsSfxMute()
     {
-        return isMute;
+        return isSfxMute;
     }
 
-    public void setIsMute(bool isMute)
+    public void setIsSfxMute(bool isSfxMute)
     {
-        this.isMute = isMute;
+        this.isSfxMute = isSfxMute;
     }
 }

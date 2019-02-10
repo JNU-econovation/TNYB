@@ -83,8 +83,11 @@ public class cheeseMove : MonoBehaviour
 	
 	private void playBoingSound()
 	{
-		int randIndex = Random.Range(0, audioClipList.Count);
-		audioSource.clip = audioClipList[randIndex];
-		audioSource.Play();
+		if (!CashierSfxManager.Instance.getIsSfxMute())
+		{
+			int randIndex = Random.Range(0, audioClipList.Count);
+            		audioSource.clip = audioClipList[randIndex];
+            		audioSource.Play();
+		}
 	}
 }

@@ -52,8 +52,10 @@ public class EggMove : MonoBehaviour {
 			isHitTheGround = true;
 			sr.sprite = CrushedEgg;
 
-			audioSource.Play();
-			
+			if (!CashierSfxManager.Instance.getIsSfxMute())
+			{
+				audioSource.Play();
+			}
 			StartCoroutine(IeAlphaDownCoroutine());
 			StartCoroutine(IeDestroyCrushedEggAfterWaiting());
 		}

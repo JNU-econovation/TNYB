@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CashierSfxManager : MonoBehaviour
 {
-    private bool isMute = false;
+    private bool isSfxMute = false;
 
     public AudioClip scanner, click, back, Count, CountOver;
     
@@ -27,16 +27,35 @@ public class CashierSfxManager : MonoBehaviour
         instance = this;
         
         audioSource = GetComponent<AudioSource>();
+        
+        if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
+        {
+            isSfxMute = true;
+        }
+        else
+        {
+            isSfxMute = false;
+        }
     }
 
-    public void clickMute()
+    public void clickSfxMute()
     {
-        isMute = !isMute;
+        if (!isSfxMute)
+        {
+            // 음소거 아닐때
+            PlayerPrefs.SetInt("isSfxMute", 1);
+            isSfxMute = true;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isSfxMute", 0);
+            isSfxMute = false;
+        }
     }
 
     public void playScoreCount()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.loop = true;
             audioSource.clip = Count;
@@ -46,7 +65,7 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playCountOver()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.loop = false;
             audioSource.clip = CountOver;
@@ -56,7 +75,7 @@ public class CashierSfxManager : MonoBehaviour
 
     public void playScanner()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = scanner;
             audioSource.Play();    
@@ -65,7 +84,7 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playBack()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = back;
             audioSource.Play();    
@@ -74,20 +93,15 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playClick()
     {
-        if (!isMute)
+        if (!isSfxMute)
         {
             audioSource.clip = click;
             audioSource.Play();    
         }
     }
-
-    public bool getIsMute()
+    
+    public bool getIsSfxMute()
     {
-        return isMute;
-    }
-
-    public void setIsMute(bool isMute)
-    {
-        this.isMute = isMute;
+        return isSfxMute;
     }
 }
