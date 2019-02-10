@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CashierSfxManager : MonoBehaviour
 {
-    private bool isMute = false;
+    private bool isSfxMute = false;
 
     public AudioClip scanner, click, back, Count, CountOver;
     
@@ -26,17 +26,28 @@ public class CashierSfxManager : MonoBehaviour
 
         instance = this;
         
+//        DontDestroyOnLoad(gameObject);
+        
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void clickMute()
+    public void clickSfxMute()
     {
-        isMute = !isMute;
+        if (SfxManager.Instance.getIsSfxMute())
+        {
+            // 음소거 해제
+            PlayerPrefs.SetInt("isSfxMute", 0);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isSfxMute", 1);
+        }
+        isSfxMute = !isSfxMute;
     }
 
     public void playScoreCount()
     {
-        if (!isMute)
+        if (!SfxManager.Instance.getIsSfxMute())
         {
             audioSource.loop = true;
             audioSource.clip = Count;
@@ -46,7 +57,7 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playCountOver()
     {
-        if (!isMute)
+        if (!SfxManager.Instance.getIsSfxMute())
         {
             audioSource.loop = false;
             audioSource.clip = CountOver;
@@ -56,7 +67,7 @@ public class CashierSfxManager : MonoBehaviour
 
     public void playScanner()
     {
-        if (!isMute)
+        if (!SfxManager.Instance.getIsSfxMute())
         {
             audioSource.clip = scanner;
             audioSource.Play();    
@@ -65,7 +76,7 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playBack()
     {
-        if (!isMute)
+        if (!SfxManager.Instance.getIsSfxMute())
         {
             audioSource.clip = back;
             audioSource.Play();    
@@ -74,20 +85,10 @@ public class CashierSfxManager : MonoBehaviour
     
     public void playClick()
     {
-        if (!isMute)
+        if (!SfxManager.Instance.getIsSfxMute())
         {
             audioSource.clip = click;
             audioSource.Play();    
         }
-    }
-
-    public bool getIsMute()
-    {
-        return isMute;
-    }
-
-    public void setIsMute(bool isMute)
-    {
-        this.isMute = isMute;
     }
 }
