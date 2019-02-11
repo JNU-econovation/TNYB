@@ -391,6 +391,7 @@ MonoBehaviour:
   - {fileID: 21300028, guid: f54106cf090bf1c409a48738d421ef5f, type: 3}
   - {fileID: 21300030, guid: f54106cf090bf1c409a48738d421ef5f, type: 3}
   shakePower: 0.4
+  RedImage: {fileID: 147713758}
   TutorialPanel: {fileID: 525000343}
   tutorialRightBtn: {fileID: 469850165}
   tutorialLeftBtn: {fileID: 790064172}
@@ -566,7 +567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &147713759
 RectTransform:
   m_ObjectHideFlags: 0
