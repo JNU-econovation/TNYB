@@ -36,12 +36,53 @@ public class FactoryManager : MonoBehaviour {
     private string select;
     private int count;
 
+
     private float speed =4.0f;
     public float shakePower = 1f;
     private int[] num = new int[8];
     private float left, right = 0;
 
-  
+    private bool Tutorial_bool;
+    public GameObject TutorialPanel;
+    public Button tutorialRightBtn;
+    public Button tutorialLeftBtn;
+    public Image[] animation_0 = new Image[2];
+    public Image animation_1;
+    public void TutorialRight()
+    {
+        tutorialLeftBtn.interactable = true;
+        tutorialRightBtn.interactable = false;
+       
+        animation_0[0].GetComponent<Animator>().enabled = false;
+
+        animation_0[1].GetComponent<Animator>().enabled = false;
+
+        animation_1.GetComponent<Animator>().enabled = true;
+    }
+
+    public void TutorialLeft()
+    {
+        animation_0[0].GetComponent<Animator>().enabled = true;
+        animation_0[1].GetComponent<Animator>().enabled = true;
+
+        animation_1.GetComponent<Animator>().enabled = false;
+
+        tutorialRightBtn.interactable = true;
+        tutorialLeftBtn.interactable = false;
+
+    }
+
+    public void CloseTutorial()
+    {
+        TutorialPanel.SetActive(false);
+        Time.timeScale = 1;
+    }
+    public void OpenTutorial()
+    {
+        Time.timeScale = 0;
+        TutorialPanel.SetActive(true);
+    }
+
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -67,10 +108,11 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-
+        OpenTutorial();
        //StartCoroutine(Changing(speed));
         makeTrash_1();
-
+        tutorialLeftBtn.interactable = false;
+        animation_1.GetComponent<Animator>().enabled = false;
         timer = 0.0f;
         waitingTime = 0.7f;
     }

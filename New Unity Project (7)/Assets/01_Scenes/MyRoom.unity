@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.01, y: 0}
   m_AnchorMax: {x: 0.99, y: 0.97}
-  m_AnchoredPosition: {x: 0, y: 86.800934}
+  m_AnchoredPosition: {x: 0, y: 77.899925}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154314
@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.7, y: 0.8}
-  m_AnchoredPosition: {x: 33, y: 0}
+  m_AnchoredPosition: {x: -14, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18005666
@@ -1903,7 +1903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.525}
   m_AnchorMax: {x: 0.8, y: 0.575}
-  m_AnchoredPosition: {x: 0.6, y: 10.200012}
+  m_AnchoredPosition: {x: 0.5999756, y: -22.800049}
   m_SizeDelta: {x: 119.7, y: 43.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242935051
@@ -4179,6 +4179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486560516}
   - component: {fileID: 486560515}
+  - component: {fileID: 486560517}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -4276,6 +4277,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486560517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486560514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca24ea7866794dd886ec393405fe48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rankNick1: {fileID: 665754744}
+  rankNick2: {fileID: 18005666}
+  rankNick3: {fileID: 1737874871}
+  rankscore1: {fileID: 1402184502}
+  rankscore2: {fileID: 1724940545}
+  rankscore3: {fileID: 1572888636}
 --- !u!1 &500049501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,7 +4652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.37482792, g: 1, b: 0.023584902, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5860,7 +5879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.7, y: 0.8}
-  m_AnchoredPosition: {x: 33, y: 0}
+  m_AnchoredPosition: {x: -14, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665754744
@@ -9037,7 +9056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.525}
   m_AnchorMax: {x: 0.8, y: 0.575}
-  m_AnchoredPosition: {x: 0.6, y: -310}
+  m_AnchoredPosition: {x: 0.5999756, y: -343.00006}
   m_SizeDelta: {x: 119.7, y: 43.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1108050789
@@ -10513,7 +10532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.525}
   m_AnchorMax: {x: 0.8, y: 0.575}
-  m_AnchoredPosition: {x: 0.6, y: -150.99997}
+  m_AnchoredPosition: {x: 0.5999756, y: -184}
   m_SizeDelta: {x: 119.7, y: 43.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318930846
@@ -13287,7 +13306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.2, y: 305.2}
+  m_AnchoredPosition: {x: -3.2000122, y: 305.2}
   m_SizeDelta: {x: 159.1, y: 689.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669297507
@@ -14049,7 +14068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.7, y: 0.8}
-  m_AnchoredPosition: {x: 33, y: 0}
+  m_AnchoredPosition: {x: -14.0000305, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737874871
@@ -17578,7 +17597,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2117771561}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 486560517}
+        m_MethodName: ClickCashierRank
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2117771561
@@ -17594,7 +17624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
