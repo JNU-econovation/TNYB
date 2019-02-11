@@ -29,6 +29,7 @@
             <e p="Pause.cs" t="Include" />
             <e p="TicketMove.cs" t="Include" />
             <e p="TimerScript_cinema.cs" t="Include" />
+            <e p="Tutorial_ciema.cs" t="Include" />
           </e>
           <e p="Factory" t="Include">
             <e p="ButtonClicked.cs" t="Include" />
@@ -51,6 +52,7 @@
             <e p="SfxManager.cs" t="Include" />
           </e>
           <e p="MyRoom" t="Include">
+            <e p="RankingManager.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
           </e>
         </e>
@@ -121,6 +123,29 @@
               </e>
               <e p="Font" t="Include">
                 <e p="README.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="MyRoom" t="Include">
+            <e p="kenney_emotespack" t="Include">
+              <e p="License.txt" t="Include" />
+              <e p="Spritesheets" t="Include">
+                <e p="pixel_style1.xml" t="Include" />
+                <e p="pixel_style2.xml" t="Include" />
+                <e p="pixel_style3.xml" t="Include" />
+                <e p="pixel_style4.xml" t="Include" />
+                <e p="pixel_style5.xml" t="Include" />
+                <e p="pixel_style6.xml" t="Include" />
+                <e p="pixel_style7.xml" t="Include" />
+                <e p="pixel_style8.xml" t="Include" />
+                <e p="vector_style1.xml" t="Include" />
+                <e p="vector_style2.xml" t="Include" />
+                <e p="vector_style3.xml" t="Include" />
+                <e p="vector_style4.xml" t="Include" />
+                <e p="vector_style5.xml" t="Include" />
+                <e p="vector_style6.xml" t="Include" />
+                <e p="vector_style7.xml" t="Include" />
+                <e p="vector_style8.xml" t="Include" />
               </e>
             </e>
           </e>

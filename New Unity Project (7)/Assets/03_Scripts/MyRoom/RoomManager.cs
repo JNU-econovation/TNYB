@@ -57,7 +57,6 @@ public class RoomManager : MonoBehaviour
         //    return;
         //}
         instance = this;
-
     }
 
     private void Start()
