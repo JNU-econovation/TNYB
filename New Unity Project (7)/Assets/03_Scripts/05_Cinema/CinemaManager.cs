@@ -266,4 +266,9 @@ public class CinemaManager : MonoBehaviour
     {
         SettingPanel.SetActive(false);
     }
+
+    public void SetScoreDB()
+    {
+        RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+    }
 }

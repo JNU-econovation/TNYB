@@ -9,9 +9,11 @@ public class TimerScript : MonoBehaviour {
     public GameObject cam;
     public float maxTime = 60f;
     float timeLeft;
+    int count;
 
     void Start()
     {
+        count = 0;
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
@@ -32,6 +34,11 @@ public class TimerScript : MonoBehaviour {
         }
         if (timeLeft <= 0)
         {
+            if (count == 0)
+            {
+                count++;
+                FactoryManager.Instance.SetSCoreDB(); //DB
+            }
             FactoryManager.Instance.gameOverPanel.SetActive(true);
             for(int i=0; i<8; i++)
             {

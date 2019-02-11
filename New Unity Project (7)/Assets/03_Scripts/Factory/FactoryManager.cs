@@ -86,6 +86,10 @@ public class FactoryManager : MonoBehaviour {
         TutorialPanel.SetActive(true);
     }
 
+    public void SetSCoreDB()
+    {
+        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
+    }
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -112,7 +116,8 @@ public class FactoryManager : MonoBehaviour {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         OpenTutorial();
-       //StartCoroutine(Changing(speed));
+        score = 0;
+        //StartCoroutine(Changing(speed));
         makeTrash_1();
         tutorialLeftBtn.interactable = false;
         timer = 0.0f;

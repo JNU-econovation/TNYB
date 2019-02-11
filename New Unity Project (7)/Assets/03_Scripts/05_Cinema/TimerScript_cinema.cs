@@ -8,8 +8,11 @@ public class TimerScript_cinema : MonoBehaviour {
     public GameObject finishPanel;
     public float maxTime = 60f;
     public static float timeLeft;     // public GameObject timesUpText;
+    private int count = 0; //DB 용
 
-    void Start () {     //  timesUpText.SetActive(false);
+    void Start () {
+        //  timesUpText.SetActive(false);
+        count = 0;
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
         finishPanel.SetActive(false);
@@ -32,6 +35,11 @@ public class TimerScript_cinema : MonoBehaviour {
         }
         else {          // timesUpText.SetActive(true);
             Time.timeScale = 0;
+            if (count == 0)
+            {
+                count++;
+                CinemaManager.instance.SetScoreDB();
+            }
         }
 	}
 }

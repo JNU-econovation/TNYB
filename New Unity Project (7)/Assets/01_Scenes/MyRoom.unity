@@ -377,7 +377,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 486560518}
-        m_MethodName: ToCinema
+        m_MethodName: ToFactory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

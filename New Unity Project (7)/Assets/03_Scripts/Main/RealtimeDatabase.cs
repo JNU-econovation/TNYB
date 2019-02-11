@@ -296,7 +296,11 @@ public class RealtimeDatabase : MonoBehaviour
             });
             */
     }
-    
+
+    public void SetGameScore(String str, int n)
+    {
+        databaseReference.Child("users").Child(Login.user.UserId).Child(str).SetValueAsync(n);
+    }
 
 }
 class User {
