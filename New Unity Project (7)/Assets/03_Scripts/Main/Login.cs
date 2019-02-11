@@ -40,6 +40,8 @@ public class Login : MonoBehaviour
     private FirebaseAuth auth;
     public static FirebaseUser user;
 
+    private string ID_Value;
+
     public static Login instance;
 
     public static Login Instance
@@ -63,6 +65,16 @@ public class Login : MonoBehaviour
         AuthStateChanged(this, null);
     }
 
+    public void Start()
+    {
+        if(PlayerPrefs.GetString("ID")!= null)
+        {
+            SignInInputEmail.text = PlayerPrefs.GetString("ID");
+        }
+        if (PlayerPrefs.GetString("password") != null)
+            SignInInputPassword.text = PlayerPrefs.GetString("password");
+    }
+
     public void ClickSignUpBtn()
     {
         SfxManager.Instance.playClick();
@@ -80,6 +92,9 @@ public class Login : MonoBehaviour
         {
             Debug.Log("email: " + SignUpEmail + ", password: " + SignUpPassword);
             CreateUser();
+            PlayerPrefs.SetString("ID", SignUpInputEmail.text); //기기에 아이디 저장
+            PlayerPrefs.SetString("password", SignUpInputPassword.text);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -115,7 +130,8 @@ public class Login : MonoBehaviour
     {
         SignInEmail = SignInInputEmail.text;
         SignInPassword = SignInInputPassword.text;
-        
+
+
         // Debug.Log("Sign In - email: " + SignInEmail + ", password: " + SignInPassword);
  
         LoginUser();
