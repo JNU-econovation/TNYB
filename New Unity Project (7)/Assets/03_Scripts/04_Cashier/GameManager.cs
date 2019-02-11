@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //from 튜토리얼관련
+    public GameObject tutoBtn;
+    public GameObject tutoCloseBtn;
+    public GameObject tutoNextBtn;
+    public GameObject tutoPrevBtn;
+    public GameObject tutoPanel;
+    public GameObject tuto1;
+    public GameObject tuto2;
+    //to 
     public GameObject pausePanel;
 	public GameObject hand;
 	public Transform handTf1, handTf2, handTf3;
@@ -216,4 +225,28 @@ public class GameManager : MonoBehaviour
 	{
 		return numberOfTissue;
 	}
+    //from 튜토리얼 관련 스크립트
+    public void OpenTuto()
+    {
+        tutoPanel.SetActive(true);
+    }
+    public void CloseTuto()
+    {
+        tutoPanel.SetActive(false);
+    }
+    public void NextTutoBtn()
+    {
+        tutoNextBtn.SetActive(false);
+        tutoPrevBtn.SetActive(true);
+        tuto1.SetActive(false);
+        tuto2.SetActive(true);
+    }
+    public void PrevTutoBtn()
+    {
+        tutoNextBtn.SetActive(true);
+        tutoPrevBtn.SetActive(false);
+        tuto2.SetActive(false);
+        tuto1.SetActive(true);
+    }
+    //to
 }
