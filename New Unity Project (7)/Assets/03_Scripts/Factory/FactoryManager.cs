@@ -42,30 +42,29 @@ public class FactoryManager : MonoBehaviour {
     private int[] num = new int[8];
     private float left, right = 0;
 
+    public GameObject RedImage;
     private bool Tutorial_bool;
     public GameObject TutorialPanel;
     public Button tutorialRightBtn;
     public Button tutorialLeftBtn;
-    public Image[] animation_0 = new Image[2];
-    public Image animation_1;
+    public GameObject[] animation_0 = new GameObject[2];
+    public GameObject animation_1;
     public void TutorialRight()
     {
         tutorialLeftBtn.interactable = true;
         tutorialRightBtn.interactable = false;
-       
-        animation_0[0].GetComponent<Animator>().enabled = false;
-
-        animation_0[1].GetComponent<Animator>().enabled = false;
-
-        animation_1.GetComponent<Animator>().enabled = true;
+        RedImage.SetActive(true);
+        animation_0[0].SetActive(false);
+        animation_0[1].SetActive(false);
+        animation_1.SetActive (true);
     }
 
     public void TutorialLeft()
     {
-        animation_0[0].GetComponent<Animator>().enabled = true;
-        animation_0[1].GetComponent<Animator>().enabled = true;
-
-        animation_1.GetComponent<Animator>().enabled = false;
+        animation_0[0].SetActive(true);
+        animation_0[1].SetActive(true);
+        RedImage.SetActive(false);
+        animation_1.SetActive(false); ;
 
         tutorialRightBtn.interactable = true;
         tutorialLeftBtn.interactable = false;
@@ -74,12 +73,16 @@ public class FactoryManager : MonoBehaviour {
 
     public void CloseTutorial()
     {
+        TutorialRight();
         TutorialPanel.SetActive(false);
+        isPaused = false;
         Time.timeScale = 1;
     }
     public void OpenTutorial()
     {
+        TutorialLeft();
         Time.timeScale = 0;
+        isPaused = true;
         TutorialPanel.SetActive(true);
     }
 
@@ -112,7 +115,6 @@ public class FactoryManager : MonoBehaviour {
        //StartCoroutine(Changing(speed));
         makeTrash_1();
         tutorialLeftBtn.interactable = false;
-        animation_1.GetComponent<Animator>().enabled = false;
         timer = 0.0f;
         waitingTime = 0.7f;
     }
