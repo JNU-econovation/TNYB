@@ -40,6 +40,11 @@ public class RankingManager : MonoBehaviour
         
     }
 
+    public void ClickGetRank()
+    {
+        RealtimeDatabase.Instance.GetRank();
+    }
+
     public void ClickCashierRank()
     {
         RealtimeDatabase.Instance.GetCashierRank();
@@ -47,8 +52,6 @@ public class RankingManager : MonoBehaviour
 
     public void UpdateRankBoard(int rank, string nickname, int score)
     {
-        Debug.Log(GameObject.Find("Rank1").GetComponent<Text>().text);
-        GameObject.Find("Rank1").SetActive(false);
         switch (rank)
         {
             case 1:
@@ -64,7 +67,5 @@ public class RankingManager : MonoBehaviour
                 rankscore3.text = score.ToString();
                 break;    
         }
-        
-        Debug.Log("2. Rank: " + rank + ",Nickname: " + nickname + ", score: " + score);
     }
 }
