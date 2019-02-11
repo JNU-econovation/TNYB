@@ -37,16 +37,11 @@ public class RealtimeDatabase : MonoBehaviour
         // 아래 비밀번호에는 특별하게 설정한거 없으면 notasecret 일 겁니다.
         FirebaseApp.DefaultInstance.SetEditorP12Password("notasecret");
     }
-    private void Start()
-    {
-        RoomManager.Instance.TruePurchase(0);
-    }
+    
     public void InitDatabase()
     {
         if (Login.user != null)
         {
-//            Debug.LogFormat("Write user - DisplayName:({0}), UserId:({1}), UserEmail:({2})",
-//                Login.user.DisplayName, Login.user.UserId, Login.user.Email);
             WriteNewUser(Login.user.UserId, Login.user.DisplayName, Login.user.Email);   
         }
     }
@@ -212,7 +207,9 @@ public class RealtimeDatabase : MonoBehaviour
     /* ============== Rank ================== */
 
     public void GetCashierRank()
-    {
+    {   
+        Debug.Log("Hi");
+        
         FirebaseDatabase.DefaultInstance
             .GetReference("users").OrderByChild("score_cashier").LimitToLast(10)
             .GetValueAsync().ContinueWith(task =>
@@ -228,8 +225,11 @@ public class RealtimeDatabase : MonoBehaviour
                     foreach (var item in snapshot.Children)
                     {
                         rank = rank + 1;
-                        Debug.Log(item.Key + ": " + item.Child("nickname").Value + " " +
-                                  item.Child("score").Value);
+                        Debug.Log("1. Rank: " + rank + ",Nickname: " + (string)item.Child("nickname").Value + ", score: " + (int)item.Child("score_cashier").Value);
+                        RankingManager.Instance.UpdateRankBoard(
+                            rank,
+                            (string)item.Child("nickname").Value,
+                            (int)item.Child("score_cashier").Value);
 
                     }
                 }
