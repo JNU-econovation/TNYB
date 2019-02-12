@@ -41,12 +41,14 @@ public class FactoryManager : MonoBehaviour {
     private int[] num = new int[8];
     private float left, right = 0;
 
+    private bool music_bool;
+    private bool sound_bool;
+    public GameObject Music;
 
 
-    public void SetSCoreDB()
-    {
-        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
-    }
+
+
+   
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -73,6 +75,8 @@ public class FactoryManager : MonoBehaviour {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         score = 0;
+
+        FirstMusicSetting();
         //StartCoroutine(Changing(speed));
         makeTrash_1();
       
@@ -80,6 +84,7 @@ public class FactoryManager : MonoBehaviour {
         waitingTime = 0.7f;
     }
     
+
 
     void Update()
     {
@@ -244,7 +249,8 @@ public class FactoryManager : MonoBehaviour {
             if ( kind[num[i]] == select)
             {
 
-                GetComponent<AudioSource>().Play();
+                if(sound_bool)
+                    GetComponent<AudioSource>().Play();
                 objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
                 if(count == 0)
@@ -351,5 +357,78 @@ public class FactoryManager : MonoBehaviour {
         Time.timeScale = 1;
         isPaused = false;
         pausePanel.SetActive(false);
+    }
+    //-----------Music
+    private void FirstMusicSetting()
+    {
+        if (PlayerPrefs.GetString("music_factory") != null)
+        {
+            if (PlayerPrefs.GetString("music_factory") == "true")
+            {
+                music_bool = true;
+                Music.GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                music_bool = false;
+                Music.GetComponent<AudioSource>().Stop();
+            }
+        }
+        else
+            music_bool = true;
+
+        if (PlayerPrefs.GetString("sound_factory") != null)
+        {
+            if (PlayerPrefs.GetString("sound_factory") == "true")
+                sound_bool = true;
+            else
+                sound_bool = false;
+        }
+        else
+            sound_bool = true;
+
+
+        GetComponent<AudioSource>().Stop();
+    }
+
+    public void ClickMusicBtn()
+    {
+        if (music_bool)
+        {
+            music_bool = false;
+            PlayerPrefs.SetString("music_factory", "false");
+            PlayerPrefs.Save();
+            Music.GetComponent<AudioSource>().Stop();
+        }
+        else
+        {
+            PlayerPrefs.SetString("music_factory", "true");
+            PlayerPrefs.Save();
+            music_bool = true;
+            Music.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void ClickSoundBtn()
+    {
+        if (sound_bool)
+        {
+            sound_bool = false;
+            PlayerPrefs.SetString("sound_factory", "false");
+            PlayerPrefs.Save();
+
+            //SoundManger 호출
+        }
+        else
+        {
+            sound_bool = true;
+            PlayerPrefs.SetString("sound_factory", "true");
+            PlayerPrefs.Save();
+        }
+    }
+    //----DB
+    public void SetSCoreDB()
+    {
+        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
     }
 }
