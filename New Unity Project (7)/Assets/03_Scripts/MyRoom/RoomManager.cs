@@ -86,8 +86,6 @@ public class RoomManager : MonoBehaviour
         instance = this;
         setprice();
         Time.timeScale = 1;
-        
-        setMusicMuteImage();
     }
 
     private void Start()
@@ -101,6 +99,9 @@ public class RoomManager : MonoBehaviour
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
         RealtimeDatabase.Instance.setRoomName();
+        
+        setMusicMuteImage();
+        setSfxMuteImage();
     }
 
     public void setRoomName(string roomName)
@@ -120,6 +121,12 @@ public class RoomManager : MonoBehaviour
         setMusicMuteImage();
     }
 
+    public void ClickSfxMute()
+    {
+        myRoomSfxManager.Instance.clickSfxMute();
+        setSfxMuteImage();
+    }
+
     public void setMusicMuteImage()
     {
         if (myRoomMusicManager.Instance.getIsMusicMute())
@@ -131,42 +138,18 @@ public class RoomManager : MonoBehaviour
             settingButton[0].GetComponent<Image>().sprite = ButtonImage[1];
         }
     }
-    
-    /*
-     
-     병재 코드
-    public void ClickSettingButton()
-    {
-        
-        // Button Image [0] -> 음소거 상태
-        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
 
-        if (settingButtons_bool[a])
+    public void setSfxMuteImage()
+    {
+        if (myRoomSfxManager.Instance.getIsSfxMute())
         {
-            if(a== 0)
-            {
-                myroomSFX.Instance.isMfxMute = true;
-                PlayerPrefs.SetInt("isMfxMute", 1);
-                PlayerPrefs.Save();
-                myroomSFX.Instance.setMyRoomMusic();
-            }
-            settingButton[a].GetComponent<Image>().sprite = ButtonImage[0];
-            settingButtons_bool[a] = false;
+            settingButton[1].GetComponent<Image>().sprite = ButtonImage[0];
         }
         else
         {
-            if (a == 0)
-            {
-                MyroomMusic.Instance.isMfxMute = false;
-                PlayerPrefs.SetInt("isMfxMute", 0);
-                PlayerPrefs.Save();
-                MyroomMusic.Instance.setMyRoomMusic();
-            }
-            settingButton[a].GetComponent<Image>().sprite = ButtonImage[1];
-            settingButtons_bool[a] = true;
+            settingButton[1].GetComponent<Image>().sprite = ButtonImage[1];
         }
     }
-    */
     
     public void CloseSettingPanel()
     {
@@ -210,7 +193,8 @@ public class RoomManager : MonoBehaviour
     }
     private void OpenPurchasePanel()
     {
-        Debug.Log(Button_number);
+        //Debug.Log(Button_number);
+        myRoomSfxManager.Instance.playBeep();
         priceText.text = "가격 : "+price[Button_number].ToString();
         PurchasePanel.SetActive(true);
     }
@@ -222,6 +206,7 @@ public class RoomManager : MonoBehaviour
     }
     public void ClosePurchasePanel()
     {
+        myRoomSfxManager.Instance.playBack();
         PurchasePanel.SetActive(false);
         nomenyText.SetActive(false);
     }
@@ -230,6 +215,7 @@ public class RoomManager : MonoBehaviour
 
         if(gameMoney> price[Button_number])
         {
+            myRoomSfxManager.Instance.playOk();
             PurchasePanel.SetActive(false); purchase[Button_number] = true;
             RealtimeDatabase.Instance.SetMoneyData(gameMoney - price[Button_number]);
             gameMoney = gameMoney - price[Button_number];
@@ -238,6 +224,7 @@ public class RoomManager : MonoBehaviour
         }
         else
         {
+            myRoomSfxManager.Instance.playWrong();
             nomenyText.SetActive(true);
         }
 
@@ -331,9 +318,6 @@ public class RoomManager : MonoBehaviour
     //클릭 함수
     public void ClickButton_Tile()
     {
-        
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-
         int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
 
         if (purchase[a]) //구매했을때
@@ -349,6 +333,7 @@ public class RoomManager : MonoBehaviour
                 tile_bool = new bool[4];
                 tile_bool[a] = true;
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_tile", tile_bool);
         }
         else //구매 안했을때
@@ -357,6 +342,7 @@ public class RoomManager : MonoBehaviour
             OpenPurchasePanel();
         }
     }
+    
     public void ClickButton_Bed()
     {
         int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
@@ -379,6 +365,7 @@ public class RoomManager : MonoBehaviour
                 bed_bool[a] = true;
                 SetBed(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_bed", bed_bool);
         }
     }
@@ -408,6 +395,7 @@ public class RoomManager : MonoBehaviour
 
                 SetTable(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_table", table_bool);
         }
     }
@@ -443,6 +431,7 @@ public class RoomManager : MonoBehaviour
                 sofa_bool[a] = true;
                 SetSofa(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_sofa", sofa_bool);
         }
     }
@@ -468,6 +457,7 @@ public class RoomManager : MonoBehaviour
                 chair_bool[a] = true;
                 SetChair(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_chair", chair_bool);
         }
     }
@@ -493,6 +483,7 @@ public class RoomManager : MonoBehaviour
                 picture_bool[a] = true;
                 SetPicture(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_picture", picture_bool);
         }
     }
@@ -516,6 +507,7 @@ public class RoomManager : MonoBehaviour
                 appliance_bool[a] = true;
                 SetAppliance(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_appliance", appliance_bool);
         }
     }
@@ -540,6 +532,7 @@ public class RoomManager : MonoBehaviour
                 furniture_bool[a] = true;
                 SetFurniture(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_furniture", furniture_bool);
         }
     }
@@ -563,6 +556,7 @@ public class RoomManager : MonoBehaviour
                 etc_bool[a] = true;
                 SetEtc(a);
             }
+            myRoomSfxManager.Instance.playBeep();
             RealtimeDatabase.Instance.SetMyRoomData("MyRoom_etc", etc_bool);
         }
     }

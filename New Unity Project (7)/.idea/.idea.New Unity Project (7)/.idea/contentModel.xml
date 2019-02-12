@@ -56,6 +56,7 @@
           </e>
           <e p="MyRoom" t="Include">
             <e p="myRoomMusicManager.cs" t="Include" />
+            <e p="myRoomSfxManager.cs" t="Include" />
             <e p="RankingManager.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
             <e p="SelectGameManager.cs" t="Include" />
@@ -96,7 +97,6 @@
             <e p="link.xml" t="Include" />
           </e>
         </e>
-        <e p="myroomSFX.cs" t="Include" />
         <e p="PlayerPrefs" t="Include">
           <e p="Editor" t="Include">
             <e p="PlayerPrefsEditor" t="Include">

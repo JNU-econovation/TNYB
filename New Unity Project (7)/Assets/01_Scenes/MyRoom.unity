@@ -16970,7 +16970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1521324283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19751,6 +19751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726999774}
   - component: {fileID: 1726999773}
+  - component: {fileID: 1726999772}
   m_Layer: 0
   m_Name: SfxManager
   m_TagString: Untagged
@@ -19758,6 +19759,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1726999772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726999771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ccacc65bf7e4e4f82e2741bd3c4d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 8300000, guid: 9423c88764923c543b9a8bb6e795ef1d, type: 3}
+  back: {fileID: 8300000, guid: 811e31b503032df4199d8d6bca6c6af1, type: 3}
+  ok: {fileID: 8300000, guid: 8164c438d6e3e97409deccb2423a3199, type: 3}
+  beep: {fileID: 8300000, guid: 3f001ff72166e4ab1b82f14c25cbd2e9, type: 3}
+  wrong: {fileID: 8300000, guid: 7a20d01946b938f408fad3de22145459, type: 3}
 --- !u!82 &1726999773
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20737,7 +20755,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 486560515}
-        m_MethodName: ClickSettingButton
+        m_MethodName: ClickSfxMute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
