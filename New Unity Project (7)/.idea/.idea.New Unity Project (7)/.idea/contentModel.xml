@@ -32,8 +32,10 @@
             <e p="Tutorial_ciema.cs" t="Include" />
           </e>
           <e p="Factory" t="Include">
+            <e p="btnScript.cs" t="Include" />
             <e p="ButtonClicked.cs" t="Include" />
             <e p="FactoryManager.cs" t="Include" />
+            <e p="factorySfxManager.cs" t="Include" />
             <e p="SelectChange.cs" t="Include" />
             <e p="TimerScript.cs" t="Include" />
           </e>
