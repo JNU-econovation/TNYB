@@ -77,6 +77,7 @@ public class RankingManager : MonoBehaviour
 
     public void ClickGetRank(string nameOfGame)
     {
+        myRoomSfxManager.Instance.playClick();
         changeNameColor(nameOfGame);
         rankScrollbar.value = 1;
         loading();

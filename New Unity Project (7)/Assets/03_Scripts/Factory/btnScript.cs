@@ -1,4 +1,6 @@
+
 ﻿using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,20 +14,6 @@ public class btnScript : MonoBehaviour
     void Start()
     {
         ClickEvent();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void ClickEvent()
-    {
-        if (factorySfxManager.Instance.getisSfxMute())
-            GetComponent<Image>().sprite = btnSprite1;
-        else
-            GetComponent<Image>().sprite = btnSprite2;
     }
     public void BtnClickEvent_Music()
     {
