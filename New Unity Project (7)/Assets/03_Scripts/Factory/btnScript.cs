@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,7 @@ public class btnScript : MonoBehaviour
             GetComponent<Image>().sprite = btnSprite1;
         else
             GetComponent<Image>().sprite = btnSprite2;
+
     }
     public void BtnClickEvent_Music_Mart()
     {
