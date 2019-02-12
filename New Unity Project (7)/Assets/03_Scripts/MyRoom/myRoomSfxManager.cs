@@ -50,6 +50,7 @@ public class myRoomSfxManager : MonoBehaviour
             PlayerPrefs.SetInt("isSfxMute", 0);
             PlayerPrefs.Save();
             isSfxMute = false;
+            playClick();
         }
     }
     

@@ -71,8 +71,6 @@ public class RoomManager : MonoBehaviour
     public GameObject SettingPaenl;
 
     public GameObject ItemInventory;
-    public GameObject ButtonPanel;
-    public GameObject SelectGamePanel;
     public GameObject RankingPanel;
     public GameObject PurchasePanel;
     public int gameMoney = 10000;
@@ -90,6 +88,9 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        setMusicMuteImage();
+        setSfxMuteImage();
+        
         settingButtons_bool[0] = settingButtons_bool[1] = settingButtons_bool[2] = true;
         Button_number =-1;
         PurchasePanel.SetActive(false);
@@ -99,9 +100,6 @@ public class RoomManager : MonoBehaviour
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
         RealtimeDatabase.Instance.setRoomName();
-        
-        setMusicMuteImage();
-        setSfxMuteImage();
     }
 
     public void setRoomName(string roomName)
@@ -112,6 +110,7 @@ public class RoomManager : MonoBehaviour
     
     public void OpenSettingPanel()
     {
+        myRoomSfxManager.Instance.playClick();
         SettingPaenl.SetActive(true);
     }
 
@@ -153,44 +152,35 @@ public class RoomManager : MonoBehaviour
     
     public void CloseSettingPanel()
     {
+        myRoomSfxManager.Instance.playBack();
         SettingPaenl.SetActive(false);
     }
     public void OpenRankingPanel()
     {
+        myRoomSfxManager.Instance.playClick();
         RankingPanel.SetActive(true);
         RankingManager.Instance.ClickGetRank("cashier");
     }
     public void CloseRankingPanel()
     {
+        myRoomSfxManager.Instance.playBack();
         RankingPanel.SetActive(false);
         //ButtonPanel.SetActive(true);
-    }
-    public void OpendSelectGame()
-    {
-        SelectGamePanel.SetActive(true);
-        ButtonPanel.SetActive(false);
-    }
-    public void CloseSlelectGame()
-    {
-        SelectGamePanel.SetActive(false);
-        ButtonPanel.SetActive(true);
     }
 
     public void OpenInventory()
     {
+        myRoomSfxManager.Instance.playClick();
         ItemInventory.SetActive(true);
         //ButtonPanel.SetActive(false);
     }
     public void CloseInventory()
     {
+        myRoomSfxManager.Instance.playBack();
         ItemInventory.SetActive(false);
         //ButtonPanel.SetActive(true);
     }
-    public void ItemPurchase()
-    {
-         
-         //table.SetActive(true);
-    }
+
     private void OpenPurchasePanel()
     {
         //Debug.Log(Button_number);
