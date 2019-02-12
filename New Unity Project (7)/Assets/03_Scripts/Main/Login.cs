@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Auth;
@@ -15,6 +14,9 @@ public class Login : MonoBehaviour
     private string SignUpEmail;
     private string SignUpPassword;
     private string SignUpConfirmedPassword;
+
+    public Text signUpErrorText;
+    public GameObject signUpPanel;
 
     private string Nickname;
 
@@ -65,6 +67,7 @@ public class Login : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
+        signUpPanel.SetActive(false);
     }
 
     public void Start()
@@ -87,6 +90,7 @@ public class Login : MonoBehaviour
         if (SignUpPassword == null || SignUpPassword == "")
         {
             SfxManager.Instance.playWrong();
+            wrongPasswordForm();
             return;
         }
         
@@ -101,8 +105,32 @@ public class Login : MonoBehaviour
         else
         {
             SfxManager.Instance.playWrong();
+            wrongPassword();
             // 비밀번호가 다릅니다.
         }
+    }
+
+    public void wrongPassword()
+    {
+        signUpPanel.SetActive(true);
+        signUpErrorText.text = "비밀번호가 일치하지 않습니다";
+    }
+    
+    public void wrongPasswordForm()
+    {
+        signUpPanel.SetActive(true);
+        signUpErrorText.text = "비밀번호 형식이\n정상적이지 않습니다";
+    }
+    
+    public void wrongTotal()
+    {
+        signUpPanel.SetActive(true);
+        signUpErrorText.text = "이메일 중복 또는 형식 오류!\n혹은 비밀번호를 더 어렵게 해주세요";
+    }
+
+    public void doneSignUpError()
+    {
+        signUpPanel.SetActive(false);
     }
 
     private void CreateUser()
@@ -112,12 +140,14 @@ public class Login : MonoBehaviour
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");
+                wrongTotal();
                 return;
             }
 
             if (task.IsFaulted)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                wrongTotal();
                 return;
             }
 

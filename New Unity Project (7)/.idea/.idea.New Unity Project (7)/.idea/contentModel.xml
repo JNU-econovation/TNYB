@@ -28,7 +28,6 @@
             <e p="CinemaManager.cs" t="Include" />
             <e p="CinemaMusicManager.cs" t="Include" />
             <e p="CinemaSfxManager.cs" t="Include" />
-            <e p="Pause.cs" t="Include" />
             <e p="TicketMove.cs" t="Include" />
             <e p="TimerScript_cinema.cs" t="Include" />
             <e p="Tutorial_ciema.cs" t="Include" />
