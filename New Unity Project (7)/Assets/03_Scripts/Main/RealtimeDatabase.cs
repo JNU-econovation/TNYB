@@ -141,7 +141,7 @@ public class RealtimeDatabase : MonoBehaviour
             });
     }
 
-    public void getRoomName()
+    public void setRoomName()
     {
         FirebaseDatabase.DefaultInstance.GetReference("users")
             .GetValueAsync().ContinueWith(task =>

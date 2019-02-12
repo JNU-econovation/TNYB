@@ -71,8 +71,7 @@ public class RoomManager : MonoBehaviour
       //  door.SetActive(true);
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
-        
-        
+        RealtimeDatabase.Instance.setRoomName();
     }
 
     public void setRoomName(string roomName)
