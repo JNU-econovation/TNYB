@@ -44,10 +44,6 @@ public class FactoryManager : MonoBehaviour {
     private bool music_bool;
     private bool sound_bool;
     public GameObject Music;
-
-
-
-
    
     public GameObject pausePanel;
     public GameObject gameOverPanel;
@@ -249,8 +245,7 @@ public class FactoryManager : MonoBehaviour {
             if ( kind[num[i]] == select)
             {
 
-                if(sound_bool)
-                    GetComponent<AudioSource>().Play();
+                factorySfxManager.Instance.ClickSound();
                 objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
                 if(count == 0)
@@ -273,6 +268,25 @@ public class FactoryManager : MonoBehaviour {
 
         remainCount.text = "남은 개수 : " + count.ToString();
 
+    }
+
+    public IEnumerator IeResultScoreCountEffect()
+    {
+        int tempScore = 0;
+        // count sfx
+        
+        CashierSfxManager.Instance.playScoreCount();
+
+        while (tempScore <= score)
+        {
+            tempScore += 1;
+            tempScore += tempScore / 8;
+            yield return null;
+            resultText.text = tempScore.ToString();
+        }
+        // count done sfx
+        CashierSfxManager.Instance.playCountOver();
+        resultText.text = score.ToString();
     }
 
     void Shake(Image obj)
