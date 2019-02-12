@@ -55,6 +55,7 @@
             <e p="SfxManager.cs" t="Include" />
           </e>
           <e p="MyRoom" t="Include">
+            <e p="myRoomMusicManager.cs" t="Include" />
             <e p="RankingManager.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
             <e p="SelectGameManager.cs" t="Include" />

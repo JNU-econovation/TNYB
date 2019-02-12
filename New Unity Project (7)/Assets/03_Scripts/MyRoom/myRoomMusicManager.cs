@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CashierMusicManager : MonoBehaviour
+public class myRoomMusicManager : MonoBehaviour
 {
     private bool isMusicMute;
-    public AudioClip mainMusic;
+    public AudioClip myRoomMusic;
    
     private AudioSource audioSource;
     
-    private static CashierMusicManager instance;
-    public static CashierMusicManager Instance
+    private static myRoomMusicManager instance;
+    public static myRoomMusicManager Instance
     {
         get { return instance; }
     }
@@ -35,11 +36,13 @@ public class CashierMusicManager : MonoBehaviour
         {
             isMusicMute = false;
         }
+        
+        DontDestroyOnLoad(gameObject);      
     }
 
     private void Start()
     {
-        audioSource.clip = mainMusic;
+        audioSource.clip = myRoomMusic;
         audioSource.Play();
     }
     
@@ -50,6 +53,16 @@ public class CashierMusicManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        switch (Application.loadedLevel)
+        {
+            case 0:
+            case 2:
+            case 3:
+            case 4:
+                Destroy(gameObject);
+                break;
+        }
+        
         if (isMusicMute)
         {
             audioSource.volume = 0;

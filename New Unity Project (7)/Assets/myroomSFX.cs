@@ -26,7 +26,7 @@ public class myroomSFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("isMfxMute", 0) == 1)
+        if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
         {
             isMfxMute = true;
         }
