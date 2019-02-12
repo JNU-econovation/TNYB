@@ -36,55 +36,12 @@ public class FactoryManager : MonoBehaviour {
     private string select;
     private int count;
 
-
     private float speed =4.0f;
     public float shakePower = 1f;
     private int[] num = new int[8];
     private float left, right = 0;
 
-    public GameObject RedImage;
-    private bool Tutorial_bool;
-    public GameObject TutorialPanel;
-    public Button tutorialRightBtn;
-    public Button tutorialLeftBtn;
-    public GameObject[] animation_0 = new GameObject[2];
-    public GameObject animation_1;
-    public void TutorialRight()
-    {
-        tutorialLeftBtn.interactable = true;
-        tutorialRightBtn.interactable = false;
-        RedImage.SetActive(true);
-        animation_0[0].SetActive(false);
-        animation_0[1].SetActive(false);
-        animation_1.SetActive (true);
-    }
 
-    public void TutorialLeft()
-    {
-        animation_0[0].SetActive(true);
-        animation_0[1].SetActive(true);
-        RedImage.SetActive(false);
-        animation_1.SetActive(false); ;
-
-        tutorialRightBtn.interactable = true;
-        tutorialLeftBtn.interactable = false;
-
-    }
-
-    public void CloseTutorial()
-    {
-        TutorialRight();
-        TutorialPanel.SetActive(false);
-        isPaused = false;
-        Time.timeScale = 1;
-    }
-    public void OpenTutorial()
-    {
-        TutorialLeft();
-        Time.timeScale = 0;
-        isPaused = true;
-        TutorialPanel.SetActive(true);
-    }
 
     public void SetSCoreDB()
     {
@@ -115,11 +72,10 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        OpenTutorial();
         score = 0;
         //StartCoroutine(Changing(speed));
         makeTrash_1();
-        tutorialLeftBtn.interactable = false;
+      
         timer = 0.0f;
         waitingTime = 0.7f;
     }
