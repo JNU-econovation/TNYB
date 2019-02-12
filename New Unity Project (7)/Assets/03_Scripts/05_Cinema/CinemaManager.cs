@@ -244,17 +244,13 @@ public class CinemaManager : MonoBehaviour
         }
         obj.transform.position = originV;
     }
-    public void RollingScore()
+    
+    public IEnumerator IeResultScoreCountEffect()
     {
-        StartCoroutine(IeResultScoreCountEffect());
-    }
-    public IEnumerator IeResultScoreCountEffect() //점수판돌아가는거
-    {
+        Debug.Log("Hi");
         int tempScore = 0;
-        // count sfx
-
-        // factorySfxManager.Instance.CountSound();
-
+        CinemaSfxManager.Instance.playScoreCount();
+        
         while (tempScore <= cinema_score)
         {
             tempScore += 1;
@@ -262,12 +258,8 @@ public class CinemaManager : MonoBehaviour
             yield return null;
             finishScore.text = tempScore.ToString();
         }
-        // count done sfx
+        CinemaSfxManager.Instance.playCountOver();
         finishScore.text = cinema_score.ToString();
-    }
-    public bool getCanRespawn()
-    {
-        return this.canRespawn;
     }
 
     public void setCanRespawn(bool canRespawn)

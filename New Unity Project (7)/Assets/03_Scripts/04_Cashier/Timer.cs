@@ -26,17 +26,17 @@ public class Timer : MonoBehaviour {
 		isResultShowed = false;
 	}
 	
-	void Update () {
-		
+	void FixedUpdate () {
 		if (timeLeft < 0)
 		{
 			CashierMusicManager.Instance.stopMusic();
-			GameManager.Instance.updateRankScore();
+			
 			finishPanel.SetActive(true);
 			if (!isResultShowed)
 			{
 				isResultShowed = true;
 				StartCoroutine(GameManager.Instance.IeResultScoreCountEffect());
+				GameManager.Instance.updateRankScore();
 			}
 		}
 
