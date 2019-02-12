@@ -5797,6 +5797,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button-Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 2435333066991591104, guid: f50d97ee8a54f4b7ca8c9adab83ab869,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1884246936579101377, guid: f50d97ee8a54f4b7ca8c9adab83ab869,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7594,11 +7599,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 9209250921467148700, guid: 5e932d0e1a9e1cc4ba01d756e34c1ffd,
-        type: 3}
-      propertyPath: m_Text
-      value: Close
-      objectReference: {fileID: 0}
     - target: {fileID: 9209250922198740660, guid: 5e932d0e1a9e1cc4ba01d756e34c1ffd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7628,6 +7628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209250921467148700, guid: 5e932d0e1a9e1cc4ba01d756e34c1ffd,
+        type: 3}
+      propertyPath: m_Text
+      value: Close
       objectReference: {fileID: 0}
     - target: {fileID: 9209250922198740661, guid: 5e932d0e1a9e1cc4ba01d756e34c1ffd,
         type: 3}
