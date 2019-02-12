@@ -69,6 +69,7 @@ public class factorySfxManager : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
     public void CountSound()
     {
         audioSource.clip = count;

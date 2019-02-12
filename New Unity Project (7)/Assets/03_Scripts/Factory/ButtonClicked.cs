@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonClicked : MonoBehaviour {
-    public Text text;
     
 	public void ButtonClick()
     {
-        FactoryManager.Instance.ItemDestroy(int.Parse(text.text));
+        int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
+        FactoryManager.Instance.ItemDestroy(a);
     }
    
 }
