@@ -247,6 +247,7 @@ public class CinemaManager : MonoBehaviour
     
     public IEnumerator IeResultScoreCountEffect()
     {
+        Debug.Log("Hi");
         int tempScore = 0;
         CinemaSfxManager.Instance.playScoreCount();
         

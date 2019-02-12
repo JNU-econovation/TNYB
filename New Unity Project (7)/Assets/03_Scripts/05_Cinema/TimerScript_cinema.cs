@@ -10,7 +10,7 @@ public class TimerScript_cinema : MonoBehaviour {
     public float maxTime = 60f;
     public float warnTime = 10f;
     public static float timeLeft;     // public GameObject timesUpText;
-    private bool dbOnce = true; //DB 용
+    private bool isResultShowed;
     public string timeBarColor_norm = "FFBB06";
     public string timeBarColor_10 = "FF3A06";
 
@@ -22,21 +22,21 @@ public class TimerScript_cinema : MonoBehaviour {
 
     void Start () {
         //  timesUpText.SetActive(false);
-        dbOnce = true;
-        timeBar = GetComponent<Image>();
+        isResultShowed = false;
         timeLeft = maxTime;
         finishPanel.SetActive(false);
     }
 	void FixedUpdate () {
-        if(timeLeft <= 0)
+        if(timeLeft < 0)
         {
             CinemaMusicManager.Instance.stopMusic();
+            
             finishPanel.SetActive(true);
-            if (dbOnce)
+            if (!isResultShowed)
             {
-                dbOnce = false;
-                CinemaManager.instance.SetScoreDB();
+                isResultShowed = true;
                 CinemaManager.instance.StartCoroutine(CinemaManager.instance.IeResultScoreCountEffect());
+                CinemaManager.instance.SetScoreDB();
             }
         }
 	    
