@@ -117,11 +117,25 @@ public class RoomManager : MonoBehaviour
 
         if (settingButtons_bool[a])
         {
+            if(a== 0)
+            {
+                myroomSFX.Instance.isMfxMute = true;
+                PlayerPrefs.SetInt("isMfxMute", 1);
+                PlayerPrefs.Save();
+                myroomSFX.Instance.setMyRoomMusic();
+            }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[0];
             settingButtons_bool[a] = false;
         }
         else
         {
+            if (a == 0)
+            {
+                myroomSFX.Instance.isMfxMute = false;
+                PlayerPrefs.SetInt("isMfxMute", 0);
+                PlayerPrefs.Save();
+                myroomSFX.Instance.setMyRoomMusic();
+            }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[1];
             settingButtons_bool[a] = true;
         }
