@@ -191,7 +191,22 @@ public class FactoryManager : MonoBehaviour {
     }
    void setSelector() //위에 pet, can, bottle, paper 선택창 세팅
     {
-        recycleText.text = select;
+        switch (select)
+        {
+            case "pet":
+                recycleText.text = "페트류";
+                break;
+            case "can":
+                recycleText.text = "캔류";
+                break;
+            case "bottle":
+                recycleText.text = "병류";
+                break;
+            case "paper":
+                recycleText.text = "종이류";
+                break;
+        }
+        
         left = right = 0;
         if(select == recycleName[0])
         {
@@ -246,7 +261,7 @@ public class FactoryManager : MonoBehaviour {
             objImage[ran].GetComponent<Image>().sprite = trashImage[tmpran];
             count++;
         }
-        remainCount.text = "남은 개수 : " + count.ToString();
+        remainCount.text = "남은 쓰레기 수 : " + count.ToString();
     }  
     public void ItemDestroy(int i)
     {
@@ -277,7 +292,7 @@ public class FactoryManager : MonoBehaviour {
             }
         }
 
-        remainCount.text = "남은 개수 : " + count.ToString();
+        remainCount.text = "남은 쓰레기 수 : " + count.ToString();
 
     }
 
