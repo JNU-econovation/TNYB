@@ -35,6 +35,7 @@ public class CinemaManager : MonoBehaviour
     public static int cinema_score = 0;
     //public static int cinema_HighScore = 0;
     bool canRespawn = false;
+    bool isMute = false;
 
     //Singleton
     public static CinemaManager instance;
@@ -50,6 +51,8 @@ public class CinemaManager : MonoBehaviour
             return;
         }
         instance = this;
+
+
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16) / 9, true);
@@ -180,8 +183,11 @@ public class CinemaManager : MonoBehaviour
     }
     private void soundEffect()
     {
-        GetComponent<AudioSource>().clip = b;
-        GetComponent<AudioSource>().Play();
+        if (CinemaSfxManager.Instance.getIsSfxMute() != true)
+        {
+            CinemaSfxManager.Instance.GetComponent<AudioSource>().clip = CinemaSfxManager.Instance.correct;
+            CinemaSfxManager.Instance.GetComponent<AudioSource>().Play();
+        }
     }
     private void speedUp()//
     {
@@ -205,8 +211,11 @@ public class CinemaManager : MonoBehaviour
 
     public void WrongButton()
     {
-        GetComponent<AudioSource>().clip = a;
-        GetComponent<AudioSource>().Play();
+        if (CinemaSfxManager.Instance.getIsSfxMute() != true)
+        {
+            CinemaSfxManager.Instance.GetComponent<AudioSource>().clip = CinemaSfxManager.Instance.wrong;
+            CinemaSfxManager.Instance.GetComponent<AudioSource>().Play();
+        }
         StartCoroutine(ShakeCoroutine(clickedTicket));
         cinema_score -= 100;
         ComboReset();
