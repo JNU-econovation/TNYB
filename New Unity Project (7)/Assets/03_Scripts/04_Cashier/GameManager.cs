@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
 	
 	void Start ()
 	{
+		score = 0;
 		Time.timeScale = 1;
         pausePanel.SetActive(false);
         bCanHandRespawn = true;
@@ -113,11 +114,8 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
 	{
-//		Debug.Log("bCanHandRespawn : " + bCanHandRespawn);
-//		Debug.Log("isClear : " + isClear);
 		if (bCanHandRespawn && isClear)
 		{
-//			Debug.Log("RESPAWN!");
 			RespawnRandomTfHand();
 		}
 		
@@ -194,6 +192,11 @@ public class GameManager : MonoBehaviour
 		{
 			audioSource.Play();	
 		}
+	}
+
+	public void updateRankScore()
+	{
+		RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
 	}
 
 	public void setbCanHandRespawn(bool b)
