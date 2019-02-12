@@ -29,10 +29,6 @@ public class factorySfxManager : MonoBehaviour
         instance = this;
 
         audioSource = GetComponent<AudioSource>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
         {
             isSfxMute = true;
@@ -42,6 +38,11 @@ public class factorySfxManager : MonoBehaviour
         {
             isSfxMute = false;
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
         ClickSoundBtn();
 
 
