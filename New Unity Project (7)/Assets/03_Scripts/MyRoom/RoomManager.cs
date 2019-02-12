@@ -92,7 +92,7 @@ public class RoomManager : MonoBehaviour
     {
         settingButtons_bool[0] = settingButtons_bool[1] = settingButtons_bool[2] = true;
         Button_number =-1;
-        // PurchasePanel.SetActive(false);
+        PurchasePanel.SetActive(false);
         //  door.SetActive(true);
         RealtimeDatabase.Instance.GetMoneyDB();
         RealtimeDatabase.Instance.GetpurchaseDB();
