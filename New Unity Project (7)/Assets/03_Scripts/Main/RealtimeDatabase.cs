@@ -140,6 +140,26 @@ public class RealtimeDatabase : MonoBehaviour
 
             });
     }
+    public void GetMoneyDB()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
+
+                    RoomManager.Instance.getMoneyDB((string)snapshot.Child(Login.user.UserId).Child("money").Value);
+                }
+
+
+            });
+    }
 
     public void setRoomName()
     {

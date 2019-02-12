@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -27,6 +28,28 @@ public class RoomManager : MonoBehaviour
     //public GameObject door; //문 포함 32개
 
     public bool[] purchase = new bool[31]; // 위 코드 순서 false 노구매 true 구매
+    private int[] price = new int[31];
+    public Text priceText;
+    private void setprice()
+    {
+        price[0] = price[1] = price[2] = price[3] = 200000;
+        price[4] = price[5] = price[6] = 250000;
+        price[7] = price[8] = price[9] = 100000;
+        price[10] = 50000;
+        price[11] = 300000;
+        price[12] = price[13] = price[14] = 4700000;
+        price[15] = price[16] = price[17] = 2200000;
+        price[18] = price[19] = price[20] = 50000;
+        price[21] = price[22] = price[23] = 1000000;
+        price[24] = 800000;
+        price[25] = 1500000;
+        price[26] = 25000;
+
+        price[27] = 150000;
+        price[28] = 50000;
+        price[29] = 10000;
+        price[30] = 17000;
+    }
 
     public bool[] tile_bool = new bool[4]; // 0: yellow, 1: green, 2: blue, 3: gray
     public bool[] bed_bool = new bool[3]; // 0: red, 1: blue, 2: purple
@@ -67,8 +90,10 @@ public class RoomManager : MonoBehaviour
     {
         settingButtons_bool[0] = settingButtons_bool[1] = settingButtons_bool[2] = true;
         Button_number =-1;
-       // PurchasePanel.SetActive(false);
-      //  door.SetActive(true);
+        // PurchasePanel.SetActive(false);
+        //  door.SetActive(true);
+        RealtimeDatabase.Instance.GetMoneyDB();
+        setprice();
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
         RealtimeDatabase.Instance.setRoomName();
@@ -140,9 +165,15 @@ public class RoomManager : MonoBehaviour
          
          //table.SetActive(true);
     }
-    private void OpenPurchasePanel()
+    private void OpenPurchasePanel(int a)
     {
+        priceText.text = "Price : "+price[a].ToString();
         PurchasePanel.SetActive(true);
+    }
+    public void getMoneyDB(string m)
+    {
+        int money_tmp = Convert.ToInt32(m);
+        gameMoney = money_tmp;
     }
     public void ClosePurchasePanel()
     {
@@ -265,7 +296,7 @@ public class RoomManager : MonoBehaviour
         }
         else //구매 안했을때
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a);
             Button_number = a;
         }
     }
@@ -275,7 +306,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 4])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+4);
             Button_number = a + 4;
         }
         else
@@ -300,7 +331,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 7])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+7);
             Button_number = a + 7;
         }
         else
@@ -330,7 +361,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 12])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+12);
             Button_number = a + 12;
         }
         else
@@ -364,7 +395,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 18])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+18);
             Button_number = a + 18;
         }
         else
@@ -389,7 +420,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 21])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+21);
             Button_number = a + 21;
         }
         else
@@ -413,7 +444,7 @@ public class RoomManager : MonoBehaviour
         int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
         if (!purchase[a + 24])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+24);
             Button_number = a + 24;
         }
         else
@@ -437,7 +468,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 27])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+27);
             Button_number = a + 27;
         }
         else
@@ -461,7 +492,7 @@ public class RoomManager : MonoBehaviour
 
         if (!purchase[a + 29])
         {
-            OpenPurchasePanel();
+            OpenPurchasePanel(a+29);
             Button_number = a + 29;
         }
         {
@@ -526,4 +557,5 @@ public class RoomManager : MonoBehaviour
     {
         purchase[i] = true;
     }
+
 }
