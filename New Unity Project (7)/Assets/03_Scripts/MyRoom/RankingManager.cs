@@ -143,6 +143,7 @@ public class RankingManager : MonoBehaviour
 
     public void UpdateRankBoard(int rank, string nickname, int score)
     {
+        // int i = rank - 1;
         int i = rank - 1;
         if (nickname == null)
         {

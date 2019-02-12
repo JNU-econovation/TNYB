@@ -270,12 +270,13 @@ public class RealtimeDatabase : MonoBehaviour
                     DataSnapshot snapshot = task.Result;
                     foreach (var item in snapshot.Children)
                     {
+                        int tempRank = 10 - rank;
                         rank = rank + 1;
                         string tempNickname = (string)Convert.ChangeType(item.Child("nickname").Value, typeof(string));
                         int tempScore = (int)Convert.ChangeType(item.Child(nameOfChild).Value, typeof(int));
-                        Debug.Log("Rank: " + rank + ", nickname: " + tempNickname + ", score: " + tempScore);
+                        Debug.Log("Rank: " + tempRank + ", nickname: " + tempNickname + ", score: " + tempScore);
                         
-                        RankingManager.Instance.UpdateRankBoard(rank, tempNickname, tempScore);
+                        RankingManager.Instance.UpdateRankBoard(tempRank, tempNickname, tempScore);
                     }
                 }
 
