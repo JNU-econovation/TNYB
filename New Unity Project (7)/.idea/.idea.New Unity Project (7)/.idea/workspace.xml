@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/MyRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/MyRoom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/Main/RealtimeDatabase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/Main/RealtimeDatabase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/MyRoom/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/MyRoom/RoomManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Prefabs/myroom/iso_stores3/car4.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefabs/myroom/iso_stores3/car4.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04_Prefabs/myroom/iso_stores3/newTruck.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefabs/myroom/iso_stores3/newTruck.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/main/풍선 뻠핑.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_Animation/main/풍선 뻠핑.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/GUI/window1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GUI/window1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/MyRoom/BG_sky2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_Animation/MyRoom/BG_sky2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/MyRoom/myroomBGsky.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_Animation/MyRoom/myroomBGsky.anim" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -682,12 +678,12 @@
       <workItem from="1549784564247" duration="4534000" />
       <workItem from="1549884792370" duration="7044000" />
       <workItem from="1549893618692" duration="5001000" />
-      <workItem from="1549945228164" duration="8322000" />
+      <workItem from="1549945228164" duration="8564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101993000" />
+    <option name="totallyTimeSpent" value="102235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
