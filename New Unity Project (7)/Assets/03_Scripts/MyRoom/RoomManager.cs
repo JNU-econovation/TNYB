@@ -102,7 +102,7 @@ public class RoomManager : MonoBehaviour
 
     public void setRoomName(string roomName)
     {
-        string roomTitle = roomName + "의 행복한 자취방";
+        string roomTitle = roomName + "님의 행복한 자취방";
         RoomNameText.text = roomTitle;
     }
     
