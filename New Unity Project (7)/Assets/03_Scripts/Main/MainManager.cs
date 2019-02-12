@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainManager : MonoBehaviour {
-
+public class MainManager : MonoBehaviour
+{
     public GameObject mainPanel, playPanel, settingPanel, rankPanel, signinPanel, exitPanel, signupPanel, nicknamePanel;
     public Button soundButton, vibrationButton, musicButton;
     private bool music = true, vibration = true;
