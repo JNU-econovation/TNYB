@@ -119,10 +119,10 @@ public class RoomManager : MonoBehaviour
         {
             if(a== 0)
             {
-                myroomSFX.Instance.isMfxMute = true;
+                MyroomMusic.Instance.isMfxMute = true;
                 PlayerPrefs.SetInt("isMfxMute", 1);
                 PlayerPrefs.Save();
-                myroomSFX.Instance.setMyRoomMusic();
+                MyroomMusic.Instance.setMyRoomMusic();
             }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[0];
             settingButtons_bool[a] = false;
@@ -131,10 +131,10 @@ public class RoomManager : MonoBehaviour
         {
             if (a == 0)
             {
-                myroomSFX.Instance.isMfxMute = false;
+                MyroomMusic.Instance.isMfxMute = false;
                 PlayerPrefs.SetInt("isMfxMute", 0);
                 PlayerPrefs.Save();
-                myroomSFX.Instance.setMyRoomMusic();
+                MyroomMusic.Instance.setMyRoomMusic();
             }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[1];
             settingButtons_bool[a] = true;

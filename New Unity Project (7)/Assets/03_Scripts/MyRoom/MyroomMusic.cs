@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class myroomMusic : MonoBehaviour
+public class MyroomMusic : MonoBehaviour
 {
     public AudioClip myroomMusics;
-    private bool isMfxMute;
+    public bool isMfxMute;
 
-    private static myroomMusic instance;
+    private static MyroomMusic instance;
 
-    public static myroomMusic Instance
+    public static MyroomMusic Instance
     {
         get { return instance; }
     }
@@ -25,7 +25,7 @@ public class myroomMusic : MonoBehaviour
         else
         {
             isMfxMute = false;
-           
+
         }
         setMyRoomMusic();
 
