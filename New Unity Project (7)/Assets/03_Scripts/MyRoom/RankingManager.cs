@@ -16,6 +16,11 @@ public class RankingManager : MonoBehaviour
     private List<Text> rankNickList = new List<Text>();
     private List<Text> rankScoreList = new List<Text>();
     private List<GameObject> loadingList = new List<GameObject>();
+
+    private const string selectedColor = "60FF06";
+    public Text cashierText, cinemaText, factoryText;
+
+    public Scrollbar rankScrollbar;
     
     private static RankingManager instance;
 
@@ -34,11 +39,7 @@ public class RankingManager : MonoBehaviour
 
         instance = this;
 
-        setList();
-        Debug.Log(rankNickList[0]);
-        Debug.Log(rankNickList[1]);
-        Debug.Log(rankNickList[2]);
-        
+        setList();        
     }
 
     public void setList()
@@ -79,16 +80,86 @@ public class RankingManager : MonoBehaviour
 
     public void ClickGetRank(string nameOfGame)
     {
+        changeNameColor(nameOfGame);
+        rankScrollbar.value = 1;
+        loading();
         RealtimeDatabase.Instance.GetRank(nameOfGame);
+    }
+
+    private void changeNameColor(string nameOfGame)
+    {
+        switch (nameOfGame)
+        {
+            case "cashier":
+                cashierText.color = GetColorFromString(selectedColor);
+                cinemaText.color = Color.white;
+                factoryText.color = Color.white;
+                break;
+            case "cinema":
+                cinemaText.color = GetColorFromString(selectedColor);
+                cashierText.color = Color.white;
+                factoryText.color = Color.white;
+                break;
+            case "factory":
+                factoryText.color = GetColorFromString(selectedColor);
+                cinemaText.color = Color.white;
+                cashierText.color = Color.white;
+                break;
+        }
+    }
+
+    public void loading()
+    {
+        deleteNicknameScore();
+        loadingStart();
+
+    }
+
+    public void deleteNicknameScore()
+    {
+        for (int i = 0; i < rankNickList.Count; i++)
+        {
+            rankNickList[i].text = "";
+        }
+        
+        for (int i = 0; i < rankScoreList.Count; i++)
+        {
+            rankScoreList[i].text = "";
+        }
     }
 
     public void loadingStart()
     {
-        
+        for (int i = 0; i < loadingList.Count; i++)
+        {
+            loadingList[i].SetActive(true);
+        }
+    }
+
+    public void loadingEnd()
+    {
+        for (int i = 0; i < loadingList.Count; i++)
+        {
+            loadingList[i].SetActive(false);
+        }
     }
 
     public void UpdateRankBoard(int rank, string nickname, int score)
     {
+        int i = rank - 1;
+        if (nickname == null)
+        {
+            rankNickList[i].text = "ERROR";
+            rankScoreList[i].text = "ERROR";
+            loadingEnd();
+            return;
+        }
+        
+        rankNickList[i].text = nickname;
+        rankScoreList[i].text = score.ToString();
+        loadingEnd();
+        
+        /*
         switch (rank)
         {
             case 1:
@@ -107,5 +178,25 @@ public class RankingManager : MonoBehaviour
                 loading3.SetActive(false);
                 break;    
         }
+        */
+    }
+    
+    private int HexToDec(string hex)
+    {
+        int dec = System.Convert.ToInt32(hex, 16);
+        return dec;
+    }
+
+    private float HexToFloatNormalized(string hex)
+    {
+        return HexToDec(hex) / 255f;
+    }
+
+    private Color GetColorFromString(string HexString)
+    {
+        float red = HexToFloatNormalized(HexString.Substring(0, 2));
+        float green = HexToFloatNormalized(HexString.Substring(2, 2));
+        float blue = HexToFloatNormalized(HexString.Substring(4, 2));
+        return new Color(red, green, blue);
     }
 }

@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour {
 		if (timeLeft < 0)
 		{
 			CashierMusicManager.Instance.stopMusic();
+			GameManager.Instance.updateRankScore();
 			finishPanel.SetActive(true);
 			if (!isResultShowed)
 			{

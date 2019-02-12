@@ -36,60 +36,19 @@ public class FactoryManager : MonoBehaviour {
     private string select;
     private int count;
 
-
     private float speed =4.0f;
     public float shakePower = 1f;
     private int[] num = new int[8];
     private float left, right = 0;
 
-    public GameObject RedImage;
-    private bool Tutorial_bool;
-    public GameObject TutorialPanel;
-    public Button tutorialRightBtn;
-    public Button tutorialLeftBtn;
-    public GameObject[] animation_0 = new GameObject[2];
-    public GameObject animation_1;
-    public void TutorialRight()
-    {
-        tutorialLeftBtn.interactable = true;
-        tutorialRightBtn.interactable = false;
-        RedImage.SetActive(true);
-        animation_0[0].SetActive(false);
-        animation_0[1].SetActive(false);
-        animation_1.SetActive (true);
-    }
+    private bool music_bool;
+    private bool sound_bool;
+    public GameObject Music;
 
-    public void TutorialLeft()
-    {
-        animation_0[0].SetActive(true);
-        animation_0[1].SetActive(true);
-        RedImage.SetActive(false);
-        animation_1.SetActive(false); ;
 
-        tutorialRightBtn.interactable = true;
-        tutorialLeftBtn.interactable = false;
 
-    }
 
-    public void CloseTutorial()
-    {
-        TutorialRight();
-        TutorialPanel.SetActive(false);
-        isPaused = false;
-        Time.timeScale = 1;
-    }
-    public void OpenTutorial()
-    {
-        TutorialLeft();
-        Time.timeScale = 0;
-        isPaused = true;
-        TutorialPanel.SetActive(true);
-    }
-
-    public void SetSCoreDB()
-    {
-        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
-    }
+   
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -115,15 +74,17 @@ public class FactoryManager : MonoBehaviour {
     void Start() {
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        OpenTutorial();
         score = 0;
+
+        FirstMusicSetting();
         //StartCoroutine(Changing(speed));
         makeTrash_1();
-        tutorialLeftBtn.interactable = false;
+      
         timer = 0.0f;
         waitingTime = 0.7f;
     }
     
+
 
     void Update()
     {
@@ -288,7 +249,8 @@ public class FactoryManager : MonoBehaviour {
             if ( kind[num[i]] == select)
             {
 
-                GetComponent<AudioSource>().Play();
+                if(sound_bool)
+                    GetComponent<AudioSource>().Play();
                 objImage[i].GetComponent<Image>().sprite =transparent;
                 count--;
                 if(count == 0)
@@ -395,5 +357,78 @@ public class FactoryManager : MonoBehaviour {
         Time.timeScale = 1;
         isPaused = false;
         pausePanel.SetActive(false);
+    }
+    //-----------Music
+    private void FirstMusicSetting()
+    {
+        if (PlayerPrefs.GetString("music_factory") != null)
+        {
+            if (PlayerPrefs.GetString("music_factory") == "true")
+            {
+                music_bool = true;
+                Music.GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                music_bool = false;
+                Music.GetComponent<AudioSource>().Stop();
+            }
+        }
+        else
+            music_bool = true;
+
+        if (PlayerPrefs.GetString("sound_factory") != null)
+        {
+            if (PlayerPrefs.GetString("sound_factory") == "true")
+                sound_bool = true;
+            else
+                sound_bool = false;
+        }
+        else
+            sound_bool = true;
+
+
+        GetComponent<AudioSource>().Stop();
+    }
+
+    public void ClickMusicBtn()
+    {
+        if (music_bool)
+        {
+            music_bool = false;
+            PlayerPrefs.SetString("music_factory", "false");
+            PlayerPrefs.Save();
+            Music.GetComponent<AudioSource>().Stop();
+        }
+        else
+        {
+            PlayerPrefs.SetString("music_factory", "true");
+            PlayerPrefs.Save();
+            music_bool = true;
+            Music.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void ClickSoundBtn()
+    {
+        if (sound_bool)
+        {
+            sound_bool = false;
+            PlayerPrefs.SetString("sound_factory", "false");
+            PlayerPrefs.Save();
+
+            //SoundManger 호출
+        }
+        else
+        {
+            sound_bool = true;
+            PlayerPrefs.SetString("sound_factory", "true");
+            PlayerPrefs.Save();
+        }
+    }
+    //----DB
+    public void SetSCoreDB()
+    {
+        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
     }
 }

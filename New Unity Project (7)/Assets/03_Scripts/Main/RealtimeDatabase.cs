@@ -232,14 +232,13 @@ public class RealtimeDatabase : MonoBehaviour
                         Debug.Log("Rank: " + rank + ", nickname: " + tempNickname + ", score: " + tempScore);
                         
                         RankingManager.Instance.UpdateRankBoard(rank, tempNickname, tempScore);
-//                        RankingManager.Instance.UpdateRankBoard(rank, (string)item.Child("nickname").Value, (int)item.Child(cashierChild).Value);
                     }
                 }
 
             });
     }
 
-    public void SetGameScore(String str, int n)
+    public void SetGameScore(string str, int n)
     {
         databaseReference.Child("users").Child(Login.user.UserId).Child(str).SetValueAsync(n);
     }
