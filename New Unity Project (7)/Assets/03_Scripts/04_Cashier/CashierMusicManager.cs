@@ -7,7 +7,7 @@ public class CashierMusicManager : MonoBehaviour
     private bool isMusicMute;
     public AudioClip mainMusic;
    
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     
     private static CashierMusicManager instance;
     public static CashierMusicManager Instance
@@ -48,7 +48,7 @@ public class CashierMusicManager : MonoBehaviour
         audioSource.Stop();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isMusicMute)
         {

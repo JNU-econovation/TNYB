@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -86,6 +86,8 @@ public class RoomManager : MonoBehaviour
         instance = this;
         setprice();
         Time.timeScale = 1;
+        
+        setMusicMuteImage();
     }
 
     private void Start()
@@ -93,6 +95,7 @@ public class RoomManager : MonoBehaviour
         settingButtons_bool[0] = settingButtons_bool[1] = settingButtons_bool[2] = true;
         Button_number =-1;
         PurchasePanel.SetActive(false);
+        SettingPaenl.SetActive(false);
         //  door.SetActive(true);
         RealtimeDatabase.Instance.GetMoneyDB();
         RealtimeDatabase.Instance.GetpurchaseDB();
@@ -111,18 +114,41 @@ public class RoomManager : MonoBehaviour
         SettingPaenl.SetActive(true);
     }
 
+    public void ClickMusicMute()
+    {
+        myRoomMusicManager.Instance.ClickMusicMute();
+        setMusicMuteImage();
+    }
+
+    public void setMusicMuteImage()
+    {
+        if (myRoomMusicManager.Instance.getIsMusicMute())
+        {
+            settingButton[0].GetComponent<Image>().sprite = ButtonImage[0];
+        }
+        else
+        {
+            settingButton[0].GetComponent<Image>().sprite = ButtonImage[1];
+        }
+    }
+    
+    /*
+     
+     병재 코드
     public void ClickSettingButton()
     {
+        
+        // Button Image [0] -> 음소거 상태
         int a = EventSystem.current.currentSelectedGameObject.name[0] - '0';
 
         if (settingButtons_bool[a])
         {
             if(a== 0)
             {
-                MyroomMusic.Instance.isMfxMute = true;
+                myroomSFX.Instance.isMfxMute = true;
                 PlayerPrefs.SetInt("isMfxMute", 1);
                 PlayerPrefs.Save();
-                MyroomMusic.Instance.setMyRoomMusic();
+                myroomSFX.Instance.setMyRoomMusic();
             }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[0];
             settingButtons_bool[a] = false;
@@ -140,6 +166,8 @@ public class RoomManager : MonoBehaviour
             settingButtons_bool[a] = true;
         }
     }
+    */
+    
     public void CloseSettingPanel()
     {
         SettingPaenl.SetActive(false);

@@ -469,6 +469,9 @@ MonoBehaviour:
   pausePanel: {fileID: 2015014101}
   gameOverPanel: {fileID: 1767952445}
   remainCount: {fileID: 1707809245}
+  MusicBtn: {fileID: 1744000185}
+  btn_0: {fileID: 21300144, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  btn_1: {fileID: 21300146, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   settingPanel: {fileID: 462432810}
 --- !u!4 &47633447
 Transform:
@@ -1982,7 +1985,6 @@ GameObject:
   - component: {fileID: 485646418}
   - component: {fileID: 485646417}
   - component: {fileID: 485646416}
-  - component: {fileID: 485646419}
   m_Layer: 5
   m_Name: 1.SoundButton
   m_TagString: Untagged
@@ -2060,17 +2062,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 485646419}
-        m_MethodName: ClickEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &485646417
@@ -2110,20 +2101,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485646414}
   m_CullTransparentMesh: 0
---- !u!114 &485646419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485646414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4266a0c84ea7c46bdab3720cc6ccb4b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSprite1: {fileID: 21300144, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
-  btnSprite2: {fileID: 21300146, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
 --- !u!1 &525000343
 GameObject:
   m_ObjectHideFlags: 0
@@ -7218,8 +7195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   okay: {fileID: 8300000, guid: 5ae2d7e898770f647b9241995a07035c, type: 3}
-  count: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
-  over: {fileID: 0}
+  count: {fileID: 8300000, guid: 9fd87af5c118f40d980f1c7b9fbfb6af, type: 3}
+  over: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  btnSprite1: {fileID: 21300144, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  btnSprite2: {fileID: 21300146, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
+  SoundBtn: {fileID: 485646416}
 --- !u!4 &1699412386
 Transform:
   m_ObjectHideFlags: 0
@@ -7325,7 +7305,6 @@ GameObject:
   - component: {fileID: 1744000187}
   - component: {fileID: 1744000186}
   - component: {fileID: 1744000185}
-  - component: {fileID: 1744000188}
   m_Layer: 5
   m_Name: 0.MusicButton
   m_TagString: Untagged
@@ -7403,17 +7382,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1744000188}
-        m_MethodName: BtnClickEvent_Music
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1744000186
@@ -7453,20 +7421,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744000183}
   m_CullTransparentMesh: 0
---- !u!114 &1744000188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744000183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4266a0c84ea7c46bdab3720cc6ccb4b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSprite1: {fileID: 21300144, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
-  btnSprite2: {fileID: 21300146, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
 --- !u!1 &1748126527
 GameObject:
   m_ObjectHideFlags: 0
