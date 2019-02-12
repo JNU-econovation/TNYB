@@ -31,9 +31,9 @@ public class btnScript : MonoBehaviour
     {
         if (FactoryManager.Instance.getMusic_bool())
         {
-            GetComponent<Image>().sprite = btnSprite2;
+            GetComponent<Image>().sprite = btnSprite1;
         }
         else
-        GetComponent<Image>().sprite = btnSprite1;
+        GetComponent<Image>().sprite = btnSprite2;
     }
 }

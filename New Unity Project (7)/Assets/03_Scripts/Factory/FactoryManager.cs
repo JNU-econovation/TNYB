@@ -41,7 +41,7 @@ public class FactoryManager : MonoBehaviour {
     private int[] num = new int[8];
     private float left, right = 0;
 
-    private bool music_bool;
+    private bool isMfxMute;
     public GameObject Music;
 
     public GameObject pausePanel;
@@ -69,7 +69,6 @@ public class FactoryManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
-
         gameOverPanel.SetActive(false);
         score = 0;
         pausePanel.SetActive(true);
@@ -92,7 +91,7 @@ public class FactoryManager : MonoBehaviour {
 
     public bool getMusic_bool()
     {
-        return music_bool;
+        return isMfxMute;
     }
     void Update()
     {
@@ -159,12 +158,12 @@ public class FactoryManager : MonoBehaviour {
     {
         if (combo)
         {
-            score += 200;
+            score += 2000;
             moveSpeed += 0.2f;
         }
         else
         {
-            score += 100;
+            score += 1000;
             moveSpeed = 1f;
         }
 
@@ -285,11 +284,10 @@ public class FactoryManager : MonoBehaviour {
     public void Finish()
     {
         gameOverPanel.SetActive(true);
-        //resultText.text = scoreText.text;
         StartCoroutine(IeResultScoreCountEffect());
 
     }
-    public IEnumerator IeResultScoreCountEffect()
+    public IEnumerator IeResultScoreCountEffect() //점수판돌아가는거
     {
         int tempScore = 0;
         // count sfx
@@ -394,43 +392,34 @@ public class FactoryManager : MonoBehaviour {
     //-----------Music
     private void FirstMusicSetting()
     {
-        if (PlayerPrefs.GetString("music_factory") != null)
+
+        if (PlayerPrefs.GetInt("isMfxMute", 0) == 1)
         {
-            if (PlayerPrefs.GetString("music_factory") == "true")
-            {
-                music_bool = true;
-                Music.GetComponent<AudioSource>().Play();
-            }
-            else
-            {
-                music_bool = false;
-                Music.GetComponent<AudioSource>().Stop();
-            }
-        }
-        else
-            music_bool = true;
-
-       
-
-
-        GetComponent<AudioSource>().Stop();
-    }
-
-    public void ClickMusicBtn()
-    {
-        if (music_bool)
-        {
-            music_bool = false;
-            PlayerPrefs.SetString("music_factory", "false");
-            PlayerPrefs.Save();
+            isMfxMute = true;
             Music.GetComponent<AudioSource>().Stop();
         }
         else
         {
-            PlayerPrefs.SetString("music_factory", "true");
-            PlayerPrefs.Save();
-            music_bool = true;
+            isMfxMute = false;
             Music.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void ClickMusicBtn()
+    {
+        if (isMfxMute)
+        {
+            isMfxMute = false;
+            PlayerPrefs.SetInt("isMfxMute", 0);
+            PlayerPrefs.Save();
+            Music.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("music_factory", 1);
+            PlayerPrefs.Save();
+            isMfxMute = true;
+            Music.GetComponent<AudioSource>().Stop();
         }
     }
 
