@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 public class ChangeScenes : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public void ToSelectGame()
+    {
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1;
+    }
+    
     public void ToFirstScene()
     {
         SceneManager.LoadScene(0);
