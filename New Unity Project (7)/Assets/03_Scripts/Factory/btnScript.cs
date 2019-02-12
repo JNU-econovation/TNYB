@@ -37,3 +37,4 @@ public class btnScript : MonoBehaviour
         GetComponent<Image>().sprite = btnSprite2;
     }
 }
+

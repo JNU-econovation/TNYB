@@ -25,6 +25,7 @@ public class MainManager : MonoBehaviour
             return;
         }
 
+        Time.timeScale = 1;
         instance = this;
     }
 
