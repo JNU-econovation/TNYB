@@ -24,6 +24,8 @@ public class TimerScript_cinema : MonoBehaviour {
         //  timesUpText.SetActive(false);
         isResultShowed = false;
         timeLeft = maxTime;
+        CinemaManager.cinema_score = 0;
+        
         finishPanel.SetActive(false);
     }
 	void FixedUpdate () {
@@ -38,6 +40,8 @@ public class TimerScript_cinema : MonoBehaviour {
                 CinemaManager.instance.StartCoroutine(CinemaManager.instance.IeResultScoreCountEffect());
                 CinemaManager.instance.SetScoreDB();
             }
+            //CinemaManager.instance.ComboReset();
+
         }
 	    
 	    if (timeLeft < warnTime)
@@ -51,6 +55,7 @@ public class TimerScript_cinema : MonoBehaviour {
             timeLeft -= Time.deltaTime;
             timeBar.fillAmount = timeLeft / maxTime;
         }
+        //else { CinemaManager.cinema_score = 0; }
 	}
     
     private int HexToDec(string hex)

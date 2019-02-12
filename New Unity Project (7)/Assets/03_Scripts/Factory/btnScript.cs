@@ -30,15 +30,28 @@ public class btnScript : MonoBehaviour
             MusicBtn.GetComponent<Image>().sprite = btnSprite1;
         }
         else
-            MusicBtn.GetComponent<Image>().sprite = btnSprite2;
-    }
 
+            GetComponent<Image>().sprite = btnSprite2;
+    }
+    public void BtnClickEvent_Music()
+    {
+        if (FactoryManager.Instance.getMusic_bool())
+        {
+            GetComponent<Image>().sprite = btnSprite1;
+        }
+        else
+        GetComponent<Image>().sprite = btnSprite2;
+    }
     public void ClickEvent_Mart()
     {
         if (CashierSfxManager.Instance.getIsSfxMute())
+        {
             GetComponent<Image>().sprite = btnSprite1;
+        }
         else
+        {
             GetComponent<Image>().sprite = btnSprite2;
+        }
 
     }
     public void BtnClickEvent_Music_Mart()
@@ -48,7 +61,9 @@ public class btnScript : MonoBehaviour
             GetComponent<Image>().sprite = btnSprite1;
         }
         else
+        {
             GetComponent<Image>().sprite = btnSprite2;
+        }
     }
 }
 
