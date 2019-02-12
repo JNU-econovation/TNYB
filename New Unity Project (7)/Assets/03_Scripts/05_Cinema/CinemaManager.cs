@@ -218,7 +218,10 @@ public class CinemaManager : MonoBehaviour
             CinemaSfxManager.Instance.GetComponent<AudioSource>().Play();
         }
         StartCoroutine(ShakeCoroutine(clickedTicket));
-        cinema_score -= 100;
+        if (cinema_score > 0)
+        {
+            cinema_score -= 100;
+        }
         ComboReset();
         scoreText.text = "" + cinema_score;
     }
@@ -260,7 +263,6 @@ public class CinemaManager : MonoBehaviour
             finishScore.text = tempScore.ToString();
         }
         // count done sfx
-        factorySfxManager.Instance.GameOverSound();
         finishScore.text = cinema_score.ToString();
     }
     public bool getCanRespawn()
