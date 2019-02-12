@@ -251,10 +251,7 @@ public class CinemaManager : MonoBehaviour
     public IEnumerator IeResultScoreCountEffect() //점수판돌아가는거
     {
         int tempScore = 0;
-        // count sfx
-
-        // factorySfxManager.Instance.CountSound();
-
+        CinemaSfxManager.Instance.playScoreCount();
         while (tempScore <= cinema_score)
         {
             tempScore += 1;
@@ -262,12 +259,8 @@ public class CinemaManager : MonoBehaviour
             yield return null;
             finishScore.text = tempScore.ToString();
         }
-        // count done sfx
+        CinemaSfxManager.Instance.playCountOver();
         finishScore.text = cinema_score.ToString();
-    }
-    public bool getCanRespawn()
-    {
-        return this.canRespawn;
     }
 
     public void setCanRespawn(bool canRespawn)

@@ -32,6 +32,9 @@ public class CinemaSfxManager : MonoBehaviour
         {
             isSfxMute = false;
         }
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = false;
     }
     public void clickSfxMute()
     {
@@ -70,6 +73,7 @@ public class CinemaSfxManager : MonoBehaviour
     {
         if (!isSfxMute)
         {
+            audioSource.loop = false;
             audioSource.clip = correct;
             audioSource.Play();
         }
@@ -78,6 +82,7 @@ public class CinemaSfxManager : MonoBehaviour
     {
         if (!isSfxMute)
         {
+            audioSource.loop = false;
             audioSource.clip = wrong;
             audioSource.Play();
         }
