@@ -209,12 +209,11 @@ public class RealtimeDatabase : MonoBehaviour
     /* ============== Rank ================== */
 
 
-    public void GetRank()
+    public void GetRank(string nameOfGame)
     {
-        Debug.Log("Hi2");
-        string cashierChild = "score_cashier";
+        string nameOfChild = "score_" + nameOfGame;
         
-        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild(cashierChild).LimitToLast(10)
+        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild(nameOfChild).LimitToLast(10)
             .GetValueAsync().ContinueWith(task =>
             {
                 if (task.IsFaulted)
@@ -228,9 +227,9 @@ public class RealtimeDatabase : MonoBehaviour
                     foreach (var item in snapshot.Children)
                     {
                         rank = rank + 1;
-                        //Debug.Log("Rank: " + rank + ", nickname: " + item.Child("nickname").Value + ", score: " + item.Child(cashierChild).Value);
                         string tempNickname = (string)Convert.ChangeType(item.Child("nickname").Value, typeof(string));
-                        int tempScore = (int)Convert.ChangeType(item.Child(cashierChild).Value, typeof(int));
+                        int tempScore = (int)Convert.ChangeType(item.Child(nameOfChild).Value, typeof(int));
+                        Debug.Log("Rank: " + rank + ", nickname: " + tempNickname + ", score: " + tempScore);
                         
                         RankingManager.Instance.UpdateRankBoard(rank, tempNickname, tempScore);
 //                        RankingManager.Instance.UpdateRankBoard(rank, (string)item.Child("nickname").Value, (int)item.Child(cashierChild).Value);
@@ -238,63 +237,6 @@ public class RealtimeDatabase : MonoBehaviour
                 }
 
             });
-    }
-
-    public void GetCashierRank()
-    {   
-        Debug.Log("Hi");
-        
-        FirebaseDatabase.DefaultInstance
-            .GetReference("users").Child("score_cashier").OrderByValue().LimitToLast(10)
-            .GetValueAsync().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    Debug.Log("Failed To Load");
-                }
-                else if (task.IsCompleted)
-                {
-                    int rank = 0;
-                    DataSnapshot snapshot = task.Result;
-                    foreach (var item in snapshot.Children)
-                    {
-                        rank = rank + 1;
-                        Debug.Log("1. Rank: " + rank + ",Nickname: " + (string)item.Child("nickname").Value + ", score: " + (int)item.Child("score_cashier").Value);
-                        RankingManager.Instance.UpdateRankBoard(
-                            rank,
-                            (string)item.Child("nickname").Value,
-                            (int)item.Child("score_cashier").Value);
-
-                    }
-                }
-            });
-        
-        /*
-        FirebaseDatabase.DefaultInstance
-            .GetReference("users").OrderByChild("score_cashier").LimitToLast(10)
-            .GetValueAsync().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    Debug.Log("Failed To Load");
-                }
-                else if (task.IsCompleted)
-                {
-                    int rank = 0;
-                    DataSnapshot snapshot = task.Result;
-                    foreach (var item in snapshot.Children)
-                    {
-                        rank = rank + 1;
-                        Debug.Log("1. Rank: " + rank + ",Nickname: " + (string)item.Child("nickname").Value + ", score: " + (int)item.Child("score_cashier").Value);
-                        RankingManager.Instance.UpdateRankBoard(
-                            rank,
-                            (string)item.Child("nickname").Value,
-                            (int)item.Child("score_cashier").Value);
-
-                    }
-                }
-            });
-            */
     }
 
     public void SetGameScore(String str, int n)

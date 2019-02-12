@@ -95,7 +95,7 @@ public class RoomManager : MonoBehaviour
     public void OpenRankingPanel()
     {
         RankingPanel.SetActive(true);
-        //ButtonPanel.SetActive(false);
+        RankingManager.Instance.ClickGetRank("cashier");
     }
     public void CloseRankingPanel()
     {
