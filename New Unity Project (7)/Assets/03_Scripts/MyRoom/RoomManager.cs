@@ -102,7 +102,7 @@ public class RoomManager : MonoBehaviour
 
     public void setRoomName(string roomName)
     {
-        string roomTitle = roomName + "의 행복한 자취방";
+        string roomTitle = roomName + "님의 행복한 자취방";
         RoomNameText.text = roomTitle;
     }
     
@@ -183,7 +183,7 @@ public class RoomManager : MonoBehaviour
     private void OpenPurchasePanel()
     {
         Debug.Log(Button_number);
-        priceText.text = "Price : "+price[Button_number].ToString();
+        priceText.text = "가격 : "+price[Button_number].ToString();
         PurchasePanel.SetActive(true);
     }
     public void getMoneyDB(string m)
