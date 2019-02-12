@@ -7,6 +7,7 @@ using Firebase.Auth;
 public class Login : MonoBehaviour
 {
     public GameObject loginLoading;
+    public GameObject signupLoading;
     
     private string SignInEmail;
     private string SignInPassword;
@@ -83,6 +84,7 @@ public class Login : MonoBehaviour
     public void ClickSignUpBtn()
     {
         SfxManager.Instance.playClick();
+        SignUpLoadingStart();
         SignUpEmail = SignUpInputEmail.text;
         SignUpPassword = SignUpInputPassword.text;
         SignUpConfirmedPassword = SignUpInputConfirmedPassword.text;
@@ -90,6 +92,7 @@ public class Login : MonoBehaviour
         if (SignUpPassword == null || SignUpPassword == "")
         {
             SfxManager.Instance.playWrong();
+            SignUpLoadingEnd();
             wrongPasswordForm();
             return;
         }
@@ -112,24 +115,28 @@ public class Login : MonoBehaviour
 
     public void wrongPassword()
     {
+        SignUpLoadingEnd();
         signUpPanel.SetActive(true);
         signUpErrorText.text = "비밀번호가 일치하지 않습니다";
     }
     
     public void wrongPasswordForm()
     {
+        SignUpLoadingEnd();
         signUpPanel.SetActive(true);
         signUpErrorText.text = "비밀번호 형식이\n정상적이지 않습니다";
     }
     
     public void wrongTotal()
     {
+        SignUpLoadingEnd();
         signUpPanel.SetActive(true);
         signUpErrorText.text = "이메일 중복 또는 형식 오류!\n혹은 비밀번호를 더 어렵게 해주세요";
     }
 
     public void doneSignUpError()
     {
+        SignUpLoadingEnd();
         signUpPanel.SetActive(false);
     }
 
@@ -140,6 +147,7 @@ public class Login : MonoBehaviour
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");
+                SignUpLoadingEnd();
                 wrongTotal();
                 return;
             }
@@ -147,13 +155,15 @@ public class Login : MonoBehaviour
             if (task.IsFaulted)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                SignUpLoadingEnd();
                 wrongTotal();
                 return;
             }
 
             // Firebase User has been created.
             Firebase.Auth.FirebaseUser newUser = task.Result;
-            Debug.LogFormat("Firebase user created successfully - DisplayName:({0}), UserId:({1})", newUser.DisplayName, newUser.UserId);
+            SignUpLoadingEnd();
+            //Debug.LogFormat("Firebase user created successfully - DisplayName:({0}), UserId:({1})", newUser.DisplayName, newUser.UserId);
             MainManager.Instance.toSignInPanel();
         });
     }
@@ -205,6 +215,16 @@ public class Login : MonoBehaviour
     public void LoginLoadingEnd()
     {
         loginLoading.SetActive(false);
+    }
+
+    public void SignUpLoadingStart()
+    {
+        signupLoading.SetActive(true);
+    }
+    
+    public void SignUpLoadingEnd()
+    {
+        signupLoading.SetActive(false);
     }
     
     public void ClickCheckOnNicknamePanel()
