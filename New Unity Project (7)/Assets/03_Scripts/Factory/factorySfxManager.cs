@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class factorySfxManager : MonoBehaviour
 {
     public AudioClip okay, count, over;
     private bool isSfxMute = false;
     private AudioSource audioSource;
+
+    public Sprite btnSprite1;
+    public Sprite btnSprite2;
+    public Button SoundBtn;
 
     private static factorySfxManager instance;
     public static factorySfxManager Instance
@@ -37,6 +42,7 @@ public class factorySfxManager : MonoBehaviour
         {
             isSfxMute = false;
         }
+        ClickSoundBtn();
 
 
     }
@@ -59,7 +65,7 @@ public class factorySfxManager : MonoBehaviour
             isSfxMute = false;
             PlayerPrefs.SetInt("isSfxMute", 0);
             PlayerPrefs.Save();
-
+            SoundBtn.GetComponent<Image>().sprite = btnSprite2;
             //SoundManger 호출
         }
         else
@@ -67,6 +73,7 @@ public class factorySfxManager : MonoBehaviour
             isSfxMute = true;
             PlayerPrefs.SetInt("isSfxMute", 1);
             PlayerPrefs.Save();
+            SoundBtn.GetComponent<Image>().sprite = btnSprite1;
         }
     }
 

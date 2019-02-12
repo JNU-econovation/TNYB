@@ -8,10 +8,12 @@ public class btnScript : MonoBehaviour
 
     public Sprite btnSprite1;
     public Sprite btnSprite2;
+    public Button MusicBtn;
     // Start is called before the first frame update
     void Start()
     {
-        ClickEvent();
+        BtnClickEvent_Music();
+       // ClickEvent();
     }
 
     // Update is called once per frame
@@ -20,22 +22,16 @@ public class btnScript : MonoBehaviour
         
     }
 
-    public void ClickEvent()
-    {
-        if (factorySfxManager.Instance.getisSfxMute())
-            GetComponent<Image>().sprite = btnSprite1;
-        else
-            GetComponent<Image>().sprite = btnSprite2;
-    }
     public void BtnClickEvent_Music()
     {
         if (FactoryManager.Instance.getMusic_bool())
         {
-            GetComponent<Image>().sprite = btnSprite1;
+            MusicBtn.GetComponent<Image>().sprite = btnSprite1;
         }
         else
-        GetComponent<Image>().sprite = btnSprite2;
+            MusicBtn.GetComponent<Image>().sprite = btnSprite2;
     }
+
     public void ClickEvent_Mart()
     {
         if (CashierSfxManager.Instance.getIsSfxMute())
