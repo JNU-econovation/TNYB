@@ -154,7 +154,7 @@ public class RealtimeDatabase : MonoBehaviour
                     DataSnapshot snapshot = task.Result;
                     //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
 
-                    RoomManager.Instance.getMoneyDB((string)snapshot.Child(Login.user.UserId).Child("money").Value);
+                    RoomManager.Instance.getMoneyDB(snapshot.Child(Login.user.UserId).Child("money").Value.ToString());
                 }
 
 
@@ -244,7 +244,12 @@ public class RealtimeDatabase : MonoBehaviour
     {
        databaseReference.Child("users").Child(Login.user.UserId).Child(str).Child(num.ToString()).SetValueAsync(true);
     }
-    
+
+    public void SetMoneyData(int value)
+    {
+        databaseReference.Child("users").Child(Login.user.UserId).Child("money").SetValueAsync(value);
+    }
+
     /* ============== Rank ================== */
 
 
