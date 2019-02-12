@@ -1534,7 +1534,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300138, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2068,8 +2068,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300138, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3765,8 +3765,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CloseTutorial
+      - m_Target: {fileID: 1811747212}
+        m_MethodName: FactoryTutorialPanel_GamestartBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3798,7 +3798,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Sprite: {fileID: 21300138, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3969,8 +3969,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CloseTuto
+      - m_Target: {fileID: 1811747212}
+        m_MethodName: MartTutorialPanel_GamestartBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4002,7 +4002,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Sprite: {fileID: 21300138, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4767,8 +4767,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CloseTuto
+      - m_Target: {fileID: 1811747212}
+        m_MethodName: CinemaTutorialPanel_GamestartBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4800,7 +4800,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Sprite: {fileID: 21300138, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5748,7 +5748,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557638663}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -6028,7 +6028,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300138, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  m_Sprite: {fileID: 21300130, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

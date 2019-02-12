@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SelectGameManager : MonoBehaviour
 {
@@ -38,20 +39,31 @@ public class SelectGameManager : MonoBehaviour
     {
         
     }
-
+    /*
     public void ToMyRoom()
     {
-
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
+    */
 
 
     public void CinemaTutorialPanel_Open()
     {
         cinemaTutorialPanel.SetActive(true);
+        Cinema_nextBtn.interactable = true;
+        Cinema_prevBtn.interactable = false;
+        fakeTicket.SetActive(false);
+        hand2.SetActive(false);
+        redline.SetActive(false);
+        CineTutoText.SetActive(false);
+        Ticekt.SetActive(true);
+        hand1.SetActive(true);
     }
     public void CinemaTutorialPanel_GamestartBtn()
     {
-        //씬 매니저 사용
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1;
     }
     public void CinemaTutorialPanel_Close()
     {
@@ -86,10 +98,15 @@ public class SelectGameManager : MonoBehaviour
     public void MartTutorialPanel_Open()
     {
         martTutorialPanel.SetActive(true);
+        Mart_nextBtn.interactable = true;
+        Mart_prevBtn.interactable = false;
+        Mart_Tuto1.SetActive(true);
+        Mart_Tuto2.SetActive(false);
     }
     public void MartTutorialPanel_GamestartBtn()
     {
-        //씬 매니저 사용
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
     }
     public void MartTutorialPanel_Close()
     {
@@ -117,10 +134,17 @@ public class SelectGameManager : MonoBehaviour
     public void FactoryTutorialPanel_Open()
     {
         factoryTutorialPanel.SetActive(true);
+        Factory_nextBtn.interactable = true;
+        Factory_prevBtn.interactable = false;
+        animation_0[0].SetActive(true);
+        animation_0[1].SetActive(true);
+        RedImage.SetActive(false);
+        animation_1.SetActive(false);
     }
     public void FactoryTutorialPanel_GamestartBtn()
     {
-        //씬 매니저 사용
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1;
     }
     public void FactoryTutorialPanel_Close()
     {
