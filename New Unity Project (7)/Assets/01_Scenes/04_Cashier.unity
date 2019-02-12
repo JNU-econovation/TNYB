@@ -2480,10 +2480,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1181365338777859185, guid: 15f829c46d8644bdc8530243ce410362,
+
+    - target: {fileID: 1181365338785759084, guid: 15f829c46d8644bdc8530243ce410362,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.855469
+      value: -25.99997
+
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f829c46d8644bdc8530243ce410362, type: 3}
@@ -5190,6 +5192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button-Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 3189458923698442413, guid: e23d57cb6fcfc4d998525d748fdf8d57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1535507034792598598, guid: e23d57cb6fcfc4d998525d748fdf8d57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5322,7 +5329,9 @@ PrefabInstance:
     - target: {fileID: 2435333066991591104, guid: f50d97ee8a54f4b7ca8c9adab83ab869,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+
+      value: 0
+
       objectReference: {fileID: 0}
     - target: {fileID: 1884246936579101377, guid: f50d97ee8a54f4b7ca8c9adab83ab869,
         type: 3}
