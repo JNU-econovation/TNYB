@@ -77,6 +77,7 @@ public class FactoryManager : MonoBehaviour {
         score = 0;
         pausePanel.SetActive(true);
         pausePanel.SetActive(false);
+        Music.GetComponent<AudioSource>().Play();
         FirstMusicSetting();
         //StartCoroutine(Changing(speed));
         makeTrash_1();
@@ -417,13 +418,13 @@ public class FactoryManager : MonoBehaviour {
         if (PlayerPrefs.GetInt("isMusicMute", 0) == 1)
         {
             isMusicMute = true;
-            Music.GetComponent<AudioSource>().Stop();
+            Music.GetComponent<AudioSource>().volume = 0;
             MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
         else
         {
             isMusicMute = false;
-            Music.GetComponent<AudioSource>().Play();
+            Music.GetComponent<AudioSource>().volume = 1;
             MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
     }
@@ -434,18 +435,18 @@ public class FactoryManager : MonoBehaviour {
         {
             isMusicMute = false;
             PlayerPrefs.SetInt("isMusicMute", 0);
-            PlayerPrefs.Save();
-            Music.GetComponent<AudioSource>().Play();
+            Music.GetComponent<AudioSource>().volume = 1;
             MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
         else
         {
             PlayerPrefs.SetInt("isMusicMute", 1);
-            PlayerPrefs.Save();
             isMusicMute = true;
-            Music.GetComponent<AudioSource>().Stop();
+            Music.GetComponent<AudioSource>().volume = 0;
             MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
+        PlayerPrefs.Save();
+
     }
 
     //----DB
