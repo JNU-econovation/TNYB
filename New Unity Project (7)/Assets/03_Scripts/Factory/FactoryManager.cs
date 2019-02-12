@@ -452,6 +452,14 @@ public class FactoryManager : MonoBehaviour {
     //----DB
     public void SetSCoreDB()
     {
-        RealtimeDatabase.Instance.SetGameScore("score_factory", score);
+        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        if (max_score < score)
+        {
+            RealtimeDatabase.Instance.SetGameScore("score_factory", score);
+            PlayerPrefs.SetInt("max_score_cashier", score);
+            PlayerPrefs.Save();
+        }
+
+
     }
 }

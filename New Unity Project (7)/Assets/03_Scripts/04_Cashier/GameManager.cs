@@ -205,7 +205,13 @@ public class GameManager : MonoBehaviour
 
 	public void updateRankScore()
 	{
-		RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
+        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        if (max_score < score)
+        {
+            RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
+            PlayerPrefs.SetInt("max_score_cashier", score);
+            PlayerPrefs.Save();
+        }
 	}
 
 	public void setbCanHandRespawn(bool b)

@@ -294,7 +294,13 @@ public class CinemaManager : MonoBehaviour
 
     public void SetScoreDB()
     {
-        RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        if (max_score < cinema_score)
+        {
+            RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+            PlayerPrefs.SetInt("max_score_cashier", cinema_score);
+            PlayerPrefs.Save();
+        }
     }
 
     public void pauseGame()
