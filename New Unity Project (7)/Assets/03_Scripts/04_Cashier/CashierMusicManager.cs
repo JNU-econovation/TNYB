@@ -66,11 +66,13 @@ public class CashierMusicManager : MonoBehaviour
         {
             // 음소거 아닐때
             PlayerPrefs.SetInt("isMusicMute", 1);
+            PlayerPrefs.Save();
             isMusicMute = true;
         }
         else
         {
             PlayerPrefs.SetInt("isMusicMute", 0);
+            PlayerPrefs.Save();
             isMusicMute = false;
         }
     }

@@ -7,6 +7,8 @@ using Firebase.Auth;
 
 public class Login : MonoBehaviour
 {
+    public GameObject loginLoading;
+    
     private string SignInEmail;
     private string SignInPassword;
     
@@ -131,6 +133,7 @@ public class Login : MonoBehaviour
         SignInEmail = SignInInputEmail.text;
         SignInPassword = SignInInputPassword.text;
 
+        LoginLoadingStart();
 
         // Debug.Log("Sign In - email: " + SignInEmail + ", password: " + SignInPassword);
  
@@ -144,12 +147,14 @@ public class Login : MonoBehaviour
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
                 SfxManager.Instance.playWrong();
+                LoginLoadingEnd();
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
                 SfxManager.Instance.playWrong();
+                LoginLoadingEnd();
                 return;
             }
  
@@ -160,6 +165,16 @@ public class Login : MonoBehaviour
             
             RealtimeDatabase.Instance.checkNicknameExistence();
         });
+    }
+
+    public void LoginLoadingStart()
+    {
+        loginLoading.SetActive(true);
+    }
+    
+    public void LoginLoadingEnd()
+    {
+        loginLoading.SetActive(false);
     }
     
     public void ClickCheckOnNicknamePanel()

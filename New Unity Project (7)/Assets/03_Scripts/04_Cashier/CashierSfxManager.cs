@@ -44,11 +44,13 @@ public class CashierSfxManager : MonoBehaviour
         {
             // 음소거 아닐때
             PlayerPrefs.SetInt("isSfxMute", 1);
+            PlayerPrefs.Save();
             isSfxMute = true;
         }
         else
         {
             PlayerPrefs.SetInt("isSfxMute", 0);
+            PlayerPrefs.Save();
             isSfxMute = false;
         }
     }

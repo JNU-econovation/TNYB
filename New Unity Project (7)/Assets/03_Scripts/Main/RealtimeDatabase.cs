@@ -140,6 +140,25 @@ public class RealtimeDatabase : MonoBehaviour
 
             });
     }
+
+    public void getRoomName()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    string tempStr = (string)Convert.ChangeType(snapshot.Child(Login.user.UserId).Child("nickname").Value, typeof(string));
+                    RoomManager.Instance.setRoomName(tempStr);
+                }
+            });
+    }
+    
     public void SetRoomDB()
     {
         FirebaseDatabase.DefaultInstance.GetReference("users")

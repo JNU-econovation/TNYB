@@ -13,6 +13,8 @@ public class RoomManager : MonoBehaviour
         get { return instance; }
     }
 
+    public Text RoomNameText;
+
     public GameObject[] tile = new GameObject[4];// 0: yellow, 1: green, 2: blue, 3: gray===0-3
     public GameObject[] bed = new GameObject[3]; //0: red, 1: blue, 2: purple=== 4-6
     public GameObject[] table = new GameObject[5]; //0: pc-table_gray 1: pc-table_red 2: pc-table_blue 3: table_2 4: tv-table;=== 7-11
@@ -67,7 +69,16 @@ public class RoomManager : MonoBehaviour
       //  door.SetActive(true);
         RealtimeDatabase.Instance.GetpurchaseDB();
         RealtimeDatabase.Instance.SetRoomDB();
+        
+        
     }
+
+    public void setRoomName(string roomName)
+    {
+        string roomTitle = roomName + "의 행복한 자취방";
+        RoomNameText.text = roomTitle;
+    }
+    
     public void OpenSettingPanel()
     {
         SettingPaenl.SetActive(true);

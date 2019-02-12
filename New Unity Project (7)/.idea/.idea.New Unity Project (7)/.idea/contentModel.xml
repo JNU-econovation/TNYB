@@ -32,8 +32,10 @@
             <e p="Tutorial_ciema.cs" t="Include" />
           </e>
           <e p="Factory" t="Include">
+            <e p="btnScript.cs" t="Include" />
             <e p="ButtonClicked.cs" t="Include" />
             <e p="FactoryManager.cs" t="Include" />
+            <e p="factorySfxManager.cs" t="Include" />
             <e p="SelectChange.cs" t="Include" />
             <e p="TimerScript.cs" t="Include" />
           </e>
@@ -54,6 +56,7 @@
           <e p="MyRoom" t="Include">
             <e p="RankingManager.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
+            <e p="SelectGameManager.cs" t="Include" />
           </e>
         </e>
         <e p="Firebase" t="Include">
