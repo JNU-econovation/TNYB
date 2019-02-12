@@ -34,11 +34,7 @@ public class RankingManager : MonoBehaviour
 
         instance = this;
 
-        setList();
-        Debug.Log(rankNickList[0]);
-        Debug.Log(rankNickList[1]);
-        Debug.Log(rankNickList[2]);
-        
+        setList();        
     }
 
     public void setList()
@@ -84,11 +80,28 @@ public class RankingManager : MonoBehaviour
 
     public void loadingStart()
     {
-        
+        for (int i = 0; i <= loadingList.Count; i++)
+        {
+            loadingList[i].SetActive(true);
+        }
+    }
+
+    public void loadingEnd()
+    {
+        for (int i = 0; i <= loadingList.Count; i++)
+        {
+            loadingList[i].SetActive(false);
+        }
     }
 
     public void UpdateRankBoard(int rank, string nickname, int score)
     {
+        int i = rank;
+        rankNickList[i].text = nickname;
+        rankScoreList[i].text = score.ToString();
+        loadingEnd();
+        
+        /*
         switch (rank)
         {
             case 1:
@@ -107,5 +120,6 @@ public class RankingManager : MonoBehaviour
                 loading3.SetActive(false);
                 break;    
         }
+        */
     }
 }
