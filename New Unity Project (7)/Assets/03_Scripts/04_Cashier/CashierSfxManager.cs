@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CashierSfxManager : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class CashierSfxManager : MonoBehaviour
 
     public AudioClip scanner, click, back, Count, CountOver;
     private AudioSource audioSource;
-    
+
+    public Button SoundBtn;
+    public Sprite btn_0;
+    public Sprite btn_1;
+
     private static CashierSfxManager instance;
     public static CashierSfxManager Instance
     {
@@ -36,7 +41,10 @@ public class CashierSfxManager : MonoBehaviour
             isSfxMute = false;
         }
     }
-
+    private void Start()
+    {
+        firstSoundMute();
+    }
     public void clickSfxMute()
     {
         if (!isSfxMute)
@@ -104,5 +112,35 @@ public class CashierSfxManager : MonoBehaviour
     public bool getIsSfxMute()
     {
         return isSfxMute;
+    }
+
+    public void ClickSoundMute()
+    {
+        if (!isSfxMute)
+        {
+            // 음소거 아닐때
+            PlayerPrefs.SetInt("isSfxMute", 1);
+            isSfxMute = true;
+            SoundBtn.GetComponent<Image>().sprite = btn_0;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isSfxMute", 0);
+            isSfxMute = false;
+            SoundBtn.GetComponent<Image>().sprite = btn_1;
+        }
+        PlayerPrefs.Save();
+    }
+
+    public void firstSoundMute()
+    {
+        if (isSfxMute)
+        {
+            SoundBtn.GetComponent<Image>().sprite = btn_0;
+        }
+        else
+        {
+            SoundBtn.GetComponent<Image>().sprite = btn_1;
+        }
     }
 }

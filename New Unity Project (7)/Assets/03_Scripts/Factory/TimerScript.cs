@@ -31,6 +31,8 @@ public class TimerScript : MonoBehaviour {
         }else
         {
             Time.timeScale = 0;
+           // CinemaManager.cinema_score = 0;
+  
         }
         if (timeLeft <= 0)
         {
@@ -44,6 +46,7 @@ public class TimerScript : MonoBehaviour {
             {
                 FactoryManager.Instance.DeleteObj(i);
             }
+           
         }
     }
 

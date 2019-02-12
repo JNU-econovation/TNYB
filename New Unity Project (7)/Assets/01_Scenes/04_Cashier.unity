@@ -3617,7 +3617,7 @@ PrefabInstance:
     - target: {fileID: 1181365338785759084, guid: 15f829c46d8644bdc8530243ce410362,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.99997
+      value: -26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f829c46d8644bdc8530243ce410362, type: 3}
@@ -6583,8 +6583,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1853545422}
-        m_MethodName: ClickEvent
+      - m_Target: {fileID: 384199930}
+        m_MethodName: ClickMusicMute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7431,8 +7431,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ClickSoundBtn
+      - m_Target: {fileID: 1530158056}
+        m_MethodName: clickSfxMute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7443,7 +7443,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2109596717}
-        m_MethodName: ClickEvent
+        m_MethodName: ClickEvent_Mart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

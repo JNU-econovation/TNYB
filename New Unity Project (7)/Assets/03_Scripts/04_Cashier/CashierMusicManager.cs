@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CashierMusicManager : MonoBehaviour
 {
     private bool isMusicMute;
     public AudioClip mainMusic;
-   
+
+    public Button MusicBtn;
+    public Sprite btn_0;
+    public Sprite btn_1;
+
     private AudioSource audioSource;
     
     private static CashierMusicManager instance;
@@ -41,6 +46,7 @@ public class CashierMusicManager : MonoBehaviour
     {
         audioSource.clip = mainMusic;
         audioSource.Play();
+        firstMusicMute();
     }
     
     public void stopMusic()
@@ -60,25 +66,55 @@ public class CashierMusicManager : MonoBehaviour
         }
     }
 
+    //public void ClickMusicMute()
+    //{
+    //    if (!isMusicMute)
+    //    {
+    //        // 음소거 아닐때
+    //        PlayerPrefs.SetInt("isMusicMute", 1);
+    //        PlayerPrefs.Save();
+    //        isMusicMute = true;
+    //    }
+    //    else
+    //    {
+    //        PlayerPrefs.SetInt("isMusicMute", 0);
+    //        PlayerPrefs.Save();
+    //        isMusicMute = false;
+    //    }
+    //}
+
+    public bool getIsMusicMute()
+    {
+        return isMusicMute;
+    }
+
     public void ClickMusicMute()
     {
         if (!isMusicMute)
         {
             // 음소거 아닐때
-            PlayerPrefs.SetInt("isMusicMute", 1);
-            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("isMusicMute", 0);
             isMusicMute = true;
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
         else
         {
-            PlayerPrefs.SetInt("isMusicMute", 0);
-            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("isMusicMute", 1);
             isMusicMute = false;
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
+        PlayerPrefs.Save();
     }
 
-    public bool getIsMusicMute()
+    public void firstMusicMute()
     {
-        return isMusicMute;
+        if (isMusicMute)
+        {
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
+        }
+        else
+        {
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
+        }
     }
 }
