@@ -53,6 +53,10 @@ public class FactoryManager : MonoBehaviour {
     float waitingTime;
     bool a = false;
 
+    public Button MusicBtn;
+    public Sprite btn_0;
+    public Sprite btn_1;
+
     public GameObject settingPanel;
 
     public string getSelect()
@@ -414,11 +418,13 @@ public class FactoryManager : MonoBehaviour {
         {
             isMusicMute = true;
             Music.GetComponent<AudioSource>().Stop();
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
         else
         {
             isMusicMute = false;
             Music.GetComponent<AudioSource>().Play();
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
     }
 
@@ -430,6 +436,7 @@ public class FactoryManager : MonoBehaviour {
             PlayerPrefs.SetInt("isMusicMute", 0);
             PlayerPrefs.Save();
             Music.GetComponent<AudioSource>().Play();
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
         else
         {
@@ -437,6 +444,7 @@ public class FactoryManager : MonoBehaviour {
             PlayerPrefs.Save();
             isMusicMute = true;
             Music.GetComponent<AudioSource>().Stop();
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
     }
 
