@@ -87,6 +87,7 @@ public class myRoomMusicManager : MonoBehaviour
             PlayerPrefs.SetInt("isMusicMute", 0);
             PlayerPrefs.Save();
             isMusicMute = false;
+            myRoomSfxManager.Instance.playClick();
         }
     }
 
