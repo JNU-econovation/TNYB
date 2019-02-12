@@ -34,25 +34,12 @@ public class SelectGameManager : MonoBehaviour
         Mart_prevBtn.interactable = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    /*
-    public void ToMyRoom()
-    {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1;
-    }
-    */
-
-
     public void CinemaTutorialPanel_Open()
     {
-        cinemaTutorialPanel.SetActive(true);
         Cinema_nextBtn.interactable = true;
         Cinema_prevBtn.interactable = false;
+        selectGameSfxManager.Instance.playClick();
+        cinemaTutorialPanel.SetActive(true);
         fakeTicket.SetActive(false);
         hand2.SetActive(false);
         redline.SetActive(false);
@@ -62,17 +49,20 @@ public class SelectGameManager : MonoBehaviour
     }
     public void CinemaTutorialPanel_GamestartBtn()
     {
+        selectGameSfxManager.Instance.playStart();
         SceneManager.LoadScene(3);
         Time.timeScale = 1;
     }
     public void CinemaTutorialPanel_Close()
     {
+        selectGameSfxManager.Instance.playBack();
         cinemaTutorialPanel.SetActive(false);
     }
     public void CinemaTutorialPanel_nextBtn()
     {
         Cinema_nextBtn.interactable = false;
         Cinema_prevBtn.interactable = true;
+        selectGameSfxManager.Instance.playNext();
         fakeTicket.SetActive(true);
         hand2.SetActive(true);
         redline.SetActive(true);
@@ -84,6 +74,7 @@ public class SelectGameManager : MonoBehaviour
     {
         Cinema_nextBtn.interactable = true;
         Cinema_prevBtn.interactable = false;
+        selectGameSfxManager.Instance.playNext();
         fakeTicket.SetActive(false);
         hand2.SetActive(false);
         redline.SetActive(false);
@@ -97,31 +88,36 @@ public class SelectGameManager : MonoBehaviour
 
     public void MartTutorialPanel_Open()
     {
-        martTutorialPanel.SetActive(true);
         Mart_nextBtn.interactable = true;
         Mart_prevBtn.interactable = false;
+        selectGameSfxManager.Instance.playClick();
+        martTutorialPanel.SetActive(true);
         Mart_Tuto1.SetActive(true);
         Mart_Tuto2.SetActive(false);
     }
     public void MartTutorialPanel_GamestartBtn()
     {
+        selectGameSfxManager.Instance.playStart();
         SceneManager.LoadScene(2);
         Time.timeScale = 1;
     }
     public void MartTutorialPanel_Close()
     {
+        selectGameSfxManager.Instance.playBack();
         martTutorialPanel.SetActive(false);
     }
     public void MartTutorialPanel_nextBtn()
     {
         Mart_nextBtn.interactable = false;
         Mart_prevBtn.interactable = true;
+        selectGameSfxManager.Instance.playNext();
         Mart_Tuto1.SetActive(false);
         Mart_Tuto2.SetActive(true);
 
     }
     public void MartTutorialPanel_PrevBtn()
     {
+        selectGameSfxManager.Instance.playNext();
         Mart_nextBtn.interactable = true;
         Mart_prevBtn.interactable = false;
         Mart_Tuto1.SetActive(true);
@@ -133,9 +129,10 @@ public class SelectGameManager : MonoBehaviour
     /// </summary>
     public void FactoryTutorialPanel_Open()
     {
-        factoryTutorialPanel.SetActive(true);
         Factory_nextBtn.interactable = true;
         Factory_prevBtn.interactable = false;
+        selectGameSfxManager.Instance.playClick();
+        factoryTutorialPanel.SetActive(true);
         animation_0[0].SetActive(true);
         animation_0[1].SetActive(true);
         RedImage.SetActive(false);
@@ -143,15 +140,18 @@ public class SelectGameManager : MonoBehaviour
     }
     public void FactoryTutorialPanel_GamestartBtn()
     {
+        selectGameSfxManager.Instance.playClick();
         SceneManager.LoadScene(4);
         Time.timeScale = 1;
     }
     public void FactoryTutorialPanel_Close()
     {
+        selectGameSfxManager.Instance.playBack();
         factoryTutorialPanel.SetActive(false);
     }
     public void FactoryTutorialPanel_nextBtn()
     {
+        selectGameSfxManager.Instance.playNext();
         Factory_nextBtn.interactable = false;
         Factory_prevBtn.interactable = true;
         RedImage.SetActive(true);
@@ -162,6 +162,7 @@ public class SelectGameManager : MonoBehaviour
     }
     public void FactoryTutorialPanel_PrevBtn()
     {
+        selectGameSfxManager.Instance.playNext();
         Factory_nextBtn.interactable = true;
         Factory_prevBtn.interactable = false;
         animation_0[0].SetActive(true);
