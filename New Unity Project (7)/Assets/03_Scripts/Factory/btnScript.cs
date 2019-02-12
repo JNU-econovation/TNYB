@@ -13,7 +13,7 @@ public class btnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ClickEvent();
+        //ClickEvent();
     }
     public void BtnClickEvent_Music()
     {
