@@ -469,6 +469,9 @@ MonoBehaviour:
   pausePanel: {fileID: 2015014101}
   gameOverPanel: {fileID: 1767952445}
   remainCount: {fileID: 1707809245}
+  MusicBtn: {fileID: 1744000185}
+  btn_0: {fileID: 21300144, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  btn_1: {fileID: 21300146, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
   settingPanel: {fileID: 462432810}
 --- !u!4 &47633447
 Transform:
@@ -1506,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 40058387}
-  maxTime: 10
+  maxTime: 60
 --- !u!114 &344077987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2796,12 +2799,12 @@ PrefabInstance:
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 283.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -288
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
@@ -2811,7 +2814,7 @@ PrefabInstance:
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
@@ -2821,7 +2824,7 @@ PrefabInstance:
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
@@ -2831,7 +2834,7 @@ PrefabInstance:
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224519070663780916, guid: fbe0176d21091f6459fbc8a0aafe153e,
         type: 3}
@@ -7302,7 +7305,6 @@ GameObject:
   - component: {fileID: 1744000187}
   - component: {fileID: 1744000186}
   - component: {fileID: 1744000185}
-  - component: {fileID: 1744000188}
   m_Layer: 5
   m_Name: 0.MusicButton
   m_TagString: Untagged
@@ -7369,17 +7371,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1744000188}
-        m_MethodName: BtnClickEvent_Music
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 47633446}
         m_MethodName: ClickMusicBtn
         m_Mode: 1
@@ -7430,21 +7421,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744000183}
   m_CullTransparentMesh: 0
---- !u!114 &1744000188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744000183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4266a0c84ea7c46bdab3720cc6ccb4b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSprite1: {fileID: 21300144, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
-  btnSprite2: {fileID: 21300146, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
-  MusicBtn: {fileID: 1744000185}
 --- !u!1 &1748126527
 GameObject:
   m_ObjectHideFlags: 0
