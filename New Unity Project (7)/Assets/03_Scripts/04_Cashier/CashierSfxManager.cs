@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CashierSfxManager : MonoBehaviour
 {
-    private bool isSfxMute = false;
+    private bool isSfxMute;
 
     public AudioClip scanner, click, back, Count, CountOver;
-    
     private AudioSource audioSource;
     
     private static CashierSfxManager instance;

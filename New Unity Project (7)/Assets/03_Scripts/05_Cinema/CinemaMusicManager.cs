@@ -7,7 +7,7 @@ public class CinemaMusicManager : MonoBehaviour
     private bool isMusicMute = false;
     public AudioClip mainMusic;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     private static CinemaMusicManager instance;
     public static CinemaMusicManager Instance
     {
@@ -42,16 +42,11 @@ public class CinemaMusicManager : MonoBehaviour
     }
     public void stopMusic()
     {
-        //if (isMusicMute == true)
-        
-            audioSource.Stop();
-        
-        //else audioSource.Play();
+        audioSource.Stop();
     }
-    // Update is called once per frame
+
     void Update()
     {
-
         if (isMusicMute)
         {
             audioSource.volume = 0;

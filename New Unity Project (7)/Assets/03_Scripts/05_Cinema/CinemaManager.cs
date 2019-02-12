@@ -244,14 +244,12 @@ public class CinemaManager : MonoBehaviour
         }
         obj.transform.position = originV;
     }
-    public void RollingScore()
-    {
-        StartCoroutine(IeResultScoreCountEffect());
-    }
-    public IEnumerator IeResultScoreCountEffect() //점수판돌아가는거
+    
+    public IEnumerator IeResultScoreCountEffect()
     {
         int tempScore = 0;
         CinemaSfxManager.Instance.playScoreCount();
+        
         while (tempScore <= cinema_score)
         {
             tempScore += 1;

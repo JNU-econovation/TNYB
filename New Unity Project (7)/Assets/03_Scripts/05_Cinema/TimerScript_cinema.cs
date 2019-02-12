@@ -32,13 +32,11 @@ public class TimerScript_cinema : MonoBehaviour {
         {
             CinemaMusicManager.Instance.stopMusic();
             finishPanel.SetActive(true);
-            CinemaManager.instance.RollingScore();
             if (dbOnce)
             {
                 dbOnce = false;
                 CinemaManager.instance.SetScoreDB();
-
-                //CinemaManager.instance.StartCoroutine(CinemaManager.instance.IeResultScoreCountEffect());
+                CinemaManager.instance.StartCoroutine(CinemaManager.instance.IeResultScoreCountEffect());
             }
         }
 	    

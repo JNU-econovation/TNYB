@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CinemaSfxManager : MonoBehaviour
 {
-    private bool isSfxMute = false;
+    private bool isSfxMute;
 
     public AudioClip correct, wrong, Count, CountOver;
     private AudioSource audioSource;
 
     private static CinemaSfxManager instance;
-    
     public static CinemaSfxManager Instance
     {
         get { return instance; }
@@ -24,6 +23,8 @@ public class CinemaSfxManager : MonoBehaviour
             return;
         }
         instance = this;
+        
+        audioSource = GetComponent<AudioSource>();
         if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
         {
             isSfxMute = true;
@@ -32,9 +33,6 @@ public class CinemaSfxManager : MonoBehaviour
         {
             isSfxMute = false;
         }
-
-        audioSource = GetComponent<AudioSource>();
-        audioSource.loop = false;
     }
     public void clickSfxMute()
     {
@@ -72,8 +70,7 @@ public class CinemaSfxManager : MonoBehaviour
     public void playCorrect()
     {
         if (!isSfxMute)
-        {
-            audioSource.loop = false;
+        { 
             audioSource.clip = correct;
             audioSource.Play();
         }
@@ -82,7 +79,6 @@ public class CinemaSfxManager : MonoBehaviour
     {
         if (!isSfxMute)
         {
-            audioSource.loop = false;
             audioSource.clip = wrong;
             audioSource.Play();
         }
