@@ -1,39 +1,31 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class myroomMusic : MonoBehaviour
+public class MyroomMusic : MonoBehaviour
 {
     public AudioClip myroomMusics;
-    private bool isMfxMute;
+    public bool isMfxMute;
 
-    private static myroomMusic instance;
+    private static MyroomMusic instance;
 
-    public static myroomMusic Instance
+    public static MyroomMusic Instance
     {
         get { return instance; }
     }
 
-    private void Awake()
-    {
-        if (instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-    }
+
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
+        if (PlayerPrefs.GetInt("isMfxMute", 0) == 1)
         {
             isMfxMute = true;
         }
         else
         {
             isMfxMute = false;
-           
+
         }
         setMyRoomMusic();
 
@@ -45,7 +37,7 @@ public class myroomMusic : MonoBehaviour
             GetComponent<AudioSource>().Stop();
         else
         {
-            GetComponent<AudioSource>().clip = myroomMusic;
+            GetComponent<AudioSource>().clip = myroomMusics;
             GetComponent<AudioSource>().Play();
 
         }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -157,10 +157,10 @@ public class RoomManager : MonoBehaviour
         {
             if (a == 0)
             {
-                myroomSFX.Instance.isMfxMute = false;
+                MyroomMusic.Instance.isMfxMute = false;
                 PlayerPrefs.SetInt("isMfxMute", 0);
                 PlayerPrefs.Save();
-                myroomSFX.Instance.setMyRoomMusic();
+                MyroomMusic.Instance.setMyRoomMusic();
             }
             settingButton[a].GetComponent<Image>().sprite = ButtonImage[1];
             settingButtons_bool[a] = true;
