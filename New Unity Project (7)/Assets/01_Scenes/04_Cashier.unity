@@ -2166,7 +2166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMusic: {fileID: 8300000, guid: dc2ad359d71a6ac448621a7764f5273d, type: 3}
-  audioSource: {fileID: 0}
+  MusicBtn: {fileID: 1853545423}
+  btn_0: {fileID: 21300144, guid: 22778f6a64dca7e4fa87f11602c9b0f4, type: 3}
+  btn_1: {fileID: 21300146, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
 --- !u!1 &414777772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,6 +5488,9 @@ MonoBehaviour:
   back: {fileID: 0}
   Count: {fileID: 8300000, guid: 9fd87af5c118f40d980f1c7b9fbfb6af, type: 3}
   CountOver: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  SoundBtn: {fileID: 2109596718}
+  btn_0: {fileID: 21300144, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
+  btn_1: {fileID: 21300146, guid: 5b06fa4b0391b4fb2829025f632dd93b, type: 3}
 --- !u!82 &1530158057
 AudioSource:
   m_ObjectHideFlags: 0
