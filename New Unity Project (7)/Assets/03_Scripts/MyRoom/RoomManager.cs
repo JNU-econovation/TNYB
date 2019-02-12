@@ -183,7 +183,7 @@ public class RoomManager : MonoBehaviour
     private void OpenPurchasePanel()
     {
         Debug.Log(Button_number);
-        priceText.text = "Price : "+price[Button_number].ToString();
+        priceText.text = "가격 : "+price[Button_number].ToString();
         PurchasePanel.SetActive(true);
     }
     public void getMoneyDB(string m)
