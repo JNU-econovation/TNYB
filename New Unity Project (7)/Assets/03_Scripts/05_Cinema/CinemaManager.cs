@@ -26,7 +26,7 @@ public class CinemaManager : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject pausePanel;
 
-    private int Combo = 0;
+    public static int Combo = 0;
     public Text scoreText;
     public Text finishScore;
 
@@ -270,7 +270,7 @@ public class CinemaManager : MonoBehaviour
     {
         Combo++;
     }
-    private void ComboReset()
+    public void ComboReset()
     {
         Combo = 0;
     }

@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CinemaMusicManager : MonoBehaviour
 {
-    private bool isMusicMute = false;
+    public static bool isMusicMute = false;
     public AudioClip mainMusic;
+
+    public Button MusicBtn;
+    public Sprite btn_0;
+    public Sprite btn_1;
 
     private AudioSource audioSource;
     private static CinemaMusicManager instance;
@@ -39,6 +44,7 @@ public class CinemaMusicManager : MonoBehaviour
     {
         audioSource.clip = mainMusic;
         audioSource.Play();
+        firstMusicMute();
     }
     public void stopMusic()
     {
@@ -61,14 +67,30 @@ public class CinemaMusicManager : MonoBehaviour
         if (!isMusicMute)
         {
             // 음소거 아닐때
-            PlayerPrefs.SetInt("isMusicMute", 1);
+            PlayerPrefs.SetInt("isMusicMute", 0);
             isMusicMute = true;
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
         }
         else
         {
-            PlayerPrefs.SetInt("isMusicMute", 0);
+            PlayerPrefs.SetInt("isMusicMute", 1);
             isMusicMute = false;
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
         }
         PlayerPrefs.Save();
     }
+
+    public void firstMusicMute()
+    {
+        if (isMusicMute)
+        {
+            MusicBtn.GetComponent<Image>().sprite = btn_0;
+        }
+        else
+        {
+            MusicBtn.GetComponent<Image>().sprite = btn_1;
+        }
+    }
+
+   
 }
