@@ -24,6 +24,7 @@ public class CinemaManager : MonoBehaviour
     public Transform TicketTfL;
     public Transform TicketTfR;
     public GameObject SettingPanel;
+    public GameObject pausePanel;
 
     private int Combo = 0;
     public Text scoreText;
@@ -52,7 +53,7 @@ public class CinemaManager : MonoBehaviour
         }
         instance = this;
 
-
+        pausePanel.SetActive(false);
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16) / 9, true);
@@ -279,5 +280,16 @@ public class CinemaManager : MonoBehaviour
     public void SetScoreDB()
     {
         RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+    }
+
+    public void pauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

@@ -58,7 +58,7 @@ public class CinemaMusicManager : MonoBehaviour
         }
         else if (!isMusicMute)
         {
-            audioSource.volume = 0.8f;
+            audioSource.volume = 1f;
         }
     }
     public void ClickMusicMute()
@@ -68,13 +68,12 @@ public class CinemaMusicManager : MonoBehaviour
             // 음소거 아닐때
             PlayerPrefs.SetInt("isMusicMute", 1);
             isMusicMute = true;
-            audioSource.Stop();
         }
         else
         {
             PlayerPrefs.SetInt("isMusicMute", 0);
             isMusicMute = false;
-            audioSource.Play();
         }
+        PlayerPrefs.Save();
     }
 }
