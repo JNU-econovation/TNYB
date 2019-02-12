@@ -6842,7 +6842,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 643378796}
-  - component: {fileID: 643378797}
   m_Layer: 0
   m_Name: BG_sky
   m_TagString: Untagged
@@ -6866,25 +6865,6 @@ Transform:
   m_Father: {fileID: 170821903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &643378797
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643378795}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fce0e2da08d9744509a0c0b0052292fb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &646233655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2776488428758282250, guid: 24b190a8763c1477bb466b9f529b6a75,
