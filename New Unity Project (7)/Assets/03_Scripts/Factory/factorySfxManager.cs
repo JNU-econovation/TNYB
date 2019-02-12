@@ -31,6 +31,7 @@ public class factorySfxManager : MonoBehaviour
         if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
         {
             isSfxMute = true;
+            // 음소거 이미지로 바꾸기
         }
         else
         {

@@ -207,7 +207,7 @@ public class CinemaManager : MonoBehaviour
         else if (Combo < 40) cinema_score += 400;
         else cinema_score += 500;
         scoreText.text = "" + cinema_score;
-        finishScore.text = "Score\n" + cinema_score;
+        finishScore.text = cinema_score.ToString();
     }
 
     public void WrongButton()
@@ -241,7 +241,28 @@ public class CinemaManager : MonoBehaviour
         }
         obj.transform.position = originV;
     }
+    public void RollingScore()
+    {
+        StartCoroutine(IeResultScoreCountEffect());
+    }
+    public IEnumerator IeResultScoreCountEffect() //점수판돌아가는거
+    {
+        int tempScore = 0;
+        // count sfx
 
+        // factorySfxManager.Instance.CountSound();
+
+        while (tempScore <= cinema_score)
+        {
+            tempScore += 1;
+            tempScore += tempScore / 8;
+            yield return null;
+            finishScore.text = tempScore.ToString();
+        }
+        // count done sfx
+        factorySfxManager.Instance.GameOverSound();
+        finishScore.text = cinema_score.ToString();
+    }
     public bool getCanRespawn()
     {
         return this.canRespawn;
