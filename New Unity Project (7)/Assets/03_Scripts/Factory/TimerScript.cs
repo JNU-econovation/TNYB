@@ -39,7 +39,7 @@ public class TimerScript : MonoBehaviour {
                 count++;
                 FactoryManager.Instance.SetSCoreDB(); //DB
             }
-            FactoryManager.Instance.gameOverPanel.SetActive(true);
+            FactoryManager.Instance.Finish();
             for(int i=0; i<8; i++)
             {
                 FactoryManager.Instance.DeleteObj(i);

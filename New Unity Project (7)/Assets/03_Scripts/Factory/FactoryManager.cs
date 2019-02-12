@@ -282,12 +282,19 @@ public class FactoryManager : MonoBehaviour {
 
     }
 
+    public void Finish()
+    {
+        gameOverPanel.SetActive(true);
+        //resultText.text = scoreText.text;
+        StartCoroutine(IeResultScoreCountEffect());
+
+    }
     public IEnumerator IeResultScoreCountEffect()
     {
         int tempScore = 0;
         // count sfx
-        
-        CashierSfxManager.Instance.playScoreCount();
+
+        factorySfxManager.Instance.CountSound();
 
         while (tempScore <= score)
         {
@@ -297,7 +304,7 @@ public class FactoryManager : MonoBehaviour {
             resultText.text = tempScore.ToString();
         }
         // count done sfx
-        CashierSfxManager.Instance.playCountOver();
+        factorySfxManager.Instance.GameOverSound();
         resultText.text = score.ToString();
     }
 
