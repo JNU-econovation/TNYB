@@ -40,6 +40,10 @@ public class factorySfxManager : MonoBehaviour
 
     }
 
+    public bool getisSfxMute()
+    {
+        return isSfxMute;
+    }
     public void ClickSound()
     {
         audioSource.clip = okay;

@@ -42,9 +42,8 @@ public class FactoryManager : MonoBehaviour {
     private float left, right = 0;
 
     private bool music_bool;
-    private bool sound_bool;
     public GameObject Music;
-   
+
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     private bool combo = false;
@@ -53,6 +52,8 @@ public class FactoryManager : MonoBehaviour {
     float timer;
     float waitingTime;
     bool a = false;
+
+    public GameObject settingPanel;
 
     public string getSelect()
     {
@@ -68,10 +69,11 @@ public class FactoryManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
-        pausePanel.SetActive(false);
+
         gameOverPanel.SetActive(false);
         score = 0;
-
+        pausePanel.SetActive(true);
+        pausePanel.SetActive(false);
         FirstMusicSetting();
         //StartCoroutine(Changing(speed));
         makeTrash_1();
@@ -79,9 +81,19 @@ public class FactoryManager : MonoBehaviour {
         timer = 0.0f;
         waitingTime = 0.7f;
     }
-    
+    public void OpenSettingPanel()
+    {
+        settingPanel.SetActive(true);
+    }
+    public void CloseSettingPanel()
+    {
+        settingPanel.SetActive(false);
+    }
 
-
+    public bool getMusic_bool()
+    {
+        return music_bool;
+    }
     void Update()
     {
        //changeImage1.GetComponent<Image>().sprite = trashImage[num[afterA]];
@@ -361,9 +373,9 @@ public class FactoryManager : MonoBehaviour {
 
     public void pauseGame()
     {
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
-        pausePanel.SetActive(true);
     }
 
     public void ResumeGame()
@@ -391,15 +403,7 @@ public class FactoryManager : MonoBehaviour {
         else
             music_bool = true;
 
-        if (PlayerPrefs.GetString("sound_factory") != null)
-        {
-            if (PlayerPrefs.GetString("sound_factory") == "true")
-                sound_bool = true;
-            else
-                sound_bool = false;
-        }
-        else
-            sound_bool = true;
+       
 
 
         GetComponent<AudioSource>().Stop();
@@ -423,23 +427,6 @@ public class FactoryManager : MonoBehaviour {
         }
     }
 
-    public void ClickSoundBtn()
-    {
-        if (sound_bool)
-        {
-            sound_bool = false;
-            PlayerPrefs.SetString("sound_factory", "false");
-            PlayerPrefs.Save();
-
-            //SoundManger 호출
-        }
-        else
-        {
-            sound_bool = true;
-            PlayerPrefs.SetString("sound_factory", "true");
-            PlayerPrefs.Save();
-        }
-    }
     //----DB
     public void SetSCoreDB()
     {
