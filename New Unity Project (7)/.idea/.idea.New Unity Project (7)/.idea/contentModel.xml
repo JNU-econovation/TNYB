@@ -108,13 +108,6 @@
               <e p="README.txt" t="Include" />
             </e>
           </e>
-          <e p="CartoonPixelGUI" t="Include">
-            <e p="Assets" t="Include">
-              <e p="Shaders" t="Include">
-                <e p="Chris'Shaders-TopParticle-AlphaBlend.shader" t="Include" />
-              </e>
-            </e>
-          </e>
           <e p="Low Poly UI Kit - v.1.1c" t="Include">
             <e p="README.txt" t="Include" />
             <e p="UI Kit" t="Include">
