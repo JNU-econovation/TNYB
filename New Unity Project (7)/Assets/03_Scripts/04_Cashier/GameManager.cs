@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject tutoPanel;
     public GameObject tuto1;
     public GameObject tuto2;
+    public GameObject martSettingPanel;
     //to 
     public GameObject pausePanel;
 	public GameObject hand;
@@ -110,6 +111,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
+    }
+    public void OpenSettingPanel()
+    {
+        martSettingPanel.SetActive(true);
+    }
+    public void CloseSettingPanel()
+    {
+        martSettingPanel.SetActive(false);
     }
 
     private void FixedUpdate()

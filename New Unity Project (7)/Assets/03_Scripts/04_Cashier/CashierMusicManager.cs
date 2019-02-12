@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CashierMusicManager : MonoBehaviour
 {
-    private bool isMusicMute = false;
+    private bool isMusicMute;
     public AudioClip mainMusic;
    
     public AudioSource audioSource;
@@ -75,5 +75,10 @@ public class CashierMusicManager : MonoBehaviour
             PlayerPrefs.Save();
             isMusicMute = false;
         }
+    }
+
+    public bool getIsMusicMute()
+    {
+        return isMusicMute;
     }
 }

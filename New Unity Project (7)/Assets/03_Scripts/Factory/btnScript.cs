@@ -36,5 +36,21 @@ public class btnScript : MonoBehaviour
         else
         GetComponent<Image>().sprite = btnSprite2;
     }
+    public void ClickEvent_Mart()
+    {
+        if (CashierSfxManager.Instance.getIsSfxMute())
+            GetComponent<Image>().sprite = btnSprite1;
+        else
+            GetComponent<Image>().sprite = btnSprite2;
+    }
+    public void BtnClickEvent_Music_Mart()
+    {
+        if (CashierMusicManager.Instance.getIsMusicMute())
+        {
+            GetComponent<Image>().sprite = btnSprite1;
+        }
+        else
+            GetComponent<Image>().sprite = btnSprite2;
+    }
 }
 
