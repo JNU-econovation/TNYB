@@ -106,7 +106,6 @@ public class RoomManager : MonoBehaviour
     {
         SelectGamePanel.SetActive(true);
         ButtonPanel.SetActive(false);
-
     }
     public void CloseSlelectGame()
     {
