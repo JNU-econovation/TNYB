@@ -37,9 +37,10 @@ public class GameManager : MonoBehaviour
 	
 	// Score
 	private int score;
-	
-	// Sound
-	private AudioSource audioSource;
+    public Text newRecordText;
+
+    // Sound
+    private AudioSource audioSource;
 	public AudioClip scanner;
 	
 	// Tissue Zone
@@ -211,8 +212,10 @@ public class GameManager : MonoBehaviour
             RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
             PlayerPrefs.SetInt("max_score_cashier", score);
             PlayerPrefs.Save();
-        }
-	}
+            newRecordText.text = "신기록!";
+        }else
+        newRecordText.text = "최고점수 : " + max_score.ToString();
+    }
     public void ScoreToMoney()
     {
         int money = RoomManager.Instance.gameMoney;

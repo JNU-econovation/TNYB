@@ -22,6 +22,7 @@ public class FactoryManager : MonoBehaviour {
     public Image[] objImage = new Image[8]; //세팅된 이미지
     public Text scoreText, resultText;
     private int score = 0;
+    public Text newRecordText;
     private int clickCount;
     int beforeA, beforeB, afterA, afterB;
 
@@ -458,7 +459,9 @@ public class FactoryManager : MonoBehaviour {
             RealtimeDatabase.Instance.SetGameScore("score_factory", score);
             PlayerPrefs.SetInt("max_score_cashier", score);
             PlayerPrefs.Save();
-        }
+            newRecordText.text = "신기록!";
+        }else
+        newRecordText.text = "최고점수 : " + max_score.ToString();
     }
 
     public void ScoreToMoney()
