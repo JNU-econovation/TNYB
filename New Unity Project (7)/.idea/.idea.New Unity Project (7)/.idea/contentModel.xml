@@ -49,6 +49,7 @@
             <e p="BackgroundRepeat.cs" t="Include" />
             <e p="ChangeScenes.cs" t="Include" />
             <e p="Login.cs" t="Include" />
+            <e p="main_TransitionManager.cs" t="Include" />
             <e p="MainManager.cs" t="Include" />
             <e p="MusicManager.cs" t="Include" />
             <e p="RealtimeDatabase.cs" t="Include" />
