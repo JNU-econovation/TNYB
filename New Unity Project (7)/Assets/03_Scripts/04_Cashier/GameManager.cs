@@ -6,14 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //from 튜토리얼관련
-    public GameObject tutoBtn;
-    public GameObject tutoCloseBtn;
-    public GameObject tutoNextBtn;
-    public GameObject tutoPrevBtn;
-    public GameObject tutoPanel;
-    public GameObject tuto1;
-    public GameObject tuto2;
     public GameObject martSettingPanel;
     //to 
     public GameObject pausePanel;
@@ -39,7 +31,7 @@ public class GameManager : MonoBehaviour
 	// Score
 	private int score;
     public Text newRecordText;
-    private int max_score;
+    private int max_score = 0;
 
     // Sound
     private AudioSource audioSource;
@@ -213,9 +205,9 @@ public class GameManager : MonoBehaviour
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
-            newRecordText.text = "신기록!";
+            newRecordText.text = "신기록 달성!";
         }else
-        newRecordText.text = "최고점수 : " + max_score.ToString();
+        newRecordText.text = "아깝! 당신의 최고점수는\n" + max_score.ToString();
     }
 
     public void SetMaxScore(string value)
@@ -259,28 +251,4 @@ public class GameManager : MonoBehaviour
 	{
 		return numberOfTissue;
 	}
-    //from 튜토리얼 관련 스크립트
-    public void OpenTuto()
-    {
-        tutoPanel.SetActive(true);
-    }
-    public void CloseTuto()
-    {
-        tutoPanel.SetActive(false);
-    }
-    public void NextTutoBtn()
-    {
-        tutoNextBtn.SetActive(false);
-        tutoPrevBtn.SetActive(true);
-        tuto1.SetActive(false);
-        tuto2.SetActive(true);
-    }
-    public void PrevTutoBtn()
-    {
-        tutoNextBtn.SetActive(true);
-        tutoPrevBtn.SetActive(false);
-        tuto2.SetActive(false);
-        tuto1.SetActive(true);
-    }
-    //to
 }
