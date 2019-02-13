@@ -77,6 +77,7 @@ public class CinemaManager : MonoBehaviour
     {
         canRespawn = true;
         RespawnTicket();
+        RealtimeDatabase.Instance.GetScore_cinema();
     }
 
     public void RespawnTicket()
@@ -298,7 +299,8 @@ public class CinemaManager : MonoBehaviour
 
     public void SetScoreDB()
     {
-        RealtimeDatabase.Instance.GetScore_cinema();
+
+        Debug.Log(max_score);
         if (max_score < cinema_score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);

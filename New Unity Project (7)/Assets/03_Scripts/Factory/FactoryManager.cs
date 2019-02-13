@@ -76,6 +76,7 @@ public class FactoryManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
+        RealtimeDatabase.Instance.GetScore_factory();
         gameOverPanel.SetActive(false);
         score = 0;
         pausePanel.SetActive(true);
@@ -455,7 +456,7 @@ public class FactoryManager : MonoBehaviour {
     //----DB
     public void SetSCoreDB()
     {
-        RealtimeDatabase.Instance.GetScore_factory();
+       
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_factory", score);

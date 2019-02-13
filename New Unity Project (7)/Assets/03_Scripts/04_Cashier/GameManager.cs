@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
 	
 	void Start ()
 	{
-		score = 0;
+        RealtimeDatabase.Instance.GetScore_cashier();
+        score = 0;
 		Time.timeScale = 1;
         pausePanel.SetActive(false);
         bCanHandRespawn = true;
@@ -208,7 +209,7 @@ public class GameManager : MonoBehaviour
      //------------DB
 	public void updateRankScore()
 	{
-        RealtimeDatabase.Instance.GetScore_cashier();
+
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
