@@ -460,9 +460,9 @@ public class FactoryManager : MonoBehaviour {
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_factory", score);
-            newRecordText.text = "신기록!";
+            newRecordText.text = "신기록 달성!";
         }else
-        newRecordText.text = "최고점수 : " + max_score.ToString();
+        newRecordText.text = "아깝! 당신의 최고점수는\n" + max_score.ToString();
     }
 
     public void ScoreToMoney()
