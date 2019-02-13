@@ -469,6 +469,7 @@ public class FactoryManager : MonoBehaviour {
     {
         int money = RoomManager.Instance.gameMoney;
         RealtimeDatabase.Instance.SetMoneyData(money + score);
+        RoomManager.Instance.gameMoney = money + score;
     }
     public void SetMaxScore(string value)
     {
