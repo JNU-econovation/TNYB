@@ -12,9 +12,13 @@ public class main_TransitionManager : MonoBehaviour
     private void Awake()
     {
         FadeEndPanel.SetActive(false);
-        if (Application.loadedLevel != 0)
+
+        switch (Application.loadedLevel)
         {
-            FadeStart(fadeStartDuration);
+            case 1:
+            case 5:
+                FadeStart(fadeStartDuration);
+                break;
         }
     }
 
