@@ -325,6 +325,7 @@ public class CinemaManager : MonoBehaviour
     {
         int money = RoomManager.Instance.gameMoney;
         RealtimeDatabase.Instance.SetMoneyData(money + cinema_score);
+        RoomManager.Instance.gameMoney = money + cinema_score;
     }
 
     public void pauseGame()

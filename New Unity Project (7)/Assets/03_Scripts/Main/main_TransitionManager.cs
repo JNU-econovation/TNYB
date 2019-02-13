@@ -1,51 +1,65 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class main_TransitionManager : MonoBehaviour
 {
-    public GameObject transitionPanel;
-    public GameObject FadeStartTransitionPanel;
+    public GameObject FadeStartPanel;
+    public float fadeStartDuration;
+    public GameObject FadeEndPanel;
+    public float fadeEndDuration;
 
     private void Awake()
     {
-        transitionPanel.SetActive(false);
-        if (Application.loadedLevel != 0)
+        FadeEndPanel.SetActive(false);
+
+        switch (Application.loadedLevel)
         {
-            FadeStartTransitionPanel.SetActive(true);
-            StartCoroutine(LoadMyRoom());    
+            case 1:
+            case 5:
+                FadeStart(fadeStartDuration);
+                break;
         }
     }
 
-    IEnumerator LoadMyRoom()
+    IEnumerator LoadMyRoom(float fadeStartDuration)
     {
-        yield return new WaitForSeconds(3.0f);
-        FadeStartTransitionPanel.SetActive(false);
+        yield return new WaitForSeconds(fadeStartDuration);
+        FadeStartPanel.SetActive(false);
     }
 
-    public void toScene(string sceneName)
+    public void FadeStart(float fadeStartDuration)
     {
-        transitionPanel.SetActive(true);
+        FadeStartPanel.SetActive(true);
+        StartCoroutine(LoadMyRoom(fadeStartDuration));
+    }
+
+    public void FadeEndtoScene(string sceneName)
+    {
+        FadeEndPanel.SetActive(true);
         playClick();
-        StartCoroutine(LoadScene(sceneName));
+        StartCoroutine(LoadScene(sceneName, fadeEndDuration));
     }
 
-    IEnumerator LoadScene(string sceneName)
+    IEnumerator LoadScene(string sceneName, float fadeEndDuration)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(fadeEndDuration);
         SceneManager.LoadScene(sceneName);
     }
 
     public void playClick()
     {
-        if (Application.loadedLevel == 0)
+        switch (Application.loadedLevel)
         {
-            SfxManager.Instance.playClick();
-        }
-        else if(Application.loadedLevel == 1)
-        {
-            myRoomSfxManager.Instance.playClick();
+            case 0:
+                SfxManager.Instance.playClick();
+                break;
+            case 1:
+                myRoomSfxManager.Instance.playClick();
+                break;
+            case 5:
+                selectGameSfxManager.Instance.playClick();
+                break;
         }
     }
 }
