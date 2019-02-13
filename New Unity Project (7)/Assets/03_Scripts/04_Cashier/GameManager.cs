@@ -94,11 +94,11 @@ public class GameManager : MonoBehaviour
 		// Audio
 		audioSource = GetComponent<AudioSource>();
 		audioSource.clip = scanner;
-	}
-	
-	void Start ()
-	{
         RealtimeDatabase.Instance.GetScore_cashier();
+    }
+    
+    void Start ()
+    {
         score = 0;
 		Time.timeScale = 1;
         pausePanel.SetActive(false);
@@ -227,6 +227,7 @@ public class GameManager : MonoBehaviour
     {
         int money = RoomManager.Instance.gameMoney;
         RealtimeDatabase.Instance.SetMoneyData(money + score);
+        RoomManager.Instance.gameMoney = money + score;
     }
 
     public void setbCanHandRespawn(bool b)
