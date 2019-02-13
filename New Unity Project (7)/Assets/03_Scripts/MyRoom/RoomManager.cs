@@ -194,6 +194,7 @@ public class RoomManager : MonoBehaviour
         gameMoney = money_tmp;
         GameMoneyText.text = m;
     }
+
     public void ClosePurchasePanel()
     {
         myRoomSfxManager.Instance.playBack();

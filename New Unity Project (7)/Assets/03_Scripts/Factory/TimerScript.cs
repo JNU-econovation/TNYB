@@ -40,6 +40,7 @@ public class TimerScript : MonoBehaviour {
             {
                 count++;
                 FactoryManager.Instance.SetSCoreDB(); //DB
+                FactoryManager.Instance.ScoreToMoney(); //db
             }
             FactoryManager.Instance.Finish();
             for(int i=0; i<8; i++)

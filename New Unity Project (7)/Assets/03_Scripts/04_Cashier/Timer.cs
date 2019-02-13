@@ -37,6 +37,7 @@ public class Timer : MonoBehaviour {
 				isResultShowed = true;
 				StartCoroutine(GameManager.Instance.IeResultScoreCountEffect());
 				GameManager.Instance.updateRankScore();
+                GameManager.Instance.ScoreToMoney();
 			}
 		}
 

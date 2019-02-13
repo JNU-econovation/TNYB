@@ -302,6 +302,11 @@ public class CinemaManager : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+    public void ScoreToMoney()
+    {
+        int money = RoomManager.Instance.gameMoney;
+        RealtimeDatabase.Instance.SetMoneyData(money + cinema_score);
+    }
 
     public void pauseGame()
     {

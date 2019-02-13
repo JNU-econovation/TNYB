@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
 			audioSource.Play();	
 		}
 	}
-
+     //------------DB
 	public void updateRankScore()
 	{
         int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
@@ -213,8 +213,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 	}
+    public void ScoreToMoney()
+    {
+        int money = RoomManager.Instance.gameMoney;
+        RealtimeDatabase.Instance.SetMoneyData(money + score);
+    }
 
-	public void setbCanHandRespawn(bool b)
+    public void setbCanHandRespawn(bool b)
 	{
 		bCanHandRespawn = b;
 	}

@@ -459,7 +459,11 @@ public class FactoryManager : MonoBehaviour {
             PlayerPrefs.SetInt("max_score_cashier", score);
             PlayerPrefs.Save();
         }
+    }
 
-
+    public void ScoreToMoney()
+    {
+        int money = RoomManager.Instance.gameMoney;
+        RealtimeDatabase.Instance.SetMoneyData(money + score);
     }
 }
