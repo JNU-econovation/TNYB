@@ -37,9 +37,10 @@ public class GameManager : MonoBehaviour
 	
 	// Score
 	private int score;
-	
-	// Sound
-	private AudioSource audioSource;
+    public Text newRecordText;
+
+    // Sound
+    private AudioSource audioSource;
 	public AudioClip scanner;
 	
 	// Tissue Zone
@@ -202,13 +203,26 @@ public class GameManager : MonoBehaviour
 			audioSource.Play();	
 		}
 	}
-
+     //------------DB
 	public void updateRankScore()
 	{
-		RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
-	}
+        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        if (max_score < score)
+        {
+            RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
+            PlayerPrefs.SetInt("max_score_cashier", score);
+            PlayerPrefs.Save();
+            newRecordText.text = "신기록!";
+        }else
+        newRecordText.text = "최고점수 : " + max_score.ToString();
+    }
+    public void ScoreToMoney()
+    {
+        int money = RoomManager.Instance.gameMoney;
+        RealtimeDatabase.Instance.SetMoneyData(money + score);
+    }
 
-	public void setbCanHandRespawn(bool b)
+    public void setbCanHandRespawn(bool b)
 	{
 		bCanHandRespawn = b;
 	}

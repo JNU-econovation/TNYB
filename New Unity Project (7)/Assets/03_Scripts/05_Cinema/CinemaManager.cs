@@ -29,9 +29,12 @@ public class CinemaManager : MonoBehaviour
     public static int Combo = 0;
     public Text scoreText;
     public Text finishScore;
+    public Text newRecordText;
 
     private GameObject clickedTicket;
     private Transform TicketTf;
+
+    
 
     public static int cinema_score = 0;
     //public static int cinema_HighScore = 0;
@@ -294,7 +297,23 @@ public class CinemaManager : MonoBehaviour
 
     public void SetScoreDB()
     {
-        RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        if (max_score < cinema_score)
+        {
+            RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
+            PlayerPrefs.SetInt("max_score_cashier", cinema_score);
+            PlayerPrefs.Save();
+            newRecordText.text = "신기록!";
+        }
+        else
+        {
+            newRecordText.text = "최고점수 : " + max_score.ToString();
+        }
+    }
+    public void ScoreToMoney()
+    {
+        int money = RoomManager.Instance.gameMoney;
+        RealtimeDatabase.Instance.SetMoneyData(money + cinema_score);
     }
 
     public void pauseGame()

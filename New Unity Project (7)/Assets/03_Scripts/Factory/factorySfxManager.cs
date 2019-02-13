@@ -29,10 +29,6 @@ public class factorySfxManager : MonoBehaviour
         instance = this;
 
         audioSource = GetComponent<AudioSource>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         if (PlayerPrefs.GetInt("isSfxMute", 0) == 1)
         {
             isSfxMute = true;
@@ -42,7 +38,12 @@ public class factorySfxManager : MonoBehaviour
         {
             isSfxMute = false;
         }
-        ClickSoundBtn();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        FirstSoundBtn();
 
 
     }
@@ -74,6 +75,17 @@ public class factorySfxManager : MonoBehaviour
             PlayerPrefs.SetInt("isSfxMute", 1);
             PlayerPrefs.Save();
             SoundBtn.GetComponent<Image>().sprite = btnSprite1;
+        }
+    }
+    public void FirstSoundBtn()
+    {
+        if(isSfxMute)
+        {
+            SoundBtn.GetComponent<Image>().sprite = btnSprite1;
+        }
+        else
+        {
+            SoundBtn.GetComponent<Image>().sprite = btnSprite2;
         }
     }
 

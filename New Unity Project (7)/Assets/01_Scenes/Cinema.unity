@@ -4483,19 +4483,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 6cf6462eb3fb0473fb0d070bda4adb08, type: 3}
-    m_FontSize: 46
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: f9e3e38102c442b42bc6c941453da620, type: 3}
+    m_FontSize: 65
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 46
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NEW RECORD
+  m_Text: "\uC2E0\uAE30\uB85D!"
 --- !u!222 &1333173039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4865,7 +4865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishPanel: {fileID: 1533218157}
-  maxTime: 10
+  maxTime: 60
   warnTime: 10
   timeBarColor_norm: FFBB06
   timeBarColor_10: FF3A06
@@ -5089,7 +5089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1533218158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5523,6 +5523,7 @@ MonoBehaviour:
   pausePanel: {fileID: 1198441380}
   scoreText: {fileID: 767421963}
   finishScore: {fileID: 241367644}
+  newRecordText: {fileID: 1333173038}
 --- !u!4 &1674654525
 Transform:
   m_ObjectHideFlags: 0

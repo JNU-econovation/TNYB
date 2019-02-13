@@ -38,7 +38,9 @@ public class TimerScript_cinema : MonoBehaviour {
             {
                 isResultShowed = true;
                 CinemaManager.instance.StartCoroutine(CinemaManager.instance.IeResultScoreCountEffect());
+                //---DB
                 CinemaManager.instance.SetScoreDB();
+                CinemaManager.instance.ScoreToMoney();
             }
             //CinemaManager.instance.ComboReset();
 

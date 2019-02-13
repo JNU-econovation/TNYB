@@ -285,6 +285,7 @@ public class RealtimeDatabase : MonoBehaviour
 
     public void SetGameScore(string str, int n)
     {
+      
         databaseReference.Child("users").Child(Login.user.UserId).Child(str).SetValueAsync(n);
     }
 
@@ -319,7 +320,7 @@ class User {
         score_cashier = 0;
         score_cinema = 0;
         score_factory = 0;
-        money = 0;
+        money = 1000000;
 
     }
 }
