@@ -25,7 +25,8 @@ public class TimerScript_cinema : MonoBehaviour {
         isResultShowed = false;
         timeLeft = maxTime;
         CinemaManager.cinema_score = 0;
-        
+        CinemaManager.Combo = 0;
+        TicketMove.throwPower = 5f;
         finishPanel.SetActive(false);
     }
 	void FixedUpdate () {

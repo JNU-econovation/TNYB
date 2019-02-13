@@ -197,7 +197,11 @@ public class CinemaManager : MonoBehaviour
     }
     private void speedUp()//
     {
-        TicketMove.throwPower += 5f;
+        if (TicketMove.throwPower < 150f)
+        {
+            TicketMove.throwPower += 5f;
+        }
+
     }
     private void speedReset()//
     {
