@@ -6,25 +6,46 @@ using UnityEngine.SceneManagement;
 public class main_TransitionManager : MonoBehaviour
 {
     public GameObject transitionPanel;
-    public Animator transitionAnim;
-    public string sceneName;
+    public GameObject FadeStartTransitionPanel;
 
     private void Awake()
     {
         transitionPanel.SetActive(false);
+        if (Application.loadedLevel != 0)
+        {
+            FadeStartTransitionPanel.SetActive(true);
+            StartCoroutine(LoadMyRoom());    
+        }
     }
 
-    public void toMain()
+    IEnumerator LoadMyRoom()
+    {
+        yield return new WaitForSeconds(3.0f);
+        FadeStartTransitionPanel.SetActive(false);
+    }
+
+    public void toScene(string sceneName)
     {
         transitionPanel.SetActive(true);
-        SfxManager.Instance.playClick();
-        StartCoroutine(LoadScene());
+        playClick();
+        StartCoroutine(LoadScene(sceneName));
     }
 
-    IEnumerator LoadScene()
+    IEnumerator LoadScene(string sceneName)
     {
-        transitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void playClick()
+    {
+        if (Application.loadedLevel == 0)
+        {
+            SfxManager.Instance.playClick();
+        }
+        else if(Application.loadedLevel == 1)
+        {
+            myRoomSfxManager.Instance.playClick();
+        }
     }
 }
