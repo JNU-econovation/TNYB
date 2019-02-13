@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class FactoryManager : MonoBehaviour {
     public Image[] objImage = new Image[8]; //세팅된 이미지
     public Text scoreText, resultText;
     private int score = 0;
+    private int max_score = 0;
     public Text newRecordText;
     private int clickCount;
     int beforeA, beforeB, afterA, afterB;
@@ -74,6 +76,7 @@ public class FactoryManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
+        RealtimeDatabase.Instance.GetScore_factory();
         gameOverPanel.SetActive(false);
         score = 0;
         pausePanel.SetActive(true);
@@ -246,7 +249,7 @@ public class FactoryManager : MonoBehaviour {
         count = 0;
         for(int i=0; i<8; i++)
         {
-            int random = Random.Range(0, 16);
+            int random = UnityEngine.Random.Range(0, 16);
             if (select == kind[random])
                 count++;
             clickCount = count;
@@ -256,11 +259,11 @@ public class FactoryManager : MonoBehaviour {
         }
         if (count == 0)
         {
-            int ran = Random.Range(0, 8);
+            int ran = UnityEngine.Random.Range(0, 8);
             int tmpran;
             while (true)
             {
-                tmpran = Random.Range(0, 16);
+                tmpran = UnityEngine.Random.Range(0, 16);
                 if (kind[tmpran] == select) break;
             }
             num[ran] = tmpran;
@@ -335,7 +338,7 @@ public class FactoryManager : MonoBehaviour {
     }
     void makeTrash_1()
     {
-        select = recycleName[Random.Range(0, 4)];
+        select = recycleName[UnityEngine.Random.Range(0, 4)];
 
         set();
         setSelector();
@@ -361,12 +364,12 @@ public class FactoryManager : MonoBehaviour {
         num[beforeA] = tmpnum;
         
 
-        btn[beforeA].GetComponent<Button>().interactable = true;
-        btn[beforeB].GetComponent<Button>().interactable = true;
-        afterA = Random.Range(0, 8);
-        afterB = Random.Range(0, 8);
-        while (afterA == afterB)
-            afterB = Random.Range(0, 8);
+        //btn[beforeA].GetComponent<Button>().interactable = true;
+        //btn[beforeB].GetComponent<Button>().interactable = true;
+        //afterA = Random.Range(0, 8);
+        //afterB = Random.Range(0, 8);
+        //while (afterA == afterB)
+            //afterB = Random.Range(0, 8);
 
 
 
@@ -393,7 +396,7 @@ public class FactoryManager : MonoBehaviour {
         while (t > 0f)
         {
             t -= 0.1f;
-            obj.transform.position = originV + (Vector3)Random.insideUnitCircle * shakePower * t;
+            obj.transform.position = originV + (Vector3)UnityEngine.Random.insideUnitCircle * shakePower * t;
             yield return null;
         }
         obj.transform.position = originV;
@@ -453,12 +456,10 @@ public class FactoryManager : MonoBehaviour {
     //----DB
     public void SetSCoreDB()
     {
-        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+       
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_factory", score);
-            PlayerPrefs.SetInt("max_score_cashier", score);
-            PlayerPrefs.Save();
             newRecordText.text = "신기록!";
         }else
         newRecordText.text = "최고점수 : " + max_score.ToString();
@@ -468,5 +469,9 @@ public class FactoryManager : MonoBehaviour {
     {
         int money = RoomManager.Instance.gameMoney;
         RealtimeDatabase.Instance.SetMoneyData(money + score);
+    }
+    public void SetMaxScore(string value)
+    {
+        max_score = Convert.ToInt32(value);
     }
 }
