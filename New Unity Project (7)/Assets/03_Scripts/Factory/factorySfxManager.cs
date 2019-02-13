@@ -43,7 +43,7 @@ public class factorySfxManager : MonoBehaviour
     void Start()
     {
 
-        ClickSoundBtn();
+        FirstSoundBtn();
 
 
     }
@@ -75,6 +75,17 @@ public class factorySfxManager : MonoBehaviour
             PlayerPrefs.SetInt("isSfxMute", 1);
             PlayerPrefs.Save();
             SoundBtn.GetComponent<Image>().sprite = btnSprite1;
+        }
+    }
+    public void FirstSoundBtn()
+    {
+        if(isSfxMute)
+        {
+            SoundBtn.GetComponent<Image>().sprite = btnSprite1;
+        }
+        else
+        {
+            SoundBtn.GetComponent<Image>().sprite = btnSprite2;
         }
     }
 

@@ -4865,7 +4865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishPanel: {fileID: 1533218157}
-  maxTime: 10
+  maxTime: 60
   warnTime: 10
   timeBarColor_norm: FFBB06
   timeBarColor_10: FF3A06
