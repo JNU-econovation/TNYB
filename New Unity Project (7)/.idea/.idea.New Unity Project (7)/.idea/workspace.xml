@@ -15,7 +15,7 @@
     <session id="418816146">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="3" />
@@ -374,8 +374,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/05_Cinema/CinemaManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="311" column="51" lean-forward="true" selection-start-line="311" selection-start-column="51" selection-end-line="311" selection-end-column="51" />
+                <state relative-caret-position="489">
+                  <caret line="316" column="36" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
                   <folding>
                     <marker date="1550030933238" expanded="false" signature="6:114" ph="..." />
                     <marker date="1550030933238" expanded="true" signature="158:8981" ph="{...}" />
@@ -754,12 +754,12 @@
       <workItem from="1549884792370" duration="7044000" />
       <workItem from="1549893618692" duration="5001000" />
       <workItem from="1549945228164" duration="24649000" />
-      <workItem from="1550001462890" duration="5918000" />
+      <workItem from="1550001462890" duration="6191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124238000" />
+    <option name="totallyTimeSpent" value="124511000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,7 +772,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13064714" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1398,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/05_Cinema/CinemaManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="311" column="51" lean-forward="true" selection-start-line="311" selection-start-column="51" selection-end-line="311" selection-end-column="51" />
+        <state relative-caret-position="489">
+          <caret line="316" column="36" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
           <folding>
             <marker date="1550030933238" expanded="false" signature="6:114" ph="..." />
             <marker date="1550030933238" expanded="true" signature="158:8981" ph="{...}" />
