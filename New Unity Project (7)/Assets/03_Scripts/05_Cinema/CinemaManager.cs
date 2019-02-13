@@ -197,11 +197,7 @@ public class CinemaManager : MonoBehaviour
     }
     private void speedUp()//
     {
-        if (TicketMove.throwPower < 150f)
-        {
-            TicketMove.throwPower += 5f;
-        }
-
+        TicketMove.throwPower += 5f;
     }
     private void speedReset()//
     {
@@ -309,11 +305,11 @@ public class CinemaManager : MonoBehaviour
         {
             RealtimeDatabase.Instance.SetGameScore("score_cinema", cinema_score);
 
-            newRecordText.text = "신기록!";
+            newRecordText.text = "신기록 달성!";
         }
         else
         {
-            newRecordText.text = "최고점수 : " + max_score.ToString();
+            newRecordText.text = "아깝! 당신의 최고점수는\n" + max_score.ToString();
         }
     }
     public void SetMax_Score(string value)
