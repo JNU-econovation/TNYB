@@ -96,12 +96,14 @@ public class CashierMusicManager : MonoBehaviour
             PlayerPrefs.SetInt("isMusicMute", 0);
             isMusicMute = true;
             MusicBtn.GetComponent<Image>().sprite = btn_0;
+            audioSource.volume = 0;
         }
         else
         {
             PlayerPrefs.SetInt("isMusicMute", 1);
             isMusicMute = false;
             MusicBtn.GetComponent<Image>().sprite = btn_1;
+            audioSource.volume = 0.8f;
         }
         PlayerPrefs.Save();
     }
