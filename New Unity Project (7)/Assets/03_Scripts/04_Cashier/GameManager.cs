@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 	// Score
 	private int score;
     public Text newRecordText;
+    private int max_score;
 
     // Sound
     private AudioSource audioSource;
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
 	private void RespawnRandomTfHand()
 	{
 		bCanHandRespawn = false;
-		handTfIndex = Random.Range(0, handTfList.Count);
+		handTfIndex = UnityEngine.Random.Range(0, handTfList.Count);
 		GameObject tempHand;
 		tempHand = Instantiate(hand);
 		tempHand.transform.position = handTfList[handTfIndex].position;
@@ -152,7 +154,7 @@ public class GameManager : MonoBehaviour
 	{
 		isClear = false;
 
-		int marchandiseIndex = Random.Range(0, marchandisePrefabsList.Count);
+		int marchandiseIndex = UnityEngine.Random.Range(0, marchandisePrefabsList.Count);
 		
 		GameObject tempMarchandise;
 		tempMarchandise = Instantiate(marchandisePrefabsList[marchandiseIndex]);
@@ -206,16 +208,20 @@ public class GameManager : MonoBehaviour
      //------------DB
 	public void updateRankScore()
 	{
-        int max_score = PlayerPrefs.GetInt("max_score_cashier", 0);
+        RealtimeDatabase.Instance.GetScore_cashier();
         if (max_score < score)
         {
             RealtimeDatabase.Instance.SetGameScore("score_cashier", score);
-            PlayerPrefs.SetInt("max_score_cashier", score);
-            PlayerPrefs.Save();
             newRecordText.text = "신기록!";
         }else
         newRecordText.text = "최고점수 : " + max_score.ToString();
     }
+
+    public void SetMaxScore(string value)
+    {
+        max_score = Convert.ToInt32(value);
+    }
+
     public void ScoreToMoney()
     {
         int money = RoomManager.Instance.gameMoney;

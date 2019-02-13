@@ -160,6 +160,64 @@ public class RealtimeDatabase : MonoBehaviour
 
             });
     }
+    public void GetScore_factory()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
+
+                    FactoryManager.Instance.SetMaxScore(snapshot.Child(Login.user.UserId).Child("score_factory").Value.ToString());
+                }
+
+            });
+    }
+    public void GetScore_cashier()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
+
+                    GameManager.Instance.SetMaxScore(snapshot.Child(Login.user.UserId).Child("score_cashier").Value.ToString());
+                }
+
+            });
+    }
+    public void GetScore_cinema()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("users")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    //Debug.Log(snapshot.Child(Login.user.UserId).Child("MyRoom_purchase").Child("0").Value);
+
+                    CinemaManager.instance.SetMax_Score(snapshot.Child(Login.user.UserId).Child("score_cinema").Value.ToString());
+                }
+
+            });
+    }
+
 
     public void setRoomName()
     {
