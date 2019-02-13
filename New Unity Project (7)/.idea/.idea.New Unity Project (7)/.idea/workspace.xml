@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6589f2b4-02b4-4bd3-b36a-2390bb519a91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.New Unity Project (7)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/MyRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/MyRoom.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/03_Scripts/Main/main_TransitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03_Scripts/Main/main_TransitionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/SceneTrasition/Panel 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_Animation/SceneTrasition/Panel 1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_Animation/SceneTrasition/myRoom_end.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_Animation/SceneTrasition/myRoom_end.anim" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +27,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="17997" />
+          <entry key="cs" value="18341" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="17997" />
+          <entry key="C#" value="18341" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -232,19 +228,19 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/main_TransitionManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+                <state relative-caret-position="255">
+                  <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
                   <folding>
-                    <marker date="1550023086397" expanded="true" signature="6:113" ph="..." />
-                    <marker date="1550023086397" expanded="true" signature="166:1214" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="281:497" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="371:491" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="527:637" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="680:800" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="845:947" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="976:1212" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="1024:1089" ph="{...}" />
-                    <marker date="1550023086397" expanded="true" signature="1135:1206" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="6:79" ph="..." />
+                    <marker date="1550028932033" expanded="true" signature="132:1545" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="304:459" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="391:453" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="512:625" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="677:784" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="834:968" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="1036:1149" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="1178:1543" ph="{...}" />
+                    <marker date="1550028932033" expanded="true" signature="1225:1537" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -569,12 +565,12 @@
       <workItem from="1549884792370" duration="7044000" />
       <workItem from="1549893618692" duration="5001000" />
       <workItem from="1549945228164" duration="24649000" />
-      <workItem from="1550001462890" duration="3372000" />
+      <workItem from="1550001462890" duration="4283000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121692000" />
+    <option name="totallyTimeSpent" value="122603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1094,19 +1090,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/03_Scripts/Main/main_TransitionManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
-            <marker date="1550023086397" expanded="true" signature="6:113" ph="..." />
-            <marker date="1550023086397" expanded="true" signature="166:1214" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="281:497" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="371:491" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="527:637" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="680:800" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="845:947" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="976:1212" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="1024:1089" ph="{...}" />
-            <marker date="1550023086397" expanded="true" signature="1135:1206" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="6:79" ph="..." />
+            <marker date="1550028932033" expanded="true" signature="132:1545" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="304:459" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="391:453" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="512:625" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="677:784" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="834:968" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="1036:1149" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="1178:1543" ph="{...}" />
+            <marker date="1550028932033" expanded="true" signature="1225:1537" ph="{...}" />
           </folding>
         </state>
       </provider>
