@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FactoryManager : MonoBehaviour {
 
-
+    private int money;
     public Text recycleText;
     public Sprite transparent;
     public Image changeImage1, changeImage2;
@@ -70,9 +70,10 @@ public class FactoryManager : MonoBehaviour {
     {
         if (!Instance)
             Instance = this;
-
+        money = RoomManager.Instance.gameMoney;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.SetResolution(Screen.width, (Screen.width * 16)/9, true);
+
     }
     // Use this for initialization
     void Start() {
@@ -467,7 +468,7 @@ public class FactoryManager : MonoBehaviour {
 
     public void ScoreToMoney()
     {
-        int money = RoomManager.Instance.gameMoney;
+
         RealtimeDatabase.Instance.SetMoneyData(money + score);
         RoomManager.Instance.gameMoney = money + score;
     }
